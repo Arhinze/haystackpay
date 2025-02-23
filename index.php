@@ -59,6 +59,12 @@ if(isset($_POST["referred_accounts"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkedin Rentals</title>
     <style>
+        body{
+            background-color:#f8f8f8;
+            font-family:tahoma;
+            padding:16px 12px;
+        }
+
         textarea{
             width:95%;
             height:150px;
@@ -70,6 +76,15 @@ if(isset($_POST["referred_accounts"])){
             font-family:arial;
             padding:12px 16px;
             margin:30px 6px;
+        }
+
+        .long-action-button{
+            background-color:#ff9100;
+            color:#fff;
+            border-radius:5px;
+            padding:15px 12px;
+            text-align:center;
+            width:95%;
         }
     </style>
 </head>
