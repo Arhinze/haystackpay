@@ -66,6 +66,7 @@ if(isset($_POST["referred_accounts"])){
     <style>
         body{
             background-color:#f8f8f8;
+            color:#888;
             font-family:tahoma;
             padding:16px 12px;
         }
