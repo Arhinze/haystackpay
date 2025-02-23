@@ -102,7 +102,9 @@ if(isset($_POST["referred_accounts"])){
 <body>
     <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals</h1>
     <div>
-        <div style="text-align:center">This program is created for managers to know if their tenants' accounts is still active on WANL(Melissa's company).</div>
+        <div style="text-align:center;margin-bottom:24px">
+            This program is created for managers to know if their tenants' accounts is still active on WANL(Melissa's company).
+        </div>
         <b>Input all the emails you wish to seek for, one on each line.</b>
     </div>
     <form method = "post" action = "">
