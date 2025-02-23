@@ -99,7 +99,7 @@ if(isset($_POST["referred_accounts"])){
     </style>
 </head>
 <body>
-<body>
+<div>
     <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals</h1>
     <div>
         <div style="text-align:center;margin-bottom:24px">
@@ -128,6 +128,6 @@ if(isset($_POST["referred_accounts"])){
             }
         }    
     ?>
-</body>
+</div>
 </body>
 </html>
