@@ -76,7 +76,7 @@ if(isset($_POST["referred_accounts"])){
         }
 
         textarea{
-            width:95%;
+            width:90%;
             height:150px;
             border:2px solid #ccc;
             box-sizing:border-box;
@@ -85,7 +85,7 @@ if(isset($_POST["referred_accounts"])){
             font-size:15px;
             font-family:arial;
             padding:12px 16px;
-            margin:30px 6px;
+            margin:15px;
         }
 
         .long-action-button{
@@ -94,7 +94,8 @@ if(isset($_POST["referred_accounts"])){
             border-radius:5px;
             padding:15px 12px;
             text-align:center;
-            width:95%;
+            width:90%;
+            margin: 6px 15px;
         }
     </style>
 </head>
@@ -103,7 +104,7 @@ if(isset($_POST["referred_accounts"])){
     <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals</h1>
     <div>
         <div style="text-align:center;margin-bottom:24px">
-            This program is created for managers to know if their tenants' accounts is still active on WANL(Melissa's company).
+            This program is created for managers to know if their tenants' accounts are still active on WANL(Melissa's company).
         </div>
         <b>Input all the emails you wish to seek for, one on each line.</b>
     </div>
@@ -131,3 +132,29 @@ if(isset($_POST["referred_accounts"])){
 </div>
 </body>
 </html>
+
+<!--
+Nelsonaaron70@gmail.com
+jonathanfavour7@gmail.com
+dessien64@gmail.com
+aulejosephine01@gmail.com
+keshbentley020@gmail.com
+Khalidzubair085@gmail.com
+eebuka583@gmail.com
+ijebus2004@gmail.com
+joshuaisaac265@gmail.com
+oyesinapaul0@gmail.com
+dangkat123@gmail.com
+olayiwolahissa484@gmail.com
+oluwadarasimi765@gmail.com
+Mmeaomajames2006@gmail.com
+karmalrashid@gmail.com
+Ohitzandrew@gmail.com
+Hezekiel4real@yahoo.com
+yisaedward@gmail.com
+adewuyitobi730@gmail.com
+sahmedtyabo90@gmail.com
+favourakinnifesi@yahoo.com
+mohammedibrahimarabi@gmail.com
+davidoriyomi21@gmail.com
+-->
