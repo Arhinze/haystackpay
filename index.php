@@ -106,7 +106,8 @@ if(isset($_POST["referred_accounts"])){
             This program is created for managers to know if their tenants' accounts are still active on WANL(Melissa's company).
         </div>
         <div style="text-align:center;font-weight:bold;font-size:18px">
-            Input all the emails you wish to seek for, one on each line.
+            Input all the emails you wish to seek for.<br />
+            (one on each line).
         </div>
     </div>
     <form method = "post" action = "">
