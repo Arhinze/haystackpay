@@ -58,6 +58,11 @@ if(isset($_POST["referred_accounts"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkedin Rentals</title>
+
+    <link rel="stylesheet" href="/static/style.css?$css_version"/>
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+
     <style>
         body{
             background-color:#f8f8f8;
@@ -89,13 +94,13 @@ if(isset($_POST["referred_accounts"])){
     </style>
 </head>
 <body>
-    <h1>Linkedin Rentals</h1>
+    <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals</h1>
     <div>
         <b>Input all the emails you wish to seek for, one on each line.</b>
     </div>
     <form method = "post" action = "">
         <textarea name="referred_accounts"></textarea>
-        <br /><input class="long-action-button" type = "submit" value = "Submit"/><br /><br />
+        <br /><button class="long-action-button" type = "submit"><i class="fa fa-flash"></i> Submit</button><br /><br />
     </form>
 
     <?php
