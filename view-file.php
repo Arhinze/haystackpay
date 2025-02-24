@@ -61,6 +61,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
             Below is a file showing all active accounts for the week on WANL(Melissa's company). <br /><br />
         </div>
 
+        <div style="margin: 24px; 12px">
         <?php
             if(!isset($_POST["managers_accounts"])){
                 $i=0;
@@ -82,7 +83,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
             }
             echo "<br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
         ?>
-
+        </div>
     </div>
 </body>
 </html>
