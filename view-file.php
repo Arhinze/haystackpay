@@ -71,7 +71,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 }
             } else {
                 echo $_POST["managers_accounts"];
-                $managers_rentals = unserialize($_POST["managers_accounts"]);
+                $managers_rentals = json_decode($_POST["managers_accounts"]);
                 echo "Managers Rentals: "; print_r($managers_rentals);
                 foreach($all_active_accounts as $all_act_acct) {
                     if(in_array($all_act_acct, $managers_rentals)) {

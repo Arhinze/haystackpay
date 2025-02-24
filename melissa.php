@@ -24,6 +24,7 @@ if(isset($_POST["referred_accounts"])){
     $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
     $managers_referrals_arr = array_unique($managers_referrals_arr);
     //echo "<h2>managers referrals array:</h2>"; print_r($managers_referrals_arr);
+    $json_all_mans = json_encode($_POST["managers_referrals_arr"]);
     
     foreach($managers_referrals_arr as $managers_ref) { //if(!in_array()) could be used here in place of array_unique
         if(in_array($managers_ref, $all_active_accounts)){
@@ -118,8 +119,8 @@ if(isset($_POST["referred_accounts"])){
                 echo "<br /><br /><b>Total number is: $i.</b>";
             }
     ?>
-        <form method="POST" action="/view-file">
-            <input type="hidden" name="managers_accounts" value="<?=serialize(['ayun','ebus'])?>"/>
+        <form method="post" action="/view-file">
+            <input type="hidden" name="managers_accounts" value="<?=$json_all_mans?>"/>
             <!-- $managers_referrals_arr-->
             
             <button class="long-action-button" style="background-color:blue;color:#fff" type="submit"> <i class="fa fa-file"></i> View on File >> </button>
