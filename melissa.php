@@ -20,7 +20,7 @@ if(isset($_POST["referred_accounts"])){
     $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
     //echo "<h2>managers referrals: </h2>". $managers_referrals;
     $managers_referrals_arr = explode("\n", $managers_referrals);
-    $managers_json = json_encode($managers_referrals_arr);
+    //$managers_json = json_encode($managers_referrals_arr);
     $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
     $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
     $managers_referrals_arr = array_unique($managers_referrals_arr);
@@ -119,7 +119,7 @@ if(isset($_POST["referred_accounts"])){
             }
     ?>
         <form method="post" action="/view-file">
-            <input type="text" name="managers_accounts" value="<?=$managers_json?>"/>
+            <input type="hidden" name="managers_accounts" value="<?=$all_referred_accounts?>"/>
             <!-- $managers_referrals_arr-->
             
             <button class="long-action-button" style="background-color:blue;color:#fff" type="submit"> <i class="fa fa-file"></i> View on File >> </button>

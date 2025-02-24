@@ -66,10 +66,19 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
             $i=0; var_dump($_POST);
             if(isset($_POST["managers_accounts"])){
                 var_dump($_POST);
-                $managers_rentals = json_decode($_POST["managers_accounts"]);
+                $managers_referrals = $_POST["managers_accounts"];
+                $managers_referrals = trim($all_referred_accounts);
+                $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
+                //echo "<h2>managers referrals: </h2>". $managers_referrals;
+                $managers_referrals_arr = explode("\n", $managers_referrals);
+                //$managers_json = json_encode($managers_referrals_arr);
+                $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
+                $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
+                $managers_referrals_arr = array_unique($managers_referrals_arr);
+
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
-                    if(in_array($all_act_acct, $managers_rentals)) {
+                    if(in_array($all_act_acct, $managers_referrals_arr)) {
                         echo "<b>$i .) $all_act_acct</b> <i class='fa fa-check-o'></i>";
                     } else {
                         echo $i, " .)", $all_act_acct;
