@@ -63,7 +63,9 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 
         <div style="margin: 24px; 12px">
         <?php
-            if(!isset($_POST["managers_accounts"])){
+            if(isset($_POST["managers_accounts"])){
+                var_dump($_POST); echo "<br />";
+
                 $i=0;
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
