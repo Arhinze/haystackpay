@@ -81,7 +81,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
                     if(in_array($all_act_acct, $managers_referrals_arr)) {
-                        echo "<b>$i.) $all_act_acct</b> <i class='fa fa-check-o'></i> <br />";
+                        echo "<b style = 'color:green'>$i.) $all_act_acct</b> <i class='fa fa-check-circle'></i> <br />";
                     } else {
                         echo $i, ".) ", $all_act_acct, "<br />";
                     }
