@@ -86,7 +86,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                         echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br />";
                     }
                 }
-            echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_rentals);
+            echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_referrals_arr);
             } else {
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
