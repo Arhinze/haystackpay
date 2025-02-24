@@ -24,7 +24,7 @@ if(isset($_POST["referred_accounts"])){
     $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
     $managers_referrals_arr = array_unique($managers_referrals_arr);
     //echo "<h2>managers referrals array:</h2>"; print_r($managers_referrals_arr);
-    $json_all_mans = json_encode($_POST["managers_referrals_arr"]);
+    $json_all_mans = json_encode($managers_referrals_arr);
     
     foreach($managers_referrals_arr as $managers_ref) { //if(!in_array()) could be used here in place of array_unique
         if(in_array($managers_ref, $all_active_accounts)){
