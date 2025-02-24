@@ -76,12 +76,14 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
                 $managers_referrals_arr = array_unique($managers_referrals_arr);
 
+                echo "managers_ref_arr"; print_r($managers_referrals_arr);
+
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
                     if(in_array($all_act_acct, $managers_referrals_arr)) {
                         echo "<b>$i.) $all_act_acct</b> <i class='fa fa-check-o'></i> <br />";
                     } else {
-                        echo $i, ".)", $all_act_acct, "<br />";
+                        echo $i, ".) ", $all_act_acct, "<br />";
                     }
                 }
             echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_rentals);
