@@ -22,6 +22,7 @@ if(isset($_POST["referred_accounts"])){
     $managers_referrals_arr = explode("\n", $managers_referrals);
     $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
     $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
+    $managers_json = json_encode($managers_referrals_arr);
     $managers_referrals_arr = array_unique($managers_referrals_arr);
     //echo "<h2>managers referrals array:</h2>"; print_r($managers_referrals_arr);
     
@@ -105,7 +106,6 @@ if(isset($_POST["referred_accounts"])){
     <?php
         if($isset_of_ref) {
             echo "<h2 style='text-align:center'>This Manager's Referals' accounts still active for the week are:</h2>";
-            //print_r($managers_referrals_arr);
 
             if(count($output) == 0) {
                 echo "No referrals for this manager the week / Empty field submitted.";
@@ -119,8 +119,7 @@ if(isset($_POST["referred_accounts"])){
             }
     ?>
         <form method="post" action="/view-file">
-            <?php $js_e = json_encode($managers_referrals_arr) ?>
-            <input type="hidden" name="managers_accounts" value="<?=$jse?>"/>
+            <input type="hidden" name="managers_accounts" value="<?=$managers_json?>"/>
             <!-- $managers_referrals_arr-->
             
             <button class="long-action-button" style="background-color:blue;color:#fff" type="submit"> <i class="fa fa-file"></i> View on File >> </button>
