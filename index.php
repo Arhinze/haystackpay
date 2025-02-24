@@ -37,7 +37,7 @@ if(isset($_POST["referred_accounts"])){
 
     $managers_referrals = trim(htmlentities($all_referred_accounts));
     //$managers_referrals = preg_replace("/[0-9].|[0-9]\)|[0-9].\)/", "", $all_referred_accounts);
-    $managers_referrals = preg_replace("/d+[\.|)|\.)]/", "", $all_referred_accounts);
+    $managers_referrals = string_replace("/d+[\.|)|\.)]/", "", $all_referred_accounts);
     //echo "<h2>managers referrals: </h2>". $managers_referrals;
     $managers_referrals_arr = explode("\n", $managers_referrals);
     $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
@@ -125,6 +125,7 @@ if(isset($_POST["referred_accounts"])){
     <?php
         if($isset_of_ref) {
             echo "<h2>This Manager's Referals for the week with active accounts are:</h2>";
+            print_r($managers_referrals_arr);
 
             if(count($output) == 0) {
                 echo "No referrals for this manager the week / Empty field submitted.";
