@@ -63,11 +63,14 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 
         <?php
             if(!isset($_POST["managers_accounts"])){
+                $i=0;
                 foreach($all_active_accounts as $all_act_acct) {
-                    echo $all_act_acct, "<br />";
+                    $i++;
+                    echo $i, ".) ", $all_act_acct, "<br />";
                 }
             } else {
                 $managers_rentals = $_POST["managers_accounts"];
+                echo "Managers Rentals: "; print_r($managers_rentals);
                 foreach($all_active_accounts as $all_act_acct) {
                     if(in_array($all_act_acct, $managers_rentals)) {
                         echo "<b>$all_act_acct</b> <i class='fa fa-check-o'></i>";
