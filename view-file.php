@@ -63,7 +63,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 
         <div style="margin: 24px; 12px">
         <?php
-            $i=0; var_dump($_POST);
+            $i=0; var_dump($_POST);  echo "<br /><br /> Post_of_Managers_account";
             if(isset($_POST["managers_accounts"])){
                 var_dump($_POST); echo "<br /><br />";
                 $managers_referrals = $_POST["managers_accounts"];
@@ -79,9 +79,9 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
                     if(in_array($all_act_acct, $managers_referrals_arr)) {
-                        echo "<b>$i .) $all_act_acct</b> <i class='fa fa-check-o'></i> <br />";
+                        echo "<b>$i.) $all_act_acct</b> <i class='fa fa-check-o'></i> <br />";
                     } else {
-                        echo $i, " .)", $all_act_acct, "<br />";
+                        echo $i, ".)", $all_act_acct, "<br />";
                     }
                 }
             echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_rentals);
