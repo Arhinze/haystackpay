@@ -76,7 +76,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
                 $managers_referrals_arr = array_unique($managers_referrals_arr);
 
-                echo "managers_ref_arr"; print_r($managers_referrals_arr);
+                echo "managers_ref_arr"; print_r($managers_referrals_arr); echo "<br />";
 
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
