@@ -63,9 +63,9 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 
         <div style="margin: 24px; 12px">
         <?php
-            $i=0; var_dump($_POST);  echo "<br /><br /> Post_of_Managers_account";
+            $i=0; //var_dump($_POST);  echo "<br /><br /> Post_of_Managers_account";
             if(isset($_POST["managers_accounts"])){
-                echo $_POST["managers_accounts"]; echo "<br /><br />";
+                //echo $_POST["managers_accounts"]; echo "<br /><br />";
                 $managers_referrals = $_POST["managers_accounts"];
                 $managers_referrals = trim($managers_referrals);
                 $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $managers_referrals);
@@ -93,7 +93,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                     echo $i, ".) ", $all_act_acct, "<br />";
                 }
             }
-            echo "<br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
+            echo "<br /><br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
         ?>
         </div>
     </div>
