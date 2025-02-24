@@ -70,7 +70,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals = trim($all_referred_accounts);
                 $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
                 //echo "<h2>managers referrals: </h2>". $managers_referrals;
-                $managers_referrals_arr = explode("\n", $managers_referrals);
+                $managers_referrals_arr = explode(" ", $managers_referrals);
                 //$managers_json = json_encode($managers_referrals_arr);
                 $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
                 $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
