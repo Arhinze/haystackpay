@@ -63,14 +63,16 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 
         <div style="margin: 24px; 12px">
         <?php
-            $i=0;
+            $i=0; var_dump($_POST);
             if(isset($_POST["managers_accounts"])){
+                var_dump($_POST);
                 $managers_rentals = json_decode($_POST["managers_accounts"]);
                 foreach($all_active_accounts as $all_act_acct) {
+                    $i++;
                     if(in_array($all_act_acct, $managers_rentals)) {
-                        echo "<b>$all_act_acct</b> <i class='fa fa-check-o'></i>";
+                        echo "<b>$i .) $all_act_acct</b> <i class='fa fa-check-o'></i>";
                     } else {
-                        echo $all_act_acct;
+                        echo $i, " .)", $all_act_acct;
                     }
                 }
             echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_rentals);
