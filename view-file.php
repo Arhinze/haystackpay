@@ -77,11 +77,11 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals_arr = array_unique($managers_referrals_arr);
 
                 //echo "managers_ref_arr: "; print_r($managers_referrals_arr); echo "<br />";
-
+                $man_acct_no = 0;
                 foreach($all_active_accounts as $all_act_acct) {
-                    $i++; $man_acct_no = 0;
+                    $i++; 
                     if(in_array($all_act_acct, $managers_referrals_arr)) {
-                        $man_acct_no++;
+                        $man_acct_no += 1;
                         echo "<b style = 'color:green'>$i.) $all_act_acct</b> <i class='fa fa-check-circle'></i> <br />";
                     } else {
                         echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br />";
