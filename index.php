@@ -123,7 +123,7 @@ if(isset($_POST["referred_accounts"])){
     <div style="margin:24px 15px">
     <?php
         if($isset_of_ref) {
-            echo "<h2 style='text-align:center'>This Manager's Referals for the week with active accounts are:</h2>";
+            echo "<h2 style='text-align:center'>This Manager's Referals' accounts still active for the week are:</h2>";
             //print_r($managers_referrals_arr);
 
             if(count($output) == 0) {
