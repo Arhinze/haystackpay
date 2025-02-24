@@ -116,7 +116,7 @@ if(isset($_POST["referred_accounts"])){
         </div>
     </div>
     <form method = "post" action = "">
-        <textarea name="referred_accounts" value="<?=$all_referred_accounts?>"></textarea>
+        <textarea name="referred_accounts"><?=$all_referred_accounts?></textarea>
         <br /><button class="long-action-button" type = "submit"><i class="fa fa-flash"></i> Submit</button><br /><br />
     </form>
 
