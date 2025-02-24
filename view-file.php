@@ -55,7 +55,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
     </style>
 </head>
 <body>
-    <h1 style = "text-align:center"><i class="fa fa-linkedin"></i>Linkedin Rentals - WANL(Melissa)</h1>
+    <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals - WANL(Melissa)</h1>
     <div>
         <div style="text-align:center;margin:21px 12px;border-bottom:3px solid #888;padding:18px 12px">
             Below is a file showing all active accounts for the week on WANL(Melissa's company). <br /><br />
