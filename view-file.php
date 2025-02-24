@@ -65,7 +65,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
         <?php
             $i=0; var_dump($_POST);  echo "<br /><br /> Post_of_Managers_account";
             if(isset($_POST["managers_accounts"])){
-                var_dump($_POST); echo "<br /><br />";
+                echo $_POST["managers_accounts"]; echo "<br /><br />";
                 $managers_referrals = $_POST["managers_accounts"];
                 $managers_referrals = trim($all_referred_accounts);
                 $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
@@ -76,7 +76,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
                 $managers_referrals_arr = array_unique($managers_referrals_arr);
 
-                echo "managers_ref_arr"; print_r($managers_referrals_arr); echo "<br />";
+                echo "managers_ref_arr: "; print_r($managers_referrals_arr); echo "<br />";
 
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
