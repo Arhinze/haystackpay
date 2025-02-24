@@ -108,7 +108,7 @@ if(isset($_POST["referred_accounts"])){
         <div style="text-align:center;margin-bottom:24px">
             This program is created for managers to know if their tenants' accounts are still active on WANL(Melissa's company). <br /><br />
 
-            Accepted numbering formats are: 1. || 1) and 1.)
+            Accepted numbering formats are: 1. , 1) or 1.)
         </div>
         <div style="text-align:center;font-weight:bold;font-size:18px">
             Input all the emails you wish to seek for.<br />
@@ -116,7 +116,7 @@ if(isset($_POST["referred_accounts"])){
         </div>
     </div>
     <form method = "post" action = "">
-        <textarea name="referred_accounts"></textarea>
+        <textarea name="referred_accounts" value="<?=$all_referred_accounts?>"></textarea>
         <br /><button class="long-action-button" type = "submit"><i class="fa fa-flash"></i> Submit</button><br /><br />
     </form>
 
