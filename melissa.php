@@ -119,7 +119,7 @@ if(isset($_POST["referred_accounts"])){
             }
     ?>
         <form method="post" action="/view-file">
-            <?php $js_e = json_encode(array_map("htmlentities", $managers_referrals_arr)); ?>
+            <?php $js_e = json_encode($managers_referrals_arr) ?>
             <input type="hidden" name="managers_accounts" value="<?=$jse?>"/>
             <!-- $managers_referrals_arr-->
             
