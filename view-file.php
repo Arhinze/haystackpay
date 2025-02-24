@@ -70,6 +70,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                     echo $i, ".) ", $all_act_acct, "<br />";
                 }
             } else {
+                var_dump($_POST); echo "<br />";
                 echo $_POST["managers_accounts"];
                 $managers_rentals = json_decode($_POST["managers_accounts"]);
                 echo "Managers Rentals: "; print_r($managers_rentals);
