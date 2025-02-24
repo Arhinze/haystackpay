@@ -83,7 +83,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                     if(in_array($all_act_acct, $managers_referrals_arr)) {
                         echo "<b style = 'color:green'>$i.) $all_act_acct</b> <i class='fa fa-check-circle'></i> <br />";
                     } else {
-                        echo $i, ".) ", $all_act_acct, "<br />";
+                        echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br />";
                     }
                 }
             echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_rentals);
