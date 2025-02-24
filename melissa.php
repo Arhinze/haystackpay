@@ -14,9 +14,9 @@ $all_referred_accounts = "";
 
 if(isset($_POST["referred_accounts"])){
     $isset_of_ref = true;
-    $all_referred_accounts = $_POST["referred_accounts"];
+    $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
 
-    $managers_referrals = trim(htmlentities($all_referred_accounts));
+    $managers_referrals = trim($all_referred_accounts);
     $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
     //echo "<h2>managers referrals: </h2>". $managers_referrals;
     $managers_referrals_arr = explode("\n", $managers_referrals);
