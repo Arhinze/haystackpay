@@ -119,7 +119,8 @@ if(isset($_POST["referred_accounts"])){
             }
     ?>
         <form method="post" action="/view-file">
-            <input type="hidden" name="managers_accounts" value="<?=json_encode(htmlentities($managers_referrals_arr))?>"/>
+            json_encode(htmlentities($managers_referrals_arr))
+            <input type="hidden" name="managers_accounts" value="<>"/>
             <!-- $managers_referrals_arr-->
             
             <button class="long-action-button" style="background-color:blue;color:#fff" type="submit"> <i class="fa fa-file"></i> View on File >> </button>
