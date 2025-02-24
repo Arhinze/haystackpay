@@ -63,19 +63,9 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 
         <div style="margin: 24px; 12px">
         <?php
+            $i=0;
             if(isset($_POST["managers_accounts"])){
-                var_dump($_POST); echo "<br />";
-
-                $i=0;
-                foreach($all_active_accounts as $all_act_acct) {
-                    $i++;
-                    echo $i, ".) ", $all_act_acct, "<br />";
-                }
-            } else {
-                var_dump($_POST); echo "<br />";
-                echo $_POST["managers_accounts"];
                 $managers_rentals = json_decode($_POST["managers_accounts"]);
-                echo "Managers Rentals: "; print_r($managers_rentals);
                 foreach($all_active_accounts as $all_act_acct) {
                     if(in_array($all_act_acct, $managers_rentals)) {
                         echo "<b>$all_act_acct</b> <i class='fa fa-check-o'></i>";
@@ -84,6 +74,11 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                     }
                 }
             echo "<br /><br /><b>Managers Total Active Referrals:</b> ", count($managers_rentals);
+            } else {
+                foreach($all_active_accounts as $all_act_acct) {
+                    $i++;
+                    echo $i, ".) ", $all_act_acct, "<br />";
+                }
             }
             echo "<br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
         ?>
