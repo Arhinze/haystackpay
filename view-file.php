@@ -57,14 +57,14 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
 <body>
     <h1 style = "text-align:center"><i class="fa fa-linkedin"></i>Linkedin Rentals - WANL(Melissa)</h1>
     <div>
-        <div style="text-align:center;margin-bottom:12px;border-bottom:3px solid #888;padding:18px 12px">
+        <div style="text-align:center;margin:21px 12px;border-bottom:3px solid #888;padding:18px 12px">
             Below is a file showing all active accounts for the week on WANL(Melissa's company). <br /><br />
         </div>
 
         <?php
             if(!isset($_POST["managers_accounts"])){
                 foreach($all_active_accounts as $all_act_acct) {
-                    echo $all_act_acct;
+                    echo $all_act_acct, "<br />";
                 }
             } else {
                 $managers_rentals = $_POST["managers_accounts"];
