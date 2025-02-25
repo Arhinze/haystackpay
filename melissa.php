@@ -1,5 +1,5 @@
 <?php
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.csv")));
+$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
 //echo "<h2>All active accounts:</h2>".$linkedin_file;
 
 $all_active_accounts = explode("\n", $linkedin_file);
@@ -27,8 +27,13 @@ if(isset($_POST["referred_accounts"])){
     //echo "<h2>managers referrals array:</h2>"; print_r($managers_referrals_arr);
     
     foreach($managers_referrals_arr as $managers_ref) { //if(!in_array()) could be used here in place of array_unique
-        if(in_array($managers_ref, $all_active_accounts)){
-            $output[] = $managers_ref;
+        //if(in_array($managers_ref, $all_active_accounts)){
+        //    $output[] = $managers_ref;
+        //}
+        if(preg_grep("/$managers_ref/", $all_active_accounts)) {
+                if(!empty($managers_ref)){ 
+                    $output[] = $managers_ref;
+                }
         }
     }
     
@@ -73,7 +78,7 @@ if(isset($_POST["referred_accounts"])){
             margin:15px;
         }
 
-        .long-action-button{
+       .long-action-button{
             background-color:#ff9100;
             color:#fff;
             border-radius:5px;

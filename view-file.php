@@ -1,5 +1,5 @@
 <?php
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.csv")));
+$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
 //echo "<h2>All active accounts:</h2>".$linkedin_file;
 
 $all_active_accounts = explode("\n", $linkedin_file);
@@ -77,17 +77,28 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals_arr = array_unique($managers_referrals_arr);
 
                 //echo "managers_ref_arr: "; print_r($managers_referrals_arr); echo "<br />";
+                
                 $man_acct_no = 0;
-                foreach($all_active_accounts as $all_act_acct) {
-                    $i++; 
-                    if(in_array($all_act_acct, $managers_referrals_arr)) {
+                $sub_all_act = "";
+                foreach ($all_active_accounts as $all_act_acct) {
+                    $i++;
+                    
+                    if(strlen($all_act_acct) > 10)
+                    {
+                        $sub_all_act = substr($all_act_acct, 0, -6);
+                    }
+                    $sub_all_act = trim($sub_all_act);
+                   // echo "<h1>",$sub_all_act, "</h1>";
+                                        
+                    if (preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)){          
                         $man_acct_no += 1;
-                        echo "<b style = 'color:green'>$i.) $all_act_acct</b> <i class='fa fa-check-circle'></i> <br />";
-                    } else {
-                        echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br />";
+                        echo "<span style='color:green;font-weight:bold'>", $i, ".) ", $all_act_acct, " <i class='fa fa-check-circle'></i></span><br />";
+                        } else {
+                        echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br/>";
                     }
                 }
-            echo "<br /><br /><b>Managers Total Active Referrals:</b> ", $man_acct_no;
+                             
+            //echo "<br /><br /><b>Managers Total Active Referrals:</b> ", $man_acct_no;
             } else {
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
