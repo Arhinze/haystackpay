@@ -98,7 +98,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                     }
                 }
                              
-            echo "<br /><br /><b>Managers Total Active Referrals:</b> ", $man_acct_no;
+            echo "<br /><br /><b>Manager's Total Active Referrals:</b> ", $man_acct_no;
             } else {
                 foreach($all_active_accounts as $all_act_acct) {
                     $i++;
