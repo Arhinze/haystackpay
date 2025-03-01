@@ -60,12 +60,12 @@ if(isset($_POST["referred_accounts"])){
     ?>
                 <div style='margin:18px 6px'>
                     <b>Total number is: <?=$i?>.</b> 
-                    <span class="long-action-button" style="width:fit-content;padding:9px 6px"> 
-                        Edit List <i class="fa fa-pencil"></i>
+                    <span class="long-action-button" style="width:fit-content;padding:9px 12px"> 
+                        Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </span>
                 <div>
                     <div><b>How much do you intend to pay each person?</b></div>
-                    <input name="amount_to_pay" type="text" required/>
+                    <input name="amount_to_pay" type="text" class="input" required/>
                 </div>
                 <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
     <?php
