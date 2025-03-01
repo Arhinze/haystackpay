@@ -382,11 +382,11 @@ a{
     border-radius:6px;
 }
 
-.close_where_to_get_wa{
+.close_where_to_get_wa, .close_bt_input_div{
     font-size:27px;
     text-align: center;
     font-weight:bold;
-    color:var(--site_color_alt);
+    color:#fff;
     background-color: red;
     height:36px;
     width:36px;

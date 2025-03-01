@@ -35,7 +35,7 @@ if(isset($_POST["referred_accounts"])){
     <div style="margin:105px 9px 24px 9px">
     <?php
         if($isset_of_ref) {
-            echo "<h2 style='text-align:center'>Bulk Payment</h2>";
+            echo "<h2 style='text-align:center'>Bulk Transfer</h2>";
             echo "<div style='margin-bottom:15px'><b style='text-align:center'>The valid email addresses within your list include:</b></div>";
 
             if(count($output) == 0) { //no valid email on the list
