@@ -44,7 +44,7 @@ if(isset($_POST["referred_accounts"])){
     </form>
 </div>
 
-    <div style="margin:24px 15px">
+    <div style="margin:105px 9px 24px 9px">
     <?php
         if($isset_of_ref) {
             echo "<h2 style='text-align:center'>The valid email addresses within your list include:</h2>";
