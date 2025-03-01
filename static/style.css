@@ -260,11 +260,14 @@ a{
     margin-left: 6px;
 }
 
+.get_started_img_div{
+    margin-top: 15px;
+    margin-right:6px;
+}
+
 .get_started_img{
     width:30px;
     height:30px;
-    margin-top: 15px;
-    margin-right:6px;
     border-radius: 100%;
     border: 1px solid var(--site_color_main);
 }
