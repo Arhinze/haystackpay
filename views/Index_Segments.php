@@ -71,11 +71,12 @@ class Index_Segments{
        }
                 
         public static function body($site_name = SITE_NAME_SHORT, $site_url = SITE_URL){
+            $site_name_uc = strtoupper($site_name);
             echo <<<HTML
                 <div class="haystackpay_intro">
                     <img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>
                     <br />
-                    <h1>HAYSTACKPAY</h1>
+                    <h1>$site_name_uc</h1>
                     Do you want to send cash to multiple people at once?
                     
                     <div style="text-align:left"><b>Enter their email addresses below:</b></div>
