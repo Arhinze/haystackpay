@@ -246,9 +246,12 @@ a{
 
 .get_started{
     background-color: var(--site_color_alt);
+    color:var(--site_color_main);
+    border-radius: 9px;
     padding:12px;
     font-weight:bold;
     font-size:18px;
+    margin:18px 6px;
 }
 
 .get_started_img{
