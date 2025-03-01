@@ -84,13 +84,12 @@ class Index_Segments{
                     <img src="/static/images/horizontal_image2.png" class=""/>
                     -->
 
-                    <div class="get_started_div">
-                        <a class="get_started">
-                            <img src="/static/images/logo.png" class="get_started_img"/> 
-                            Get Started now 
-                            <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </div>
+                    <a href="/sign-up">
+                        <div class="get_started">
+                            <div class="get_started_img"><img src="/static/images/logo.png"/></div> 
+                            <div>Get Started now &nbsp;<i class="fa fa-arrow-right"></i></div>
+                        </div>
+                    </a>
 
                     <div style="margin-bottom:12px">
                         <b>Do you intend to send money to multiple persons from a single account? <br />

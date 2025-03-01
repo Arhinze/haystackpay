@@ -244,10 +244,6 @@ a{
     margin:15px;
 }
 
-.get_started_div{
-    margin:24px 6px;
-}
-
 .get_started{
     background-color: var(--site_color_alt);
     color:var(--site_color_main);
@@ -255,6 +251,9 @@ a{
     padding:12px;
     font-weight:bold;
     font-size:18px;
+    margin:24px 6px;
+    display: flex;
+    justify-content: center;
 }
 
 .get_started i{
