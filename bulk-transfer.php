@@ -31,18 +31,6 @@ if(isset($_POST["referred_accounts"])){
 }
 
 ?>
-<div style="display:none">
-    <div style="margin:12px">
-        <b>Do you intend to send money to multiple persons from a single account? <br />
-        <span style="color:#888">Enter their email addresses, one on each line:</span></b>
-    </div>
-                    
-    <div style="font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
-    <form method = "post" action = "">
-        <textarea name="referred_accounts" class="index_textarea" placeholder="Eligible Accounts to Pay: \n  \n1.) abc@example.com \n2) def@example.com \n3. ghi@example.com \n4.) jkl@example.com \n5.) mno@example.com"><?=$all_referred_accounts?></textarea>
-        <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
-    </form>
-</div>
 
     <div style="margin:105px 9px 24px 9px">
     <?php
@@ -50,7 +38,7 @@ if(isset($_POST["referred_accounts"])){
             echo "<h2 style='text-align:center'>Bulk Payment</h2>";
             echo "<div style='margin-bottom:15px'><b style='text-align:center'>The valid email addresses within your list include:</b></div>";
 
-            if(count($output) == 0) {
+            if(count($output) == 0) { //no valid email on the list
                 echo "No valid email found / Empty field submitted.";
             } else {
                 foreach($output as $out_put_) {
@@ -63,6 +51,7 @@ if(isset($_POST["referred_accounts"])){
                     <span class="long-action-button" style="width:fit-content;padding:6px 12px;background-color:green"> 
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </span>
+                </div>
                 <div>
                     <div style="margin:15px 3px"><b>How much do you intend to pay these persons?</b></div>
                     <input name="amount_to_pay" type="number" class="input" required/>
