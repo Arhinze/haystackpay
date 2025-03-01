@@ -391,9 +391,16 @@ a{
     height:36px;
     width:36px;
     border-radius:100%;
-    position:fixed;
+    position:fixed;   
+}
+
+.close_where_to_get_wa {
     top:6%;
     right:8%;
+}
+
+.close_bt_input_div{
+    
 }
 
 .close_where_to_get_wa .fa-x-icon{
