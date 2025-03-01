@@ -31,6 +31,7 @@ if(isset($_POST["referred_accounts"])){
 }
 
 ?>
+<div style="display:none">
     <div style="margin:12px">
         <b>Do you intend to send money to multiple persons from a single account? <br />
         <span style="color:#888">Enter their email addresses, one on each line:</span></b>
@@ -41,6 +42,7 @@ if(isset($_POST["referred_accounts"])){
         <textarea name="referred_accounts" class="index_textarea" placeholder="Eligible Accounts to Pay: \n  \n1.) abc@example.com \n2) def@example.com \n3. ghi@example.com \n4.) jkl@example.com \n5.) mno@example.com"><?=$all_referred_accounts?></textarea>
         <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
     </form>
+</div>
 
     <div style="margin:24px 15px">
     <?php
@@ -55,7 +57,11 @@ if(isset($_POST["referred_accounts"])){
                     echo "<b>$i.) ".$out_put_."</b><br />";
                 }
     ?>
-                <div style='margin:18px 6px'><b>Total number is: <?=$i?>.</b></div>
+                <div style='margin:18px 6px'>
+                    <b>Total number is: <?=$i?>.</b> 
+                    <span class="long-action-button" style="width:fit-content;padding:9px 6px"> 
+                        Edit List <i class="fa fa-pencil"></i>
+                    </span>
                 <div>
                     <div><b>How much do you intend to pay each person?</b></div>
                     <input name="amount_to_pay" type="text" required/>
