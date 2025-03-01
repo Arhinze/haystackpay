@@ -84,12 +84,12 @@ class Index_Segments{
 
                     <div style="margin-bottom:12px">
                         <b>Do you intend to send money to multiple persons from a single account? <br />
-                        <span style="color:#888">Enter their email addresses below:</span></b>
+                        <span style="color:#888">Enter their email addresses, one on each line:</span></b>
                     </div>
                     
                     <div style="font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
                     <form method = "post" action = "">
-                        <textarea name="referred_accounts" class="index_textarea" placeholder="Enter the email addresses to get started"></textarea>
+                        <textarea name="referred_accounts" class="index_textarea" placeholder="Eligible Accounts to Pay: \n1.) abc@example.com \n2) def@example.com \n3. ghi@example.com \n4.) jkl@example.com \n5.) mno@example.com"></textarea>
                         <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
                     </form>
                 </div>
@@ -124,11 +124,17 @@ class Index_Segments{
             function hide_invalid_div() {
                 //const collection = document.getElementsByClassName("invalid");
                 i = 0;
-                               
                 for (i=0; i<collection.length; i++){
                     collection[i].style.display = "none";
                 }  
             }
+
+            //Implementing multi-line placeholder for textarea html documents
+            var textAreas = document.getElementsByTagName('textarea');
+
+            Array.prototype.forEach.call(textAreas, function(elem) {
+                elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+            });
         </script>
         HTML;
         }
