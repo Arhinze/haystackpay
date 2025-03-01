@@ -52,7 +52,10 @@ if(isset($_POST["referred_accounts"])){
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </span>
                 </div>
-                <div style="display:block;padding:6px 9px; border:2px solid #888;border-radius:6px;margin:9px 3px" id="input_div">
+                <div id="bt_input_div" style="display:block;padding:6px 9px; border:2px solid #888;border-radius:6px;margin:9px 3px">
+                    <div class="close_bt_input_div" id="close_bt_input_div" onclick="show_div('bt_input_div')">
+                        <div class="fa-x-icon"><i class ="fa fa-times"></i></div>
+                    </div>
                     <!--
                     <div style="margin:12px">
                         <b>Do you intend to send money to multiple persons from a single account? <br />
@@ -63,13 +66,14 @@ if(isset($_POST["referred_accounts"])){
                     <div style="font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
                     <form method = "post" action = "">
                         <textarea name="referred_accounts" class="index_textarea" placeholder="Eligible Accounts to Pay: \n  \n1.) abc@example.com \n2) def@example.com \n3. ghi@example.com \n4.) jkl@example.com \n5.) mno@example.com"><?=$all_referred_accounts?></textarea>
-                        <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
+                        <br /><button class="long-action-button" type = "submit">Update List <i class="fa fa-angle-up"></i><i class="fa fa-angle-up"></i> </button><br /><br />
                     </form>
                 </div>
 
                 <div>
                     <div style="margin:15px 3px"><b>How much do you intend to pay these persons?</b></div>
-                    <input name="amount_to_pay" type="number" class="input" required/>
+                    <input name="amount_to_pay" type="number" class="input" onkeyup="" required/>
+                    <div></div>
                 </div>
                 <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
     <?php
