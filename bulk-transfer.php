@@ -48,7 +48,7 @@ if(isset($_POST["referred_accounts"])){
     <?php
         if($isset_of_ref) {
             echo "<h2 style='text-align:center'>Bulk Payment</h2>";
-            echo "<div><b style='text-align:center'>The valid email addresses within your list include:</b></div>";
+            echo "<div style='margin-bottom:15px'><b style='text-align:center'>The valid email addresses within your list include:</b></div>";
 
             if(count($output) == 0) {
                 echo "No valid email found / Empty field submitted.";
@@ -60,7 +60,7 @@ if(isset($_POST["referred_accounts"])){
     ?>
                 <div style='margin:18px 6px'>
                     <b>Total number is: <?=$i?>.</b> 
-                    <span class="long-action-button" style="width:fit-content;padding:9px 12px"> 
+                    <span class="long-action-button" style="width:fit-content;padding:6px 12px"> 
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </span>
                 <div>
