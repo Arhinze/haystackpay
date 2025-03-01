@@ -76,12 +76,19 @@ class Index_Segments{
                 <div class="haystackpay_intro">
                     <!--<img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>-->
                     <br />
-                    <h1>Get it done with ease</h1>
-                    No need for the hassle life is not meant to be stressful.
-                    
-                    <div style="text-align:left"><b>Enter their email addresses below:</b></div>
+                    <h1>Get it done with ease.</h1>
+                    <div>No need for the hassle life is not meant to be stressful.</div>
+                    <div>Make bulk transfers, receive, send, exchange and manage multiple currencies in one app.</div>
+
+                    <img src="/static/images/horizontal_image1.png" class="" style="margin:12px"/> 
+                    <img src="/static/images/horizontal_image2.png" class=""/>
+
+                    <div>
+                        <b>Do you intend to send money to multiple persons from a single account? <br />Enter their email addresses below:</b>
+                    </div>
                     <div style="color:#ff9100;font-weight:bold">Accepted numbering formats are: 1. , 1) or 1.)</div>
 
+                    
                     <form method = "post" action = "">
                         <textarea name="referred_accounts" class="index_textarea" placeholder="Enter the email addresses to get started"></textarea>
                         <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />

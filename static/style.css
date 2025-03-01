@@ -225,7 +225,8 @@ a{
     height:auto;
 }
 
-.haystackpay_intro{ 
+.haystackpay_intro{
+    text-align:center; 
     margin:126px 12px 24px 12px;
     /*background-image: url(../static/images/logo.png);*/
 }
