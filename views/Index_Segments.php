@@ -144,6 +144,14 @@ class Index_Segments{
             Array.prototype.forEach.call(textAreas, function(elem) {
                 elem.placeholder = elem.placeholder.replace(/\\n/g, '\\n');
             });
+
+            function show_bt_input_div(){
+                document.getElementById("bt_input_div").style.display = block;
+            }
+
+            function close_bt_input_div(){
+                document.getElementById("bt_input_div").style.display = none;
+            }
         </script>
         HTML;
         }
