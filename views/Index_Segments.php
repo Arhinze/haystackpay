@@ -72,7 +72,7 @@ class Index_Segments{
                 
         public static function body($site_name = SITE_NAME_SHORT, $site_url = SITE_URL){
             echo <<<HTML
-                <div style="text-align:center; margin:30px 12px">
+                <div class="haystackpay_intro">
                     <img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>
                     <br />
                     <h1>HAYSTACKPAY</h1>

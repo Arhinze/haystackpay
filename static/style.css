@@ -228,6 +228,13 @@ a{
     height:auto;
 }
 
+.haystackpay_intro{
+    text-align:center; 
+    margin:75px 12px 24px 12px;
+}
+
+
+
 .index_textarea{
     width:90%;
     height:150px;
