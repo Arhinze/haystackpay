@@ -82,5 +82,15 @@ if(isset($_POST["referred_accounts"])){
     ?>
     </div>
 
+    <script>    
+        function show_bt_input_div(){
+            document.getElementById("bt_input_div").style.display = block;
+        }
+
+        function close_bt_input_div(){
+            document.getElementById("bt_input_div").style.display = none;
+        }
+    </script>
+
 <?php
 Index_Segments::footer();
