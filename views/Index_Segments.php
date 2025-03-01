@@ -84,7 +84,7 @@ class Index_Segments{
 
                     <form method = "post" action = "">
                         <textarea name="referred_accounts" class="index_textarea" placeholder="Enter the email addresses to get started"></textarea>
-                        <br /><button class="long-action-button" type = "submit"><i class="fa fa-flash"></i> Submit</button><br /><br />
+                        <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
                     </form>
                 </div>
             HTML;
