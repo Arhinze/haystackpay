@@ -52,7 +52,7 @@ if(isset($_POST["referred_accounts"])){
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </span>
                 </div>
-                <div style="display:block" id="input_div">
+                <div style="display:block;padding:6px 9px; border:2px solid #888;border-radius:6px;margin:9px 3px" id="input_div">
                     <!--
                     <div style="margin:12px">
                         <b>Do you intend to send money to multiple persons from a single account? <br />
