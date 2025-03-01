@@ -54,7 +54,7 @@ a{
 }
 
 .menu-icon{
-    font-size:27px;
+    font-size:24px;
     float:right;
     margin:21px;
     color:var(--site_color_alt);
@@ -151,7 +151,7 @@ a{
 
 .site_name{
     color:var(--site_color_alt);
-    font-size:18px;
+    font-size:24px;
     margin:25px 12px; 
     float:left;
     background-color: var(--site_color_main);
