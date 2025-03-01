@@ -87,7 +87,7 @@ class Index_Segments{
                         <span style="color:#888">Enter their email addresses below:</span></b>
                     </div>
                     
-                    <div style="text-align:left">Accepted numbering formats are: 1. , 1) or 1.)</div>
+                    <div style="text-align:left;font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
                     <form method = "post" action = "">
                         <textarea name="referred_accounts" class="index_textarea" placeholder="Enter the email addresses to get started"></textarea>
                         <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
