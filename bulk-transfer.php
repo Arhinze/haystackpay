@@ -64,7 +64,7 @@ if(isset($_POST["referred_accounts"])){
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </span>
                 <div>
-                    <div><b>How much do you intend to pay each person?</b></div>
+                    <div style="margin:15px 3px"><b>How much do you intend to pay these persons?</b></div>
                     <input name="amount_to_pay" type="number" class="input" required/>
                 </div>
                 <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
