@@ -4,7 +4,7 @@ ini_set("display_errors", '1'); //for testing purposes..
 include_once($_SERVER["DOCUMENT_ROOT"]."/php/connection.php");
 
 class Index_Segments{
-    public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = "", $title=SITE_NAME){
+    public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "", $title=SITE_NAME){
         if (isset($_GET["ref"])) {
             $ref = htmlentities($_GET["ref"]);
 
@@ -70,7 +70,7 @@ class Index_Segments{
        HTML;
        }
                 
-        public static function body($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL){
+        public static function body($site_name = SITE_NAME_SHORT, $site_url = SITE_URL){
             echo <<<HTML
                 <div style="text-align:center; margin:30px 12px">
                     <img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>
@@ -129,7 +129,7 @@ class Index_Segments{
         }
 
 
-        public static function footer($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $additional_scripts = ""){ 
+        public static function footer($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $additional_scripts = ""){ 
             
             $index_scripts = Index_Segments::index_scripts();    
 
