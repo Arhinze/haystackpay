@@ -400,7 +400,8 @@ a{
 }
 
 .close_bt_input_div{
-    text-align: right;
+    position:relative;
+    float: right;
 }
 
 .close_where_to_get_wa .fa-x-icon, .close_bt_input_div .fa-x-icon{
