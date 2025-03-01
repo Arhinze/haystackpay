@@ -61,7 +61,7 @@ if(isset($_POST["referred_accounts"])){
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </button>
                 </div>
-                <div id="bt_input_div" class="bt_input_div" style="display:none">
+                <div id="bt_input_div" class="bt_input_div" style="display:block">
                     <div class="close_bt_input_div" id="close_bt_input_div" onclick="close_bt_input_div()">
                         <div class="fa-x-icon"><i class ="fa fa-times"></i></div>
                     </div>
