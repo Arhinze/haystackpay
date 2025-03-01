@@ -83,7 +83,8 @@ class Index_Segments{
                     <img src="/static/images/horizontal_image2.png" class=""/>
 
                     <div>
-                        <b>Do you intend to send money to multiple persons from a single account? <br />Enter their email addresses below:</b>
+                        <b>Do you intend to send money to multiple persons from a single account? <br />
+                        <span style="color:var(--site_color_alt)">Enter their email addresses below:</span></b>
                     </div>
                     <div style="color:#ff9100;font-weight:bold">Accepted numbering formats are: 1. , 1) or 1.)</div>
 
