@@ -1,5 +1,8 @@
 <?php
 
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
+
+Index_Segments::header();
 
 $managers_referrals = [];
 $output = [];
@@ -28,7 +31,6 @@ if(isset($_POST["referred_accounts"])){
 }
 
 ?>
-
     <div style="margin:12px">
         <b>Do you intend to send money to multiple persons from a single account? <br />
         <span style="color:#888">Enter their email addresses, one on each line:</span></b>
@@ -52,19 +54,15 @@ if(isset($_POST["referred_accounts"])){
                     $i += 1;
                     echo "<b>$i.) ".$out_put_."</b><br />";
                 }
-                echo "<br /><br /><b>Total number is: $i.</b>";
-            }
+    ?>
+                <div style='margin:18px 6px'><b>Total number is: <?=$i?>.</b></div>
+
+                <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
+    <?php
+            } //end of else stmt, that's (if $output !== 0)
         }    
     ?>
     </div>
 
-    <script>
-        //Implementing multi-line placeholder for textarea html documents
-        var textAreas = document.getElementsByTagName('textarea');
-
-        Array.prototype.forEach.call(textAreas, function(elem) {
-            elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
-        });
-    </script>
-</body>
-</html>
+<?php
+Index_Segments::footer();
