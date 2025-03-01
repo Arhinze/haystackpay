@@ -79,8 +79,12 @@ class Index_Segments{
                     <h1>Get it done with <span style="color:#ff9100">ease</span>.</h1>
                     <div>Make bulk transfers, receive, send, exchange and manage multiple currencies in one app.</div>
 
+                    <!--
                     <img src="/static/images/horizontal_image1.png" class="" style="margin:12px"/> 
                     <img src="/static/images/horizontal_image2.png" class=""/>
+                    -->
+
+                    <a class="get_started"><img src="/static/images/logo.png" class="get_started_img"/> Get Started now <i class="fa fa-arrow-right"></i></a>
 
                     <div style="margin-bottom:12px">
                         <b>Do you intend to send money to multiple persons from a single account? <br />

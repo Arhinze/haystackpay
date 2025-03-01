@@ -227,7 +227,7 @@ a{
 
 .haystackpay_intro{
     text-align:center; 
-    margin:126px 12px 24px 12px;
+    margin:105px 12px 24px 12px;
     /*background-image: url(../static/images/logo.png);*/
 }
 
@@ -242,6 +242,19 @@ a{
     font-family:arial;
     padding:12px 16px;
     margin:15px;
+}
+
+.get_started{
+    background-color: var(--site_color_alt);
+    padding:12px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.get_started_img{
+    width:30px;
+    height:30px;
+    border-radius: 100%;
 }
 
 .faq .header_text{
