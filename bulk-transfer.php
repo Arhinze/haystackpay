@@ -25,7 +25,8 @@ if(isset($_POST["referred_accounts"])){
     $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
     $managers_referrals_arr = array_unique($managers_referrals_arr);
     //echo "<h2>managers referrals array:</h2>"; print_r($managers_referrals_arr);
-    
+
+    /* For Melissa: ~ to check if inputed accounts by users are in her file:
     foreach($all_active_accounts as $all_act_acct) { //if(!in_array()) could be used here in place of array_unique
         //if(in_array($managers_ref, $all_active_accounts)){
         //    $output[] = $managers_ref;
@@ -35,23 +36,24 @@ if(isset($_POST["referred_accounts"])){
                 $sub_all_act = substr($all_act_acct, 0, -6);
             }
                 $sub_all_act = trim($sub_all_act);
-        
-        /* For Melissa: ~ to check if inputed accounts by users are in her file:
+                
+        //For Melissa: ~ to check if inputed accounts by users are in her file:
         if(preg_grep("/$all_act_acct|$sub_all_act/i", $managers_referrals_arr)) {
                 if(!empty($all_act_acct)){ 
                     $output[] = $all_act_acct;
                 }
         }
-        */
+        
+    }
+    */
 
-        //For Haystack users: ~ to check if they've entered a valid email address:
-        foreach($managers_referrals_arr as $man_ref){
-            if(filter_var($man_ref, FILTER_VALIDATE_EMAIL) == true){
-                $output[] = $man_ref;
-            }
+    //For Haystack users: ~ to check if they've entered a valid email address:
+    foreach($managers_referrals_arr as $man_ref){
+        if(filter_var($man_ref, FILTER_VALIDATE_EMAIL) == true){
+            $output[] = $man_ref;
         }
     }
-    
+
     $i = 0;
 }
 
