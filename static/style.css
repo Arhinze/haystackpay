@@ -264,9 +264,10 @@ a{
 .get_started_img{
     width:30px;
     height:30px;
+    margin-top: 15px;
     margin-right:6px;
     border-radius: 100%;
-    border: 1px dotted var(--site_color_main);
+    border: 1px solid var(--site_color_main);
 }
 
 .faq .header_text{
