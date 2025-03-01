@@ -262,7 +262,7 @@ a{
     background-color: var(--site_color_alt);
     border-radius: 8px;
     width:fit-content;
-    color:var(--site_color_alt);
+    color:var(--site_color_main);
     border:0;
 }
 
@@ -271,7 +271,7 @@ a{
     background-color: var(--site_color_alt);
     border-radius:6px;
     width:fit-content;
-    color:var(--site_color_alt);
+    color:var(--site_color_main);
     border:0;
     width:90%;
     max-width:600px;
