@@ -74,10 +74,10 @@ class Index_Segments{
             $site_name_uc = strtoupper($site_name);
             echo <<<HTML
                 <div class="haystackpay_intro">
-                    <img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>
+                    <!--<img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>-->
                     <br />
-                    <h1>$site_name_uc</h1>
-                    Do you want to send cash to multiple people at once?
+                    <h1>Get it done with ease</h1>
+                    No need for the hassle life is not meant to be stressful.
                     
                     <div style="text-align:left"><b>Enter their email addresses below:</b></div>
                     <div style="color:#ff9100;font-weight:bold">Accepted numbering formats are: 1. , 1) or 1.)</div>
