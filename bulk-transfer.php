@@ -147,31 +147,14 @@ if(isset($_POST["referred_accounts"])){
         }    
     ?>
     </div>
+
+    <script>
+        //Implementing multi-line placeholder for textarea html documents
+        var textAreas = document.getElementsByTagName('textarea');
+
+        Array.prototype.forEach.call(textAreas, function(elem) {
+            elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+        });
+    </script>
 </body>
 </html>
-
-<!--
-Nelsonaaron70@gmail.com
-jonathanfavour7@gmail.com
-dessien64@gmail.com
-aulejosephine01@gmail.com
-keshbentley020@gmail.com
-Khalidzubair085@gmail.com
-eebuka583@gmail.com
-ijebus2004@gmail.com
-joshuaisaac265@gmail.com
-oyesinapaul0@gmail.com
-dangkat123@gmail.com
-olayiwolahissa484@gmail.com
-oluwadarasimi765@gmail.com
-Mmeaomajames2006@gmail.com
-karmalrashid@gmail.com
-Ohitzandrew@gmail.com
-Hezekiel4real@yahoo.com
-yisaedward@gmail.com
-adewuyitobi730@gmail.com
-sahmedtyabo90@gmail.com
-favourakinnifesi@yahoo.com
-mohammedibrahimarabi@gmail.com
-davidoriyomi21@gmail.com
--->
