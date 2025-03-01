@@ -244,6 +244,10 @@ a{
     margin:15px;
 }
 
+.get_started_div{
+    margin:24px 6px;
+}
+
 .get_started{
     background-color: var(--site_color_alt);
     color:var(--site_color_main);
@@ -251,13 +255,18 @@ a{
     padding:12px;
     font-weight:bold;
     font-size:18px;
-    margin:18px 6px;
+}
+
+.get_started i{
+    margin-left: 6px;
 }
 
 .get_started_img{
     width:30px;
     height:30px;
+    margin-right:6px;
     border-radius: 100%;
+    border: 1px dotted var(--site_color_main);
 }
 
 .faq .header_text{
