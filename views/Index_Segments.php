@@ -82,12 +82,12 @@ class Index_Segments{
                     <img src="/static/images/horizontal_image1.png" class="" style="margin:12px"/> 
                     <img src="/static/images/horizontal_image2.png" class=""/>
 
-                    <div>
+                    <div style="margin-bottom:12px">
                         <b>Do you intend to send money to multiple persons from a single account? <br />
-                        <span style="color:var(--site_color_alt)">Enter their email addresses below:</span></b>
+                        <span style="color:#888">Enter their email addresses below:</span></b>
                     </div>
-                    <div style="color:#ff9100;font-weight:bold">Accepted numbering formats are: 1. , 1) or 1.)</div>
-
+                    
+                    <div style="text-align:left">Accepted numbering formats are: 1. , 1) or 1.)</div>
                     <form method = "post" action = "">
                         <textarea name="referred_accounts" class="index_textarea" placeholder="Enter the email addresses to get started"></textarea>
                         <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
