@@ -1,7 +1,7 @@
 :root{
     /*SITE COLOURS: #042---c06 #0bee---3ccc*/ 
     /*SITE COLOURS: #f8---f8f8 #3331---31*/ 
-    --site_color_main:#e9e9e9;
+    --site_color_main:#fdfff5;
     --site_color_alt:#333131;
 }
 
@@ -401,9 +401,7 @@ a{
 
 .close_bt_input_div{
     position:relative;
-    margin-bottom:18px;
     float: right;
-    clear:both;
 }
 
 .close_where_to_get_wa .fa-x-icon, .close_bt_input_div .fa-x-icon{
