@@ -64,7 +64,7 @@ class Index_Segments{
                     <li><a href="/login">Login</a></li>
                     <li><a href="/sign-up">Sign Up</a></li>
                     <li><a href="/how-it-works">How it works</a></li>
-                    <li><a href="/contact-us">How it works</a></li>
+                    <li><a href="https://wa.link/94f4vk">Contact us</a></li>
                 </ul> 
             </div> 
        HTML;
