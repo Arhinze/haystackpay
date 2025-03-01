@@ -56,8 +56,11 @@ if(isset($_POST["referred_accounts"])){
                 }
     ?>
                 <div style='margin:18px 6px'><b>Total number is: <?=$i?>.</b></div>
-
-                <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
+                <div>
+                    <div><b>How much do you intend to pay each person?</b></div>
+                    <input name="amount_to_pay" type="text" required/>
+                </div>
+                <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
     <?php
             } //end of else stmt, that's (if $output !== 0)
         }    
