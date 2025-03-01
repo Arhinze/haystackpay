@@ -402,6 +402,7 @@ a{
 .close_bt_input_div{
     position:relative;
     float: right;
+    clear:both;
 }
 
 .close_where_to_get_wa .fa-x-icon, .close_bt_input_div .fa-x-icon{
