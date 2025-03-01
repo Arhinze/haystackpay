@@ -248,6 +248,7 @@ a{
     background-color: var(--site_color_alt);
     color:var(--site_color_main);
     border-radius: 9px;
+    border:1px solid #ff9100;
     padding:12px;
     font-weight:bold;
     font-size:18px;
