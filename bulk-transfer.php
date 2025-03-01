@@ -1,4 +1,5 @@
 <?php
+/*
 $linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
 //echo "<h2>All active accounts:</h2>".$linkedin_file;
 
@@ -6,6 +7,7 @@ $all_active_accounts = explode("\n", $linkedin_file);
 $all_active_accounts = array_map('strtolower', $all_active_accounts);
 $all_active_accounts = array_map('trim', $all_active_accounts);
 //echo "<h2>All active accounts:</h2>"; print_r($all_active_accounts);
+*/
 
 $managers_referrals = [];
 $output = [];
@@ -36,7 +38,7 @@ if(isset($_POST["referred_accounts"])){
                 $sub_all_act = substr($all_act_acct, 0, -6);
             }
                 $sub_all_act = trim($sub_all_act);
-                
+
         //For Melissa: ~ to check if inputed accounts by users are in her file:
         if(preg_grep("/$all_act_acct|$sub_all_act/i", $managers_referrals_arr)) {
                 if(!empty($all_act_acct)){ 
