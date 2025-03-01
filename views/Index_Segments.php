@@ -82,7 +82,7 @@ class Index_Segments{
                     <div style="color:#ff9100;font-weight:bold">Accepted numbering formats are: 1. , 1) or 1.)</div>
 
                     <form method = "post" action = "">
-                        <textarea name="referred_accounts"><?=$all_referred_accounts?></textarea>
+                        <textarea name="referred_accounts" placeholder="Enter the email addresses to get started"></textarea>
                         <br /><button class="long-action-button" type = "submit"><i class="fa fa-flash"></i> Submit</button><br /><br />
                     </form>
                 </div>
