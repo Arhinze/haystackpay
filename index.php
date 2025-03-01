@@ -13,6 +13,9 @@ Segments::footer();
 <br />
 <br />
 <br />
+
+<img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>
+<br />
 <h1>Haystackpay</h1>
  ~ coming soooon ~
 <br />
