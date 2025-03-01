@@ -86,7 +86,7 @@ class Index_Segments{
 
                     <a href="/sign-up">
                         <div class="get_started">
-                            <div class="get_started_img"><img src="/static/images/logo.png" class="get_started_img"/></div> 
+                            <div class="get_started_img_div"><img src="/static/images/logo.png" class="get_started_img"/></div> 
                             <div>Get Started now &nbsp;<i class="fa fa-arrow-right"></i></div>
                         </div>
                     </a>
