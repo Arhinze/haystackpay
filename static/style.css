@@ -401,6 +401,7 @@ a{
 
 .close_bt_input_div{
     position:relative;
+    margin-bottom:18px;
     float: right;
     clear:both;
 }
