@@ -9,6 +9,7 @@ $output = [];
 $isset_of_ref = false;
 $all_referred_accounts = "";
 
+$amount_to_pay_per_person = ((htmlentities($_POST["amount_to_pay_each_person"]) == null) ? "" : htmlentities($_POST["amount_to_pay_each_person"]));
 if(isset($_POST["referred_accounts"])){
     $isset_of_ref = true;
     $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
@@ -71,7 +72,7 @@ if(isset($_POST["referred_accounts"])){
 
                 <form method="post" action="/confirm-transaction">
                     <div style="margin:15px 3px"><b>How much do you intend to pay these persons?</b></div>
-                    <input type="number" name="amount_to_pay_each_person" id="amount_to_pay_each_person" class="input" onkeyup="calculate_total()" required/>
+                    <input type="number" name="amount_to_pay_each_person" id="amount_to_pay_each_person" class="input" value="<?=$amount_to_pay_per_person?>" onkeyup="calculate_total()" required/>
                     <div id="total_number" style="display:none"><?=$i?></div>
                     <div id="total_to_transfer_text"></div>
 
