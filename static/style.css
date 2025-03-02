@@ -691,6 +691,10 @@ a{
     margin-top:21px;
 }
 
+.sign-in-bottom a{
+    color:#ff9100;
+}
+
 .fa-user-login {
     margin-right:12px;
     font-size:30px;
