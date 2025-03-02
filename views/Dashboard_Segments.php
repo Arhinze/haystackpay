@@ -4,7 +4,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/php/account-manager.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 
 class Dashboard_Segments extends Index_Segments{
-    public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = "",$title=SITE_NAME){
+    public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "",$title=SITE_NAME){
 
     $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
 
@@ -43,11 +43,11 @@ class Dashboard_Segments extends Index_Segments{
             
             <!-- Hi user --> 
             
-            <span style="float:right;background-color:#fdfff5;color:#000;border-radius:6px;margin:3px;font-size:12px;padding:1px 0 6px 9px">
+            <span style="float:right;background-color:#fdfff5;color:#000;border-radius:6px;margin:3px;font-size:12px;padding:1px 0 6px 9px;margin-right:6px">
                 
                 Hi $Hi_user
 
-                <i style="background-color:#0bee3ccc;color:#fff; border-radius:6px;padding:6px 8px;text-align:center;margin:6px 9px 0px 6px;" class="fa fa-user"></i> 
+                <i style="background-color:#ff9100;color:#fff; border-radius:6px;padding:6px 8px;text-align:center;margin:6px 9px 0px 6px;" class="fa fa-user"></i> 
             </span>
         </div>
     
