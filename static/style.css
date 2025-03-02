@@ -659,7 +659,7 @@ a{
     height:37px;
     margin-top:6px;
     background-color: #fff;
-    color:var(--site_color_main);
+    color:var(--site_color_alt);
     font-weight:bold;
     border:1px solid #525050;
     border-radius: 6px;
