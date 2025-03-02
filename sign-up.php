@@ -8,9 +8,6 @@ $referer = "";
 $remember_name = "";
 $remember_username = "";
 $remember_email = "";
-$remember_twitter_username = "";
-$remember_avax_wallet_address = "";
-$remember_aguat_wallet_address = "";
 
 if(isset($_GET["referer"])){
     $referer = htmlentities($_GET["referer"]);
@@ -31,19 +28,6 @@ if(isset($_POST["username"])){
 if(isset($_POST["email"])){
     $remember_email = htmlentities($_POST["email"]);
 }
-
-if(isset($_POST["twitter_username"])){
-    $remember_twitter_username = htmlentities($_POST["twitter_username"]);
-}
-
-if(isset($_POST["avax_wallet_address"])){
-    $remember_avax_wallet_address = htmlentities($_POST["avax_wallet_address"]);
-}
-
-if(isset($_POST["aguat_wallet_address"])){
-    $remember_aguat_wallet_address = htmlentities($_POST["aguat_wallet_address"]);
-}
-
 
 $ref_stmt = $pdo->prepare("SELECT * FROM haystack_users WHERE username = ?");
 $ref_stmt->execute([$referer]);
@@ -95,12 +79,12 @@ if(isset($_POST["user_code"])){
                         //conditions are met -- Insert User
                         $p_stmt = $pdo->prepare("INSERT INTO haystack_users(real_name, username, user_email, `password`,airdrop_status,twitter_username,avax_wallet_address,aguat_wallet_address,referred_by,entry_date,mining_status,mining_start_time) VALUES(?, ?,?, ?, ?, ?,?,?,?,?,?,?)");
 
-                        $p_stmt->execute([$_POST["name"], $_POST['username'],$_POST["email"],$_POST['password1'],"not_participated",$_POST['twitter_username'],$_POST['avax_wallet_address'],$_POST['aguat_wallet_address'],$referer,date("Y-m-d H:i:s", time()),date("Y-m-d H:i:s", time()),"inactive"]);
+                        $p_stmt->execute([$_POST["name"], $_POST['username'],$_POST["email"],$_POST['password1'],"not_participated"," "," "," ",$referer,date("Y-m-d H:i:s", time()),date("Y-m-d H:i:s", time()),"inactive"]);
                     
                         //Mail User:
-                        $e_name = html_entities($_POST["name"]);
-                        $e_username = html_entities($_POST["username"]);
-                        $e_password = html_entities($_POST["password1"]);
+                        $e_name = htmlentities($_POST["name"]);
+                        $e_username = htmlentities($_POST["username"]);
+                        $e_password = htmlentities($_POST["password1"]);
 
                         ini_set("display_errors", 1);
 
