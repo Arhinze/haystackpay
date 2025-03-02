@@ -175,7 +175,7 @@ class Index_Segments{
                 <div class="footer_fa_links"> <!-- social media links -->
                     <a href="https://youtube.com/"><i class="fa fa-youtube-play"></i></a>
                     <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                    <a href="https://wa.me/+2348106961530" style="color:green"><i class="fa fa-whatsapp"></i></a>
+                    <a href="https://wa.link/hgzcrj" style="color:green"><i class="fa fa-whatsapp"></i></a>
                     <a href="https://t.me/"><i class="fa fa-telegram"></i></a>
                     <a href="https://x.com/arhinze"><i class="fa fa-twitter"></i></a>
                 </div>

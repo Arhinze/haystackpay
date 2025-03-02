@@ -20,7 +20,9 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         }
      
         //display header:
-        Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username);
+        //Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "");
+        Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username,$title=SITE_NAME." - Dashboard");
+        
         
 ?>
 
@@ -29,7 +31,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
     <div style="text-align:center">
         <p>Sorry, we're still working on this project.</p>
         <p>We believe this little tour has been able to give you the whole idea of what the project is all about</p>
-        <p>For further enquiries, kindly <b><a href="https://wa.me/+2348106961530">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: +2348106961530.</p>
+        <p>For further enquiries, kindly <b><a href="https://wa.link/hgzcrj">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: +2348106961530.</p>
     </div>
     <!--End of: This is going off soon -->
 
