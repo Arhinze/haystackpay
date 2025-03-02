@@ -74,10 +74,12 @@ class Index_Segments{
             $site_name_uc = strtoupper($site_name);
             echo <<<HTML
                 <div class="haystackpay_intro">
-                    <!--<img src="/static/images/logo.png" style="width:120px;height:120px;border-radius:100%"/>-->
+                    <!--
                     <div class="site_images_div">
                         <img src="/static/images/logo_rbg.png" class="site_images"/>
-                    </div>
+                    </div> 
+                    -->
+                    
                     <br />
                     <h1>Get it done with <span style="color:#ff9100">ease</span>.</h1>
                     <div>Make bulk transfers, receive, send, exchange and manage multiple currencies in one app.</div>
