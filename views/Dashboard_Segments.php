@@ -6,9 +6,9 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 class Dashboard_Segments extends Index_Segments{
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = "",$title=SITE_NAME){
 
-    
     $css_version = filemtime("/static/style.css");
 
+    
     echo <<<HTML
     <!doctype html>
     <html lang="en">
@@ -82,7 +82,7 @@ class Dashboard_Segments extends Index_Segments{
                 <a href="$site_url/bulk-transfer">Bulk Transfers</a>
             </div>
             -->
-            
+
             <li class="clear" style="padding-bottom:16px">
                 <label for="hidden-menu-item">
                     <span style="float:left">Referrals</span> <i class="fa fa-angle-down" style="float:right"></i> 

@@ -1,6 +1,6 @@
 <?php
 
-include_once("/home/u590828029/domains/aguanit.com/public_html/views/Dashboard_Segments.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
     if($data){
         // that means user is logged in:
@@ -51,7 +51,7 @@ include_once("/home/u590828029/domains/aguanit.com/public_html/views/Dashboard_S
 
 <?php
     Dashboard_Segments::dashboard_footer(); 
-    } else { /*end of count($data) for cookie name and pass*/ 
+    } else { /*end of if($data) for cookie name and pass .. else means user is not logged in*/
         header("location:/login");
     } 
 ?>
