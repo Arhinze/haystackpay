@@ -379,7 +379,7 @@ if(isset($_POST["user_code"])){
                 }
             ?>
 
-            <br /><button type="submit" class="long-action-button">Join <?=$site_name?> <i class="fa fa-sign-in"></i></button> <br />
+            <br /><button type="submit" class="long-action-button">Join <?=$site_name?> &nbsp; <i class="fa fa-sign-in"></i></button> <br />
     
             <div style="margin-top:15px;font-size:15px">
                 Already have an account? <a href="login" style="font-weight:bold;font-size:18px;color:<?=$site_color_light?>">Login</a><br />
