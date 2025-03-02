@@ -104,6 +104,10 @@ class Index_Segments{
                         </form>
                     </div><!-- end of .bulk_tr -->
                 </div>
+
+                <div class="site_images_div">
+                    <img src="/static/images/logo.png" class="site_images"/>
+                </div>
             HTML;
        }
 
