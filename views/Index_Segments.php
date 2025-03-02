@@ -145,21 +145,22 @@ class Index_Segments{
                 elem.placeholder = elem.placeholder.replace(/\\n/g, '\\n');
             });
 
-        function show_bt_input_div(){
-            document.getElementById("bt_input_div").style.display = "block";
-        }
+            function show_bt_input_div(){
+                document.getElementById("bt_input_div").style.display = "block";
+            }
+        
+            function close_bt_input_div(){
+                document.getElementById("bt_input_div").style.display = "none";
+            }
     
-        function close_bt_input_div(){
-            document.getElementById("bt_input_div").style.display = "none";
-        }
+            function calculate_total(){
+                total_num = document.getElementById("total_number").innerHTML;
+                amt_for_each = document.getElementById("amount_to_pay_each_person").value;
+                total_amount = Number(total_num) * Number(amt_for_each);
+    
+                document.getElementById("total_to_transfer_text").innerHTML = "Total cost of transaction: <b><i class='fa fa-naira-sign'></i>"+total_amount.toString()+"</b>";
+            }
 
-        function calculate_total(){
-            $total_num = Number(document.getElementById("total_number").innerHTML);
-            $amt_for_each = Number(document.getElementById("amount_to_pay_each_person").value);
-            $total_amount = $total_num * $amt_for_each;
-            
-            document.getElementById("total_to_transfer_text").innerHTML = "Total cost of transaction: <b><i class='fa fa-naira-sign'></i>"+$total_amount.toString()+"</b>";
-        }
         </script>
         HTML;
         }
