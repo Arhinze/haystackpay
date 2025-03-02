@@ -3,15 +3,15 @@
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 if($data) {//user is logged in: -- $data from /php/account-manager.php
-    Dashboard_Segments::header();
+    Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username,$title=SITE_NAME." - Confirm Transaction");
 ?>
 
-<div style="margin:180px 15px 120px 15px">
+<div style="margin:180px 15px 90px 15px">
     <!-- This is going off soon -->
     <div style="text-align:center">
         <p>Sorry, we're still working on this project.</p>
-        <p>We believe this little tour has been able to give you an idea of what the project is all about</p>
-        <p>For further enquiries, kindly <b><a href="https://wa.link/hgzcrj" style="color:#ff9100">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: <b>+2348106961530</b>.</p>
+        <p style="margin-top:18px">We believe this little tour has been able to give you an idea of what the project is all about</p>
+        <p style="margin-top:18px">For further enquiries, kindly <b><a href="https://wa.link/hgzcrj" style="color:#ff9100">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: <b>+2348106961530</b>.</p>
     </div>
     <!--End of: This is going off soon -->
 </div>
