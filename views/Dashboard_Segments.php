@@ -71,8 +71,8 @@ class Dashboard_Segments extends Index_Segments{
 
             <input type="checkbox" style="display:none" id="hidden-menu-item" class="hidden-menu-item"/>
             <div class="hidden-menu-div">
-                <a href="$site_url/single-transfer">Singular Transfers</a><br />
-                <a href="$site_url/bulk-transfer">Bulk Transfers</a>
+                <a href="$site_url/single-transfer" style="color:#fff">Singular Transfers</a><br />
+                <a href="$site_url/bulk-transfer" style="color:#fff">Bulk Transfers</a>
             </div>
             -->
 
@@ -84,7 +84,7 @@ class Dashboard_Segments extends Index_Segments{
 
             <input type="checkbox" style="display:none" id="hidden-menu-item" class="hidden-menu-item"/>
             <div class="hidden-menu-div">
-                <a href="$site_url/referred-users">Referred Users</a><br />
+                <a href="$site_url/referred-users" style="color:#fff">Referred Users</a><br />
                 <!--<a href="$site_url/referred-commissions">Referred Commissions</a>-->
             </div>
             
