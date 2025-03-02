@@ -1,13 +1,13 @@
 <?php
 
-include_once("/home/u590828029/domains/aguanit.com/public_html/php/account-manager.php");
-include_once("/home/u590828029/domains/aguanit.com/public_html/views/Index_Segments.php");
+include_once("/php/account-manager.php");
+include_once("/views/Index_Segments.php");
 
 class Dashboard_Segments extends Index_Segments{
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = "",$title=SITE_NAME){
 
     
-    $css_version = filemtime("/home/u590828029/domains/aguanit.com/public_html/static/style.css");
+    $css_version = filemtime("/static/style.css");
 
     echo <<<HTML
     <!doctype html>
