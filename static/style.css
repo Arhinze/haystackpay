@@ -947,7 +947,7 @@ a{
     top:59px;
     left:0;
     background-color:var(--site_color_alt);
-    padding-bottom:6px;
+    padding:9px 6px;
     box-shadow:0 0 3px 0 var(--site_color_alt);
 }
 

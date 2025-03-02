@@ -25,19 +25,16 @@ class Dashboard_Segments extends Index_Segments{
     <body>
 
     <div class="body">
-        <div class="headers" style="height:36px;padding:16px 16px 8px 8px"> 
-            <div style="font-size:18px;margin:-16px 19px 0px 14px;float:left">
-                <h3 class="site_name">
-                    <a href="$site_url">$site_name</a>
-                </h3>
+        <div class="headers">  
+            <div style="margin:-16px 19px 0px 14px">
+                <a href="/"><h3 class="site_name">$site_name</h3></a>
             </div>
-
-            <div class="menu_and_user_icon">
-
-            <span class="other-menu-icon" style="">
-                <label for = "menu-box"><i class="fa fa-bars"></i></label>
-            </span>
-            </div>
+        
+            <div class="menu-icon">
+                <label for = "menu-box">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </div> 
         </div> 
 
         <div class="hi_user"> 
