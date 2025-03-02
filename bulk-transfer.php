@@ -47,11 +47,11 @@ if(isset($_POST["referred_accounts"])){
     ?>
                 <div style='margin:18px 6px'>
                     <b>Total number is: <?=$i?>.</b> 
-                    <button class="long-action-button" style="width:fit-content;padding:9px 15px;background-color:green" onclick="show_bt_input_div()"> 
-                        Edit List &nbsp;<i class="fa fa-pencil"></i>
+                    <button class="long-action-button" style="width:fit-content;padding:9px 15px;background-color:green;text-decoration:none" onclick="show_bt_input_div()"> 
+                        Edit List . . &nbsp;<i class="fa fa-pencil"></i>
                     </button>
                 </div>
-                <div id="bt_input_div" class="bt_input_div" style="display:block">
+                <div id="bt_input_div" class="bt_input_div" style="display:none">
                     <div class="close_bt_input_div" id="close_bt_input_div" onclick="close_bt_input_div()">
                         <div class="fa-x-icon"><i class ="fa fa-times"></i></div>
                     </div>
