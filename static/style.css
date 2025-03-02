@@ -651,7 +651,7 @@ a{
     left:12px;
     padding:3px 12px 3px 6px;
     border-right:2px solid #bbb7b7;
-    color:var(--site_color_main);
+    color:var(--site_color_alt);
 }
 
 .new-input {
