@@ -301,15 +301,9 @@ if(isset($_POST["user_code"])){
                             echo "Sorry, an error occurred, Mail not sent to both user and referer";
                         }
 
-
                         //redirect user to dashboard
                         header("location:/dashboard?new-user"); //--automatically log in
-                        //display sign up success pop up:
-                        //echo "<div class='pop_up' style='display:block'>
-                        //    <h3>Sign UP Successful, Kindly <a href='/login' style='color:#042c06'>Login</a></h3>
-                        //    </div>";
-                    
-                    
+                        //display sign up success pop up: ~ on dashboard page
                     }
 
                 }
@@ -370,38 +364,14 @@ if(isset($_POST["user_code"])){
                 <div class="new-input-fa-icon"> <i class="fa fa-key"></i> </div>
             </div>
     
-            <!-- Airdrop Credentials starts -->
-            <div class="airdrop_requirements">
-                <div style="border-radius:3px; border: 1px solid <?=$site_color_light?>;background-color:#fff;padding:2px 3px"><b style = "color:<?=$site_color_dark?>;font-weight:bold;font-size:12px;margin:6px 0"><i class="fa fa-asterisk"></i> Do not miss out on the $<?=$token_name?> Airdrop: </b></div>
-                <!-- Twitter Username -->
-                <div class="new-input-div">
-                    <input type = "text" placeholder = "Enter your X(twitter) username" name = "twitter_username" class="new-input" minlength="3" value="<?=$remember_twitter_username?>" required/><br />
-                    <div class="new-input-fa-icon"> <i class="fa fa-twitter"></i> </div>
-                </div>
-        
-                <!-- AVAX Wallet Address -->
-                <div class="new-input-div">
-                    <input type = "text" placeholder = "Enter your $AVAX wallet address" name = "avax_wallet_address" class="new-input" minlength="8" value="<?=$remember_avax_wallet_address?>" required/><br />
-                    <div class="new-input-fa-icon"> <i class="fa fa-barcode"></i> </div>
-                </div>
-        
-                <!-- AGUAT Wallet Address -->
-                <div class="new-input-div">
-                    <input type = "text" placeholder = "Enter your $<?=$token_name?> wallet address" name = "aguat_wallet_address" class="new-input" minlength="8" value="<?=$remember_aguat_wallet_address?>" required/><br />
-                    <div class="new-input-fa-icon"> <i class="fa fa-barcode"></i> </div>
-                </div>
-
-                <!-- Where to get your $Aguat wallet address? -->
-                <b style = "color:<?=$site_color_light?>;font-weight:bold;font-size:12px;margin:9px 0"  onclick="show_div('where_to_get_wallet_address')"><i class="fa fa-question-circle"></i> Where to get your $<?=$token_name?> wallet address?</b>
-            </div>
-            <!-- Airdrop Credentials end-->
-            <!-- code -->
+            <!-- code(captcha) -->
             <?php include($_SERVER["DOCUMENT_ROOT"]."/views/captcha.php"); ?>
            
             <br />
             <input type="checkbox" required/><span class="small_letters">I have read and agreed with the terms and conditions</span>
             <br />
-    
+            <!-- end of code(captcha) -->
+
             <?php 
                 if(!empty($referer)){
             ?>
