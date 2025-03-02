@@ -324,8 +324,7 @@ if(isset($_POST["user_code"])){
 }
 ?>
 
-<div class="dashboard_div" style="margin-top:90px"> <!-- dashboard_div class starts -->
-
+<div class="sign-in-page"> <!-- sign-in-page class starts -->
     <div class="new-sign-in-head" style="display:flex">
         <div class="fa-user-login"><i class="fa fa-user"></i></div> 
         <div class="new-sign-in-head-caption">Create An Account</div>
@@ -391,7 +390,7 @@ if(isset($_POST["user_code"])){
 
     <?php include($_SERVER["DOCUMENT_ROOT"]."/views/where_to_get_wa.php"); ?>
 
-</div> <!-- dashboard_div class ends -->
+</div> <!-- sign-in-page class ends -->
 
 <?php
     Index_Segments::footer();
