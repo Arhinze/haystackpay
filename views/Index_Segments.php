@@ -111,7 +111,7 @@ class Index_Segments{
                 </div>
 
                 <div class="site_images_div">
-                    <img src="/static/images/logo.png" class="site_images"/>
+                    <img src="/static/images/haystackpay_banner.png" class="site_images"/>
                 </div>
             HTML;
        }
