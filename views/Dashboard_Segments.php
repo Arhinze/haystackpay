@@ -93,7 +93,7 @@ class Dashboard_Segments extends Index_Segments{
 
             <li><a href="$site_url/claim-airdrop" style="color:#fff;font-weight:bold;background-color:#0bee3ccc;padding:6px;border-radius:12px">Claim Airdrop</a></li>
 
-            <li><a href="$site_mining_page_url/logout.php" style="color:#fff;font-weight:bold;background-color:red;padding:6px;border-radius:12px">Log out</a></li>
+            <li><a href="/logout.php" style="color:#fff;font-weight:bold;background-color:red;padding:6px;border-radius:12px">Log out</a></li>
         </ul>     
 HTML;
     }
