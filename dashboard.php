@@ -31,7 +31,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
     <div style="text-align:center">
         <p>Sorry, we're still working on this project.</p>
         <p>We believe this little tour has been able to give you the whole idea of what the project is all about</p>
-        <p>For further enquiries, kindly <b><a href="https://wa.link/hgzcrj" style="color:#ff9100">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: +2348106961530.</p>
+        <p>For further enquiries, kindly <b><a href="https://wa.link/hgzcrj" style="color:#ff9100">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: <b>+2348106961530</b>.</p>
     </div>
     <!--End of: This is going off soon -->
 
