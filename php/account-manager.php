@@ -1,6 +1,6 @@
 <?php
 ini_set("session.use_only_cookies", 1);
-include_once("/php/connection.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/php/connection.php");
 
 $data = false;
 
