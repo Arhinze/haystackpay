@@ -43,7 +43,7 @@ class Dashboard_Segments extends Index_Segments{
             
             <!-- Hi user --> 
             
-            <span style="float:right;background-color:#fdfff5;color:#000;border-radius:6px;margin:3px;font-size:12px;padding:1px 0 6px 9px;margin-right:6px">
+            <span style="float:right;background-color:#fdfff5;color:#000;border-radius:6px;margin:3px;font-size:12px;padding:1px 0 6px 9px;margin-right:12px">
                 
                 Hi $Hi_user
 
