@@ -680,7 +680,7 @@ a{
 .sign-in-page{
     background-color:var(--site_color_alt);
     color:var(--site_color_main);
-    margin:90px 15px;
+    margin:105px 15px;
     padding:12px 8px;
     border-radius:8px;
     box-shadow:0 0 9px 0 #ff9100;
