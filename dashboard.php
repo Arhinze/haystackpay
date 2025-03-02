@@ -6,11 +6,11 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         // that means user is logged in:
 
         //cookie variables:
-        $form_user_id = $_COOKIE["username_or_email"];
-        $form_password = $_COOKIE["password"];
+        //$form_user_id = $_COOKIE["username_or_email"];
+        //$form_password = $_COOKIE["password"];
 
         //~check if user is new so as to welcome user:
-        if(isset($_GET["new-user"])){
+        /*if(isset($_GET["new-user"])){
             $user_status = htmlentities($_GET["new-user"]);
             if ((time() - strtotime($data->entry_date)) < (1*60)){//if user is not more than 1 min old
                 echo "<div class='pop_up'>Sign up successful. Welcome to $site_name, <b>$data->username</b>. <span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span></div>";
@@ -18,6 +18,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
                 header("location:/dashboard");
             }
         }
+        */
      
         //display header:
         Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username);
