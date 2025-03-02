@@ -1,7 +1,6 @@
 <?php
-ini_set("display_error", 1);
-include_once("/php/account-manager.php");
-include_once("/views/Index_Segments.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/php/account-manager.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 
 Index_Segments::header();
 
@@ -28,7 +27,6 @@ if (isset($_POST["username_or_email"]) && isset($_POST["password"])) {
 
         //redirect to dashboard
         header("location:/dashboard");
-
     } else {
 ?>
     <div class = "invalid">
