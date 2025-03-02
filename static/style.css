@@ -458,110 +458,10 @@ a{
     padding-bottom:6px;
 }
 
-.airdrop_users {
-    padding-bottom:9px;
-    border-bottom:1px solid #fff;
-    margin:12px 3px;
-    font-size: 15px;
-}
-
-.airdrop_users_text_bottom{
-    margin:12px 0 9px 18px;
-}
-
 .about_us{
    background-color:var(--site_color_main);
    color: #fff;
    padding:5% 3%;    
-}
-
-.investment_sectors_parent{
-    padding:2%;
-}
-
-.investment_sectors_img{
-    width:100%;
-    height:60%;
-    max-width:600px;
-    max-height:700px;
-}
-
-.investment_plans_and_youtube{
-    background-color: #FAF9F6;
-    color:#000;
-    padding: 4% 3%;
-    text-align: center;
-}
-
-.investment_plans{
-    border:1px solid #888;
-    margin: 3% 3% 3% 4%;
-    text-align: center;
-    list-style-type:none;
-    padding-left: 0;
-    height:fit-content;
-    /*
-    color:var(--site_color_alt);
-    background-color: var(--site_color_main);
-    */
-    
-    color:var(--site_color_main);
-    background-color: #fff;
-    border-radius: 6px;
-}
-
-.investment_plans:hover{
-    box-shadow: 0px 0px 8px 0px #ff9100; /*#888*/
-}
-
-.pre_plan_list{
-    border-bottom:1px solid #f0eeee;
-    height:28px;
-}
-
-.plan_list_header{
-    color:var(--site_color_alt);
-    font-size: 26px;
-  /*  
-    padding: 80px 17px; 
-    background-color: var(--site_color_main);
-  */
-    font-weight: bold;
-
-   /* background-image: url("../static/images/investement_plans_bg.png");
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background-color: var(--site_color_main);
-    padding:45px 17px 120px 17px;
-}
-
-.plan_list_subheader{
-    border-bottom:1px solid #f0eeee;
-    background-color: #f0eeee;
-    color:#000;
-    font-size: 21px;
-    padding: 21px 17px;
-    font-weight: bold;
-}
-
-.plan_list_normal{
-    border-bottom:1px solid #f0eeee;
-    padding: 21px 17px;
-    color:var(--site_color_alt);
-    background-color: var(--site_color_main);
-}
-
-.plan_list_bottom{
-    border-bottom:1px solid #f0eeee;
-    background-color: #f0eeee;
-    padding: 25px 17px;
-}
-
-.plan_list_bottom .sign_up{
-    font-size: 18px;
-    background-color:var(--site_color_main);
-    padding: 12px 30px ;
-    color:var(--site_color_alt);
 }
 
 .youtube-video{
@@ -778,7 +678,7 @@ a{
 
 /*other pages*//**/
 .sign-in-page{
-    background-color:#FAF9F6;
+    background-color:var(--site_color_alt);
     color:var(--site_color_main);
     margin:90px 15px;
     padding:12px 8px;
