@@ -216,13 +216,13 @@ a{
 }
 
 .site_images_div{
-    margin:12px 0;
+    margin:12px 9px;
     text-align:center;
 }
 
 .site_images{
-    width:100%; 
-    height:auto;
+    width:90%; 
+    height:90%;
 }
 
 .haystackpay_intro{
