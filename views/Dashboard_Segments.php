@@ -8,7 +8,7 @@ class Dashboard_Segments extends Index_Segments{
 
     $css_version = filemtime("/static/style.css");
 
-    
+
     echo <<<HTML
     <!doctype html>
     <html lang="en">
@@ -21,11 +21,6 @@ class Dashboard_Segments extends Index_Segments{
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
         <title>$site_name</title>        
-        <style>
-            body{
-                background-color: #000500;
-            }
-        </style>
     </head>
     <body>
 
