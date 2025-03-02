@@ -91,7 +91,7 @@ class Index_Segments{
                         </div>
                     </a>
 
-                    <div class="bulk_tr"><a id="bulk_tr"></a><!-- start of .bulk_tr -->
+                    <div class="bulk_tr"><a id="bulk_tr" name="bulk_tr"></a><!-- start of .bulk_tr -->
                         <div style="margin-bottom:12px">
                             <b>Do you intend to send money to multiple persons from a single account? <br />
                             <span style="color:#888">Enter their email addresses, one on each line:</span></b>
