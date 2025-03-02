@@ -180,7 +180,7 @@ class Index_Segments{
                 </div>
                          
                 <div class="footer_copyright">
-                    © 2025 $site_name Token.
+                    © 2025 $site_name
                 </div>
             </div>
             
