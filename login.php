@@ -1,6 +1,6 @@
 <?php
-include_once("/home/u590828029/domains/aguanit.com/public_html/php/account-manager.php");
-include_once("/home/u590828029/domains/aguanit.com/public_html/views/Index_Segments.php");
+include_once("/php/account-manager.php");
+include_once("/views/Index_Segments.php");
 
 Index_Segments::header();
 
