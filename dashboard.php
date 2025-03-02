@@ -20,7 +20,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         }
      
         //display header:
-        Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = $data->username);
+        Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username);
         
 ?>
 
