@@ -40,8 +40,8 @@ if (isset($_POST["username_or_email"]) && isset($_POST["password"])) {
 <!--HTML:-->
 <div class="sign-in-page">
     <div class="new-sign-in-head">
-        <center><div class="fa-user-login"><i class="fa fa-user"></i></div> 
-        <div class="new-sign-in-head-caption">Create An Account</div></center>
+        <div class="fa-user-login"><i class="fa fa-user"></i></div> 
+        <div class="new-sign-in-head-caption">Create An Account</div>
     </div>
 
     <div class="sign-in-box">
