@@ -1,6 +1,6 @@
 <?php
 ini_set("session.use_only_cookies", 1);
-include_once("/home/u590828029/domains/aguanit.com/public_html/php/connection.php");
+include_once("/php/connection.php");
 
 $data = false;
 
