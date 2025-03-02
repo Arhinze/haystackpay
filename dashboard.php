@@ -31,7 +31,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
     <div style="text-align:center">
         <p>Sorry, we're still working on this project.</p>
         <p>We believe this little tour has been able to give you the whole idea of what the project is all about</p>
-        <p>For further enquiries, kindly <b><a href="https://wa.link/hgzcrj">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: +2348106961530.</p>
+        <p>For further enquiries, kindly <b><a href="https://wa.link/hgzcrj" style="color:#ff9100">click here <i class="fa fa-whatsapp"></i></a></b> to contact the software developer, or call on: +2348106961530.</p>
     </div>
     <!--End of: This is going off soon -->
 
@@ -39,12 +39,12 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
     <div style="padding:12px">
         <h3 style="color:<?=$site_color_alt?>">Your Referral Link</h3>
             
-        <input style="height:33px;border:1px solid #0bee3ccc;
-            border-right:30px solid #0bee3ccc;width:80%;
+        <input style="height:33px;border:1px solid #ff9100;
+            border-right:30px solid #ff9100;width:80%;
             border-radius:6px;margin-top:8px" id='referral_link'
             value="https://<?=$site_url_short?>/?ref=<?=$data->username?>"/>
             
-            <i style="margin-left:-29px" class="fa fa-copy" onclick="copyText('referral_link')"></i>
+            <i style="margin-left:-29px;color:#fff" class="fa fa-copy" onclick="copyText('referral_link')"></i>
             <div id="alert_text_copied"></div>
         <br /> 
     </div>

@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 a{
-    color: var(--site_color_alt);
+    color:#ff9100;
     text-decoration:none;
 }
 
