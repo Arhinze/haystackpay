@@ -44,7 +44,8 @@ class Dashboard_Segments extends Index_Segments{
             <!-- Hi user --> 
             
             <span style="float:right;background-color:#042c06;border-radius:6px;margin:3px;font-size:12px;padding:1px 0 6px 9px">
-                Hi $Hi_user
+                
+                Hi $Hi_use
 
                 <i style="background-color:#0bee3ccc;color:#fff; border-radius:6px;padding:6px 8px;text-align:center;margin:6px 9px 0px 6px;" class="fa fa-user"></i> 
             </span>
