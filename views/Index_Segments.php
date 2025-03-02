@@ -158,7 +158,7 @@ class Index_Segments{
                 amt_for_each = document.getElementById("amount_to_pay_each_person").value;
                 total_amount = Number(total_num) * Number(amt_for_each);
     
-                document.getElementById("total_to_transfer_text").innerHTML = "Total cost of transaction: <b><i class='fa fa-naira-sign'></i>"+total_amount.toString()+"</b>";
+                document.getElementById("total_to_transfer_text").innerHTML = "Total cost of transaction: <b><i class='fa fa-dollar-sign'></i>"+total_amount.toString()+"</b>";
             }
 
         </script>
