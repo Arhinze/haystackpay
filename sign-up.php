@@ -382,8 +382,8 @@ if(isset($_POST["user_code"])){
             <br /><button type="submit" class="long-action-button" style="background-color:#ff9100">Join <?=$site_name?> &nbsp; <i class="fa fa-sign-in"></i></button> <br />
     
             <div style="margin-top:15px;font-size:15px">
-                Already have an account? <a href="login" style="font-weight:bold;font-size:18px;color:<?=$site_color_light?>">Login</a><br />
-                Forgot Your Password? <b><a href="/reset-password" style="font-weight:bold;font-size:18px;color:<?=$site_color_light?>">Recover it</a></b>
+                Already have an account? <a href="login" style="font-weight:bold;font-size:18px;color:#ff9100">Login</a><br />
+                Forgot Your Password? <b><a href="/reset-password" style="font-weight:bold;font-size:18px;color:#ff9100">Recover it</a></b>
             </div>
         </form>
     </div>   <!-- sign-in-box class ends -->
