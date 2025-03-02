@@ -26,7 +26,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         
 ?>
 
-<div style="margin:180px 15px 120px 15px">
+<div style="margin:150px 15px;">
     <!-- This is going off soon -->
     <div style="text-align:center">
         <p>Sorry, we're still working on this project.</p>
