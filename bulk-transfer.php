@@ -57,7 +57,7 @@ if(isset($_POST["referred_accounts"])){
     ?>
                 <div style='margin:18px 6px'>
                     <b>Total number is: <?=$i?>.</b> 
-                    <button class="long-action-button" style="width:fit-content;padding:6px 12px;background-color:green" onlick="show_bt_input_div()"> 
+                    <button class="long-action-button" style="width:fit-content;padding:9px 15px;background-color:green" onclick="show_bt_input_div()"> 
                         Edit List &nbsp;<i class="fa fa-pencil"></i>
                     </button>
                 </div>
