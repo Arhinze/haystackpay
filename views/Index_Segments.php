@@ -91,16 +91,18 @@ class Index_Segments{
                         </div>
                     </a>
 
-                    <div style="margin-bottom:12px">
-                        <b>Do you intend to send money to multiple persons from a single account? <br />
-                        <span style="color:#888">Enter their email addresses, one on each line:</span></b>
-                    </div>
+                    <div class="bulk_tr"><a id="bulk_tr"></a><!-- start of .bulk_tr -->
+                        <div style="margin-bottom:12px">
+                            <b>Do you intend to send money to multiple persons from a single account? <br />
+                            <span style="color:#888">Enter their email addresses, one on each line:</span></b>
+                        </div>
                     
-                    <div style="font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
-                    <form method = "post" action = "/bulk-transfer">
-                        <textarea name="referred_accounts" class="index_textarea" placeholder="Eligible Accounts to Pay: \n  \n1.) abc@example.com \n2) def@example.com \n3. ghi@example.com \n4.) jkl@example.com \n5.) mno@example.com"></textarea>
-                        <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-money"></i> </button><br /><br />
-                    </form>
+                        <div style="font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
+                        <form method = "post" action = "/bulk-transfer">
+                            <textarea name="referred_accounts" class="index_textarea" placeholder="Eligible Accounts to Pay: \n  \n1.) abc@example.com \n2) def@example.com \n3. ghi@example.com \n4.) jkl@example.com \n5.) mno@example.com"></textarea>
+                            <br /><button class="long-action-button" type = "submit">Disburse Funds <i class="fa fa-money"></i> </button><br /><br />
+                        </form>
+                    </div><!-- end of .bulk_tr -->
                 </div>
             HTML;
        }

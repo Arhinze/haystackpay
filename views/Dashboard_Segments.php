@@ -60,7 +60,7 @@ class Dashboard_Segments extends Index_Segments{
             <li class="x"><label for="menu-box"><i class="fa fa-times"></i></label></li>
             
             <li><a href="$site_url/dashboard">Dashboard</a></li>
-            <li><a href="$site_url/bulk-transfer">Bulk Transfer </a></li>
+            <li><a href="$site_url#bulk_tr">Bulk Transfer </a></li>
 
             <!--
             <li class="clear" style="padding-bottom:16px">
