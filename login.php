@@ -1,4 +1,5 @@
 <?php
+ini_set("display_error", 1);
 include_once("/php/account-manager.php");
 include_once("/views/Index_Segments.php");
 
