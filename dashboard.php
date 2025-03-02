@@ -35,7 +35,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
     <!-- Referral Link section starts -->
     <div style="padding:12px">
-        <h3 style="color:#fff">Your Referral Link</h3>
+        <h3 style="color:<?=$site_color_alt?>">Your Referral Link</h3>
             
         <input style="height:33px;border:1px solid #0bee3ccc;
             border-right:30px solid #0bee3ccc;width:80%;
