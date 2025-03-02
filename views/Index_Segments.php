@@ -173,10 +173,11 @@ class Index_Segments{
             echo <<<HTML
             <div class="footer">
                 <div class="footer_fa_links"> <!-- social media links -->
-                    <a href="https://youtube.com/@aguanittoken?si=2UPwkGxROq7WpLAO"><i class="fa fa-youtube-play"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61553828145828"><i class="fa fa-facebook"></i></a>
-                    <a href="https://t.me/aguanit"><i class="fa fa-telegram"></i></a>
-                    <a href="https://x.com/AguanitToken?t=VwVfUCIOP1xBa9KRrfPHkg&s=09"><i class="fa fa-twitter"></i></a>
+                    <a href="https://youtube.com/"><i class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://wa.me/+2348106961530" style="color:green"><i class="fa fa-whatsapp"></i></a>
+                    <a href="https://t.me/"><i class="fa fa-telegram"></i></a>
+                    <a href="https://x.com/"><i class="fa fa-twitter"></i></a>
                 </div>
                          
                 <div class="footer_copyright">
