@@ -102,7 +102,7 @@ HTML;
 
 
 
-    public static function dashboard_scripts($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL){
+    public static function dashboard_scripts($site_name = SITE_NAME_SHORT, $site_url = SITE_URL){
 
         //Index_Segments::index_scripts();
 
