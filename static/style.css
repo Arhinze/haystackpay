@@ -222,7 +222,8 @@ a{
 
 .site_images{
     width:90%; 
-    height:90%;
+    height:auto;
+    border-radius:9px;
 }
 
 .haystackpay_intro{
@@ -1085,7 +1086,8 @@ a{
     }
 
     .site_images{
-        width:60%;
+        width:300px;
+        height:auto;
     }
 
     .where_to_get_wallet_address{
