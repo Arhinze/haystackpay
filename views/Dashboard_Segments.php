@@ -6,7 +6,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 class Dashboard_Segments extends Index_Segments{
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = "",$title=SITE_NAME){
 
-    $css_version = filemtime("/static/style.css");
+    $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
 
 
     echo <<<HTML
