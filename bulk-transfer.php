@@ -8,11 +8,12 @@ $managers_referrals = [];
 $output = [];
 $isset_of_ref = false;
 $all_referred_accounts = "";
+$amount_to_pay_per_person = "";
 
-$amount_to_pay_per_person = ((htmlentities($_POST["amount_to_pay_each_person"]) == null) ? "" : htmlentities($_POST["amount_to_pay_each_person"]));
 if(isset($_POST["referred_accounts"])){
     $isset_of_ref = true;
     $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
+    $amount_to_pay_per_person = htmlentities($_POST["amount_to_pay_each_person"]);
 
     $managers_referrals = trim($all_referred_accounts);
     $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
