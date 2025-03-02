@@ -152,6 +152,13 @@ class Index_Segments{
         function close_bt_input_div(){
             document.getElementById("bt_input_div").style.display = "none";
         }
+
+        function calculate_total(){
+            $total_num = Number(document.getElementById("total_number").innerHTML);
+            $amt_for_each = Number(document.getElementById("amount_for_each").value);
+            $total_amount = $total_num * $amt_for_each;
+            document.getElementById("total_to_transfer_text").innerHTML = "Total cost of transaction: <b><i class='fa fa-naira-sign'></i>"+$total_amount.toString()+"</b>";
+        }
         </script>
         HTML;
         }

@@ -69,12 +69,18 @@ if(isset($_POST["referred_accounts"])){
                     </form>
                 </div>
 
-                <div>
+                <form method="post" action="/confirm-transaction">
                     <div style="margin:15px 3px"><b>How much do you intend to pay these persons?</b></div>
-                    <input name="amount_to_pay" type="number" class="input" onkeyup="" required/>
-                    <div></div>
-                </div>
-                <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
+                    <input type="number" name="amount_to_pay_each_person" id="amount_for_each" class="input" onkeyup="calculate_total()" required/>
+                    <div id="total_number" style="display:none"><?=$i?></div>
+                    <div id="total_to_transfer"></div>
+
+                    <input type="hidden" name="transaction_amount" value=""/>
+                    <input type="hidden" name="transaction_type" value="bulk_transfer"/>
+                    <input type="hidden" name="valid_emails" value="<?=json_encode($output)?>"/>
+                    <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
+                </form>
+                
     <?php
             } //end of else stmt, that's (if $output !== 0)
         }    
