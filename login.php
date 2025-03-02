@@ -49,7 +49,7 @@ if (isset($_POST["username_or_email"]) && isset($_POST["password"])) {
             <div class="flex-div">
                 <div class="new-input-div">
                     <input type="text" name="username_or_email" placeholder="Username" value="<?=$remember_username?>" class="new-input" style="margin-bottom:6px"/>    
-                    <div class="new-input-fa-icon"> <i class="fa fa-user" style="color:<?=$site_color_dark?>"></i> </div>
+                    <div class="new-input-fa-icon"> <i class="fa fa-user"></i> </div>
                 </div>
 
                 <div class="new-input-div">
