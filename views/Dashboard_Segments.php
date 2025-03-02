@@ -67,8 +67,22 @@ class Dashboard_Segments extends Index_Segments{
             <li class="x"><label for="menu-box"><i class="fa fa-times"></i></label></li>
             
             <li><a href="$site_url/dashboard">Dashboard</a></li>
-            <li><a href="$site_url/settings">Settings</a></li>
+            <li><a href="$site_url/bulk-transfer">Bulk Transfer </a></li>
 
+            <!--
+            <li class="clear" style="padding-bottom:16px">
+                <label for="hidden-menu-item">
+                    <span style="float:left">Transfers</span> <i class="fa fa-angle-down" style="float:right"></i> 
+                </label>
+            </li>
+
+            <input type="checkbox" style="display:none" id="hidden-menu-item" class="hidden-menu-item"/>
+            <div class="hidden-menu-div">
+                <a href="$site_url/single-transfer">Singular Transfers</a><br />
+                <a href="$site_url/bulk-transfer">Bulk Transfers</a>
+            </div>
+            -->
+            
             <li class="clear" style="padding-bottom:16px">
                 <label for="hidden-menu-item">
                     <span style="float:left">Referrals</span> <i class="fa fa-angle-down" style="float:right"></i> 
@@ -78,9 +92,10 @@ class Dashboard_Segments extends Index_Segments{
             <input type="checkbox" style="display:none" id="hidden-menu-item" class="hidden-menu-item"/>
             <div class="hidden-menu-div">
                 <a href="$site_url/referred-users">Referred Users</a><br />
-                <a href="$site_url/referred-commissions">Referred Commissions</a>
+                <!--<a href="$site_url/referred-commissions">Referred Commissions</a>-->
             </div>
             
+            <li><a href="$site_url/settings">Settings</a></li>
             <li><a href="$site_url/reset-password">Reset Password</a></li>
 
             <li><a href="$site_url/claim-airdrop" style="color:#fff;font-weight:bold;background-color:#0bee3ccc;padding:6px;border-radius:12px">Claim Airdrop</a></li>
