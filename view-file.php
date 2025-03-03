@@ -1,7 +1,8 @@
 <?php
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
-//echo "<h2>All active accounts:</h2>".$linkedin_file;
 
+$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
+
+$linkedin_file = str_replace("+", "", $linkedin_file);
 $all_active_accounts = explode("\n", $linkedin_file);
 $all_active_accounts = array_map('strtolower', $all_active_accounts);
 $all_active_accounts = array_map('trim', $all_active_accounts);
@@ -69,7 +70,6 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 $managers_referrals = $_POST["managers_accounts"];
                 $managers_referrals = trim($managers_referrals);
                 $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $managers_referrals);
-                $managers_referrals = str_replace("+", "", $managers_referrals);
                 echo "<h6>$managers_referrals</h6>";
                 //echo "<h2>managers referrals: </h2>". $managers_referrals;
                 $managers_referrals_arr = explode("\n", $managers_referrals);
