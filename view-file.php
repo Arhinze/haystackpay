@@ -90,10 +90,11 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                         if (preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)){          
                             $man_acct_no += 1;
                             echo "<span style='color:green;font-weight:bold'>", $i, ".) ", $all_act_acct, " <i class='fa fa-check-circle'></i></span><br />";
-                            } else {
+                        } else {
                             echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br/>";
                         }
-
+                    } else {
+                        echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br/>";
                     }
                 }
                              
