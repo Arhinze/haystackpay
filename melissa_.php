@@ -1,7 +1,8 @@
 <?php
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
-//echo "<h2>All active accounts:</h2>".$linkedin_file;
 
+$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin.txt")));
+
+$linkedin_file = str_replace("+", "", $linkedin_file);
 $all_active_accounts = explode("\n", $linkedin_file);
 $all_active_accounts = array_map('strtolower', $all_active_accounts);
 $all_active_accounts = array_map('trim', $all_active_accounts);
