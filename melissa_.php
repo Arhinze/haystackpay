@@ -34,10 +34,10 @@ if(isset($_POST["referred_accounts"])){
             {
                 $sub_all_act = substr($all_act_acct, 0, -6);
             }
-                $sub_all_act = trim($sub_all_act);
+        $sub_all_act = trim($sub_all_act);
         
-        
-        if(preg_grep("/$all_act_acct/i", $managers_referrals_arr)) {
+        //if(preg_grep("/$all_act_acct|$sub_all_act/i", $managers_referrals_arr)) {
+        if(preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)) {
                 if(!empty($all_act_acct)){ 
                     $output[] = $all_act_acct;
                 }
