@@ -68,7 +68,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                 //echo $_POST["managers_accounts"]; echo "<br /><br />";
                 $managers_referrals = $_POST["managers_accounts"];
                 $managers_referrals = trim($managers_referrals);
-                $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $managers_referrals);
+                $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]|[\+]/", "", $managers_referrals);
                 //echo "<h2>managers referrals: </h2>". $managers_referrals;
                 $managers_referrals_arr = explode("\n", $managers_referrals);
                 //$managers_json = json_encode($managers_referrals_arr);
@@ -87,7 +87,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
                         $sub_all_act = substr($all_act_acct, 0, -6);
                         $sub_all_act = trim($sub_all_act);                    
                         
-                        if (preg_grep("/\($all_act_acct)|\($sub_all_act)/", $managers_referrals_arr)){          
+                        if (preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)){          
                             $man_acct_no += 1;
                             echo "<span style='color:green;font-weight:bold'>", $i, ".) ", $all_act_acct, " <i class='fa fa-check-circle'></i></span><br />";
                         } else {
