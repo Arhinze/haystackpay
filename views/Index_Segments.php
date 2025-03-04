@@ -46,7 +46,7 @@ class Index_Segments{
                     <h3 class="site_name"><a href="/">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></a></h3>
                 </div>
             
-                <div class="menu-icon" style="right:9px">
+                <div class="menu-icon" style="position:fixed;right:9px">
                     <label for = "menu-box">
                         <i class="fa fa-bars"></i>
                     </label>
