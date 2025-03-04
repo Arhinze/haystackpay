@@ -51,8 +51,8 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
             $new_tr_stmt->execute([$data->user_id, "inflow", $dep_amount, date("Y-m-d H:i:s", time()), $ps_trx_ref, $ps_att_ref]);
 
             //Delete the transaction to avoid a repeat
-            $delete_tr_att_stmt = $pdo->prepare("DELETE FROM tr_attempts WHERE user_id = ? AND ps_attempt_refx = ? LIMIT ?, ?");
-            $delete_tr_att_stmt->execute([$data->user_id, $ps_att_ref, 0, 1]);
+            $delete_tr_att_stmt = $pdo->prepare("DELETE FROM tr_attempts WHERE ps_attempt_refx = ? LIMIT ?, ?");
+            $delete_tr_att_stmt->execute([$ps_att_ref, 0, 1]);
 
             //mail admin
             $mail1 = mail($sender, "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);
