@@ -13,6 +13,10 @@ if(isset($_POST["deposit_amount"])) {
     $dep_amount = htmlentities($_POST["deposit_amount"]);
 }
 
+if(isset($_GET["deposit_amount"])) {
+    $dep_amount = htmlentities($_GET["deposit_amount"]);
+}
+
 $mail_body_top = <<<HTML
     <html>
         <head>
@@ -70,7 +74,7 @@ $headers .= "Content-type:text/html; charset=UTF-8\r\n";
 
 function check_mail_status($mail) {
     if ($mail) {
-        echo "<br /> <span style='color:#e93609; margin-left:15px'> <b>Mail Sent Successfully</b> </span>";
+        //echo "<br /> <span style='color:#e93609; margin-left:15px'> <b>Mail Sent Successfully</b> </span>";
     } else {
         echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b> </span>";
     }
