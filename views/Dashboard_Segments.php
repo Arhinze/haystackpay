@@ -5,8 +5,8 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 
 class Dashboard_Segments extends Index_Segments{
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "",$title=SITE_NAME){
-
-    $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
+        $main_header = Index_Segments::main_header();
+        $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
 
 
     echo <<<HTML
@@ -25,17 +25,7 @@ class Dashboard_Segments extends Index_Segments{
     <body>
 
     <div class="body">
-        <div class="headers">  
-            <div style="margin:-16px 19px 0px 14px">
-                <a href="/"><h3 class="site_name">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></h3></a>
-            </div>
-        
-            <div class="menu-icon">
-                <label for = "menu-box">
-                    <i class="fa fa-bars"></i>
-                </label>
-            </div> 
-        </div> 
+        $main_header
 
         <div class="hi_user"> 
             <!-- Google Translate div --> 

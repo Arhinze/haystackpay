@@ -2,9 +2,9 @@
 
 //admin_Segments
 
-include_once($_SERVER["DOCUMENT_ROOT"]."/php/connection.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 
-Class admin_Segments{
+Class admin_Segments extends Index_Segments {
     public static function headerr () {
         //dummy method used for test purposes
     }
@@ -43,15 +43,15 @@ Class admin_Segments{
 
 
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL){
+        $main_header = Index_Segments::main_header();
         $main_admin_access = admin_Segments::main_admin_access();
-
+        $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
         $Hi_admin = "";
 
         if(isset($_COOKIE["admin_name"])){
             $Hi_admin = $_COOKIE["admin_name"];
         }
 
-        $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
 
         echo <<<HTML
             <!DOCTYPE html>
@@ -110,13 +110,7 @@ Class admin_Segments{
 
 </head>
 <body>
-    <div class="headers" style="height:36px;padding:16px 16px 8px 8px"> 
-        <div style="font-size:18px;margin:-16px 19px 0px 14px"><a href=""><h3 class="site_name">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></h3></a></div>
-        
-        <div class="menu-icon">
-            <label for = "menu-box"><i class="fa fa-bars"></i></label>
-        </div>
-    </div> 
+    $main_header
 
     <hr />
 
