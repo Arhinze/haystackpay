@@ -21,7 +21,7 @@ class Transactions {
 
     public function withdraw($user_id,$amt,$description){
         $wit_stmt = $this->pdo->prepare("INSERT INTO transactions(tr_id, user_id, tr_type, tr_amount, tr_time, tr_from) VALUES (?,?,?,?,?,?)");
-        $with_stmt->execute([null, $user_id, "outflow", $amt, date("Y-m-d h:ia",time(), $description)]);
+        $wit_stmt->execute([null, $user_id, "outflow", $amt, date("Y-m-d h:ia",time(), $description)]);
 
         return $this->tr_alert("Withdrawal made successfully"); 
     }
