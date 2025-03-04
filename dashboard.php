@@ -35,7 +35,7 @@ if($data){// that means user is logged in:
             $no = 0;
             $all_trs_by_this_user = $hstkp_transactions->all_trs($data->user_id);
             
-            echo "<div style='margin-top:18px'>";
+            echo "<div style='margin-top:24px'>";
             if(count($all_trs_by_this_user) > 0) {
                 foreach ($all_trs_by_this_user as $all_h_tr) {
                     $no += 1;
@@ -53,6 +53,7 @@ if($data){// that means user is logged in:
             }
         ?>
             </div>
+            <hr />
         <div style="margin-top:21px"><b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?></div>
     </div>
 
