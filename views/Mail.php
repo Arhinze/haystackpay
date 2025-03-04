@@ -2,6 +2,7 @@
 
 ini_set("display_errors", 1);
 $username = "";
+//$deposit_amount ="";
 if($data) {
     $username = $data->username;
 }

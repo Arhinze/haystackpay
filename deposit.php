@@ -12,13 +12,13 @@ if($data){// that means user is logged in:
 <?php 
 if(isset($_POST["deposit_amount"])) { //paystack initialization starts
     //Initialize Paystack:
-    $amount = (int)htmlentities($_POST["deposit_amount"]);
+    $dep_amount = (int)htmlentities($_POST["deposit_amount"]);
 
     $url = "https://api.paystack.co/transaction/initialize";
     
     $fields = [
       'email' => $data->user_email,
-      'amount' => $amount*100,
+      'amount' => $dep_amount*100,
       'callback_url' => "$site_url/dashboard",
       //'callback_url' => "$site_url/success.php?name=$new_order_name&phone=$new_order_phone&qty=$new_order_qty&mail=$customer_mail&product=$product_name",
       'metadata' => ["cancel_action" => "$site_url/failure.php"]
@@ -54,8 +54,8 @@ if(isset($_POST["deposit_amount"])) { //paystack initialization starts
 
     //email admin on attempted deposit
     // implement this someday : $mail_sender->send();
-    $mail = mail($sender,"A user attempted a deposit of $deposit_amount", $attempted_deposit_message, $headers);
-    $mail4 = mail("francisokoye48@gmail.com", "A user attempted a deposit of $deposit_amount", $attempted_deposit_message, $headers);
+    $mail = mail($sender,"A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
+    $mail4 = mail("francisokoye48@gmail.com", "A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
     
     //Record the transaction:
     $hstkp_transactions->deposit($data->user_id, $deposit_amount);
