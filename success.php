@@ -10,16 +10,15 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
             padding: 50px;
         }
-        .message {
+        .message {;
+            text-align: center;
             background-color: #dff0d8;
             color: #3c763d;
             padding: 20px;
             border-radius: 5px;
-            margin: 20px auto;
+            margin: 20px 12px;
             max-width: 600px;
         }
     </style>
