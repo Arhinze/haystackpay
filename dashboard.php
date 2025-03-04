@@ -32,11 +32,20 @@ if($data){// that means user is logged in:
     <div class="dashboard">
         <h2>Your Transactions:</h2>
         <?php
+            $no = 0;
             foreach($hstkp_transactions->all_trs($data->user_id) as $all_h_tr) {
+                $no += 1;
                 $tr_color = ($all_h_tr->tr_type == "inflow") ? "green" : "red";
-                echo "<div style='color:$tr_color;font-size:15px;margin-bottom:9px'><i class='fa fa-circle'></i> &nbsp;", $all_h_tr->tr_type, " - N$all_h_tr->tr_amount - $all_h_tr->tr_time <i class='fa fa-angle-down'></i></div>";
+        ?>
+                <div style="color:<?=$tr_color?>;font-size:15px;margin-bottom:9px" onclick="show_div('tr_desc_div<?=$no?>')">
+                    <i class='fa fa-circle'></i> &nbsp; <?=$all_h_tr->tr_type?> - N<?=$all_h_tr->tr_amount?> - <?=$all_h_tr->tr_time?> <i class='fa fa-angle-down'></i>
+                </div>
+
+                <div id="tr_desc_div<?=$no?>"><?=$all_h_tr->tr_from?></div>
+        <?php
             }
         ?>
+        <b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?>
     </div>
 
     <!-- Referral Link section starts -->

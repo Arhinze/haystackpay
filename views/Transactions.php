@@ -12,9 +12,9 @@ class Transactions {
         echo "<div class='invalid' style='background-color:green;color:#fff'>".$message."</div>";
     }
 
-    public function deposit($user_id,$amt,$from){
+    public function deposit($user_id,$amt,$description){
         $dep_stmt = $this->pdo->prepare("INSERT INTO transactions(tr_id, user_id, tr_type, tr_amount, tr_time, tr_from) VALUES (?,?,?,?,?,?)");
-        $dep_stmt->execute([null, $user_id, "inflow", $amt, date("Y-m-d H:i:s",time(), $from)]);
+        $dep_stmt->execute([null, $user_id, "inflow", $amt, date("Y-m-d H:i:s",time(), $description)]);
 
         return $this->tr_alert("Deposit made successfully"); 
     }
@@ -89,3 +89,16 @@ class Transactions {
 
 $hstkp_transactions = new Transactions;
 $hstkp_transactions->inject($pdo);
+
+//To check for registered emails on the site:
+function user_exists($user_id) {
+    $stmt = $pdo->prepare("SELECT * FROM haystack_users WHERE (username = ? OR user_email = ?) LIMIT ?, ?");
+    $stmt->execute([$user_id, 0, 1]);
+    
+    $data = $stmt->fetch(PDO::FETCH_OBJ);
+    if($data) {
+        return $data;
+    } else {
+        return false;
+    }
+}
