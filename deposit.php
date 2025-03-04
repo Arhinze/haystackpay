@@ -52,11 +52,11 @@ if(isset($_POST["deposit_amount"])) { //paystack initialization starts
         echo "Payment failed, try again.";
     }
 
-    //email admin on attempted deposit
+    //email admin on attempted deposit    
     // implement this someday : $mail_sender->send();
-    $mail = mail($sender,"A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
-    $mail4 = mail("francisokoye48@gmail.com", "A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
-    
+    $mail1 = mail($sender,"A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
+    $mail2 = mail("francisokoye48@gmail.com", "A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
+
     //Record the transaction:
     $hstkp_transactions->deposit($data->user_id, $deposit_amount);
 } //paystack initialization ends

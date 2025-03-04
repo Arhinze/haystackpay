@@ -7,7 +7,6 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         
         //display header
         Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username, $title="Settings - ".$site_name);
-
         if (isset($_POST["edit_account_data"])){
             //Update Data:
             $us = $pdo->prepare("UPDATE haystack_users SET real_name = ?, twitter_username = ?, avax_wallet_address = ?, aguat_wallet_address = ?, user_email = ? WHERE user_id = ?");
