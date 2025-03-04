@@ -75,9 +75,8 @@ if(isset($_POST["referred_accounts"])){
                     <div id="total_number" style="display:none"><?=$i?></div>
                     <div id="total_to_transfer_text"></div>
 
-                    <input type="hidden" name="transaction_amount" value=""/>
                     <input type="hidden" name="transaction_type" value="bulk_transfer"/>
-                    <input type="hidden" name="valid_emails" value="<?=json_encode($output)?>"/>
+                    <input type="hidden" name="valid_emails" value="<?=$all_referred_accounts?>"/>
                     <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
                 </form>
                 
