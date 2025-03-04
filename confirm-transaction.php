@@ -9,7 +9,7 @@ if($data) {//that means user is logged in:
         $hstkp_transactions->withdraw($data->user_id, $amt_to_deduct, $mails_to_disburse_to);
     }
 
-    header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
+    //header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
     Dashboard_Segments::footer();
 } else {
     header("location:/login");
