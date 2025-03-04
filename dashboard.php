@@ -64,7 +64,7 @@ if($data){// that means user is logged in:
         ?>
             </div>
             <hr />
-        <div style="margin-top:21px"><b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?></div>
+        <div style="margin-top:21px"><b>Current Balance: </b>N<?=$hstkp_transactions->current_balance($data->user_id)?></div>
     </div>
 
     <!-- Referral Link section starts -->
