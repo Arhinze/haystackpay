@@ -35,7 +35,7 @@ class Transactions {
         $total_cb_in = 0;
         if(count($cb_in_data) > 0) {
             foreach($cb_in_data as $cb_in) {
-                $total_cb_in += $cb_in;
+                $total_cb_in += $cb_in->tr_amount;
             }
         }
 
@@ -47,7 +47,7 @@ class Transactions {
         $total_cb_out = 0;
         if(count($cb_out_data) > 0) {
             foreach($cb_out_data as $cb_out) {
-                $total_cb_out += $cb_out;
+                $total_cb_out += $cb_out->tr_amount;
             }
         }
 
