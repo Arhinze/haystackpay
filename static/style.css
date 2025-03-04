@@ -56,7 +56,6 @@ a{
 .menu-icon{
     font-size:24px;
     float:right;
-    margin:21px;
     color:var(--site_color_alt);
     padding:2px 10px;
     border-radius:4px;
@@ -152,7 +151,6 @@ a{
 .site_name{
     color:var(--site_color_alt);
     font-size:24px;
-    margin:25px 12px; 
     float:left;
     background-color: var(--site_color_main);
 }
