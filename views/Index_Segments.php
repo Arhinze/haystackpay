@@ -41,11 +41,12 @@ class Index_Segments{
         </head>
         <body>
             <div class="headers">  
+                <div style="float:left"><img src="/static/images/logo_rbg.png" class="site_name_logo"/></div>
                 <div style="margin:-16px 19px 0px 14px">
-                    <a href="/"><h3 class="site_name"><img src="/static/images/logo_rbg.png" class="site_name_logo"/>HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></h3></a>
+                    <h3 class="site_name"><a href="/">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></a></h3>
                 </div>
             
-                <div class="menu-icon">
+                <div class="menu-icon" style="float:right">
                     <label for = "menu-box">
                         <i class="fa fa-bars"></i>
                     </label>
