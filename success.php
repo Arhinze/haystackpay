@@ -47,8 +47,8 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         if ($tr_attempt_data) { // ~ transaction is a valid transaction
             //Insert deposit transaction . .
             //$hstkp_transactions->deposit($data->user_id, $dep_amount, "You made a deposit");
-            $new_tr_stmt = $pdo->prepare("INSERT INTO transactions(user_id, tr_type, tr_amount, tr_time, ps_trxref, ps_attempt_refx) VALUES (?, ?, ?, ?, ?, ?)");
-            $new_tr_stmt->execute([$data->user_id, "inflow", $dep_amount, date("Y-m-d H:i:s", time()), $ps_trx_ref, $ps_att_ref]);
+            $new_tr_stmt = $pdo->prepare("INSERT INTO transactions(user_id, tr_type, tr_amount, tr_time, tr_from, ps_trxref, ps_attempt_refx) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $new_tr_stmt->execute([$data->user_id, "inflow", $dep_amount, date("Y-m-d H:i:s", time()), "You made a deposit", $ps_trx_ref, $ps_att_ref]);
 
             //Delete the transaction to avoid a repeat
             $delete_tr_att_stmt = $pdo->prepare("DELETE FROM tr_attempts WHERE ps_attempt_refx = ?");
