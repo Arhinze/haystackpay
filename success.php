@@ -40,9 +40,9 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         $dep_amount = htmlentities($_GET["deposit_amount"]);
 
         //Check if transaction is a valid transaction before depositing . .
-        $tr_attempt_check = $pdo->prepare("SELECT * FROM tr_attempts WHERE user_id = ? AND ps_attempt_refx = ?");
-        $tr_attempt_check->execute([$data->user_id, $ps_att_ref]);
-        $tr_attempt_data =  $tr_attempt_check->fetch(PDO::FETCH_OBJ);
+        $tr_attempt_check_stmt = $pdo->prepare("SELECT * FROM tr_attempts WHERE user_id = ? AND ps_attempt_refx = ? LIMIT ?, ?");
+        $tr_attempt_check_stmt->execute([$data->user_id, $ps_att_ref, 0, 1]);
+        $tr_attempt_data =  $tr_attempt_check_stmt->fetch(PDO::FETCH_OBJ);
 
         if ($tr_attempt_data) { // ~ transaction is a valid transaction
             //Insert deposit transaction . .
@@ -52,7 +52,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
             //Delete the transaction to avoid a repeat
             $delete_tr_att_stmt = $pdo->prepare("DELETE * FROM tr_attempts WHERE user_id = ? AND ps_attempt_refx = ? LIMIT ?, ?");
-            $$delete_tr_att_stmt->execute([$data->user_id, $ps_att_ref, 0, 1]);
+            $delete_tr_att_stmt->execute([$data->user_id, $ps_att_ref, 0, 1]);
 
             //mail admin
             $mail1 = mail($sender, "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);
