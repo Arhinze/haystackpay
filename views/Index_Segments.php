@@ -75,6 +75,9 @@ class Index_Segments{
             $site_name_uc = strtoupper($site_name);
             echo <<<HTML
                 <div class="haystackpay_intro">
+                    <video class="video" width="100%" height="700" autoplay playsinline muted loop>
+                        <source src="/static/videos/haystackpay_intro.mp4"  type="video/mp4"> 
+                    </video>
                     <!--
                     <div class="site_images_div">
                         <img src="/static/images/logo_rbg.png" class="site_images"/>
