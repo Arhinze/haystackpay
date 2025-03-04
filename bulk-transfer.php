@@ -10,6 +10,11 @@ $isset_of_ref = false;
 $all_referred_accounts = "";
 
 $valid_emails_as_string = "";
+$error = "";
+if(isset($_GET["error_msg"])) {
+    $error = htmlentities($_GET["error_msg"]);
+    echo "<div class='invalid'>$error</div>";
+}
 
 if(isset($_POST["referred_accounts"])){
     $isset_of_ref = true;
