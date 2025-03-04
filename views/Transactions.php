@@ -92,7 +92,7 @@ $hstkp_transactions->inject($pdo);
 
 //To check for registered emails on the site:
 function user_exists($user_id) {
-    $stmt = $pdo->prepare("SELECT * FROM haystack_users WHERE (username = ? OR user_email = ?) LIMIT ?, ?");
+    $stmt = $this->pdo->prepare("SELECT * FROM haystack_users WHERE (username = ? OR user_email = ?) LIMIT ?, ?");
     $stmt->execute([$user_id, 0, 1]);
     
     $data = $stmt->fetch(PDO::FETCH_OBJ);
