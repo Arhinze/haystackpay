@@ -18,10 +18,10 @@ if($data) {//that means user is logged in:
             } else {
                 $p_stmt = $pdo->prepare("INSERT INTO haystack_users(real_name, username, user_email, `password`,airdrop_status,twitter_username,avax_wallet_address,aguat_wallet_address,referred_by,entry_date,mining_status,mining_start_time) VALUES(?, ?,?, ?, ?, ?,?,?,?,?,?,?)");
 
-                $p_stmt->execute(["Dummy Real Name", "dummy_user_name", $ave, "123pc","not_participated"," "," "," ",$data->username,date("Y-m-d H:i:s", time()),date("Y-m-d H:i:s", time()),"inactive"]);
+                $p_stmt->execute(["Dummy Real Name", $ave, $ave, "123pc","not_participated"," "," "," ",$data->username,date("Y-m-d H:i:s", time()),date("Y-m-d H:i:s", time()),"inactive"]);
 
                 if ($hstkp_transactions->user_exists($ave)) {//now user exists if previously does not exist . .
-                    $hstkp_transactions->deposit($ave->user_id, $amt_for_each_person, "Received from: ".$data->username); 
+                    $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
                     // - mail() $ave
                 }
             }
