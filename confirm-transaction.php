@@ -2,7 +2,7 @@
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 
-if($data) {
+if($data) {//that means user is logged in:
     if(isset($_POST["transaction_type"])) {
         $amt_to_deduct = htmlentities($_POST["amount_to_pay_each_person"])*htmlentities($_POST["total_number"]);
         $mails_to_disburse_to = htmlentities($_POST["valid_emails"]);
