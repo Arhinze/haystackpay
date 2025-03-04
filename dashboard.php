@@ -9,11 +9,11 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         $form_user_id = $_COOKIE["username_or_email"];
         $form_password = $_COOKIE["password"];
 
-        //~check if user is new so as to welcome user:
-        if(isset($_GET["new-user"])){
-            $user_status = htmlentities($_GET["new-user"]);
-            if ((time() - strtotime($data->entry_date)) < (1*60)){//if user is not more than 1 min old
-                echo "<div class='pop_up'>Sign up successful. Welcome to $site_name, <b>$data->username</b>. <span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span></div>";
+        //~check if user made a new transaction:
+        if(isset($_GET["new_transaction"])){
+            $trans_id = (int)htmlentities($_GET["new_transaction"]);
+            if ((time() - strtotime($hstkp_transactions->tr_time($trans_id))) < (1*60)){//if transaction is not more than 1 min old
+                echo "<div class='pop_up'>Transaction successful. <span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span></div>";
             } else { //to avoid excessive access to mysql database ~ I don't know if this is necessary though
                 header("location:/dashboard");
             }

@@ -38,7 +38,7 @@ class Transactions {
 
         //outflow:
         $cb_out_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE user_id = ? AND tr_type = ? LIMIT ?, ?");
-        $cb_out_data = $cb_out_stmt->execute([$data->user_id, "outflow", 0, 1000]);
+        $cb_out_data = $cb_out_stmt->execute([$user_id, "outflow", 0, 1000]);
 
         $total_cb_out = 0;
         foreach($cb_out_data as $cb_out) {
@@ -48,6 +48,28 @@ class Transactions {
         //current balance:
         $current_balance = $total_cb_in - $total_cb_out;
         return $current_balance;
+    }
+
+    public function get_last_tr_id($user_id) {
+        //Get last user transaction id
+        $tr_id_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE user_id = ? LIMIT ?, ? ORDER BY tr_id DESC");
+        $tr_id_stmt->execute([$user_id, 0, 1]);
+
+        $tr_id_data = $tr_id_stmt->fetch(PDO::FETCH_OBJ);
+        if ($tr_id_data) {
+            return $tr_id_data->tr_id;
+        }
+    }
+
+    public function tr_time($tr_id) {
+        //Get last user transaction id
+        $tr_time_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE tr_id = ? LIMIT ?, ? ORDER BY tr_id DESC");
+        $tr_time_stmt->execute([$tr_id, 0, 1]);
+
+        $tr_time_data = $tr_time_stmt->fetch(PDO::FETCH_OBJ);
+        if ($tr_time_data) {
+            return $tr_time_data->tr_time;
+        }
     }
 }
 
