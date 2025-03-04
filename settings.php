@@ -10,11 +10,11 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
         if (isset($_POST["edit_account_data"])){
             //Update Data:
-            $us = $pdo->prepare("UPDATE miners SET real_name = ?, twitter_username = ?, avax_wallet_address = ?, aguat_wallet_address = ?, user_email = ? WHERE user_id = ?");
+            $us = $pdo->prepare("UPDATE haystack_users SET real_name = ?, twitter_username = ?, avax_wallet_address = ?, aguat_wallet_address = ?, user_email = ? WHERE user_id = ?");
 
             $us->execute([htmlentities($_POST["full_name"]), htmlentities($_POST["email"]), $data->user_id]);
 
-            $stmt = $pdo->prepare("SELECT * FROM miners WHERE username = ? AND `password` = ?");
+            $stmt = $pdo->prepare("SELECT * FROM haystack_users WHERE username = ? AND `password` = ?");
             $stmt->execute([$data->username, $password]);
             
             $data = $stmt->fetch(PDO::FETCH_OBJ);
