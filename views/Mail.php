@@ -2,7 +2,7 @@
 
 ini_set("display_errors", 1);
 $username = "";
-//$deposit_amount ="";
+//$dep_amount ="";
 if($data) {
     $username = $data->username;
 }
@@ -15,7 +15,7 @@ $attempted_deposit_order = <<<HTML
         </div>
         <h2 style="color:#00008b;font-family:Arimo;text-align:center">$site_name</h2>
             <p  style ="font-family:Trirong;">
-                Hello Sir, a user with username: $username attempted to deposit N$deposit_amount in his dashboard.
+                Hello Sir, a user with username: $username attempted to deposit N$dep_amount in his dashboard.
             </p>
     </body>
     </html>
