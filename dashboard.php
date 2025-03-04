@@ -33,7 +33,7 @@ if($data){// that means user is logged in:
         <h2>Your Transactions:</h2>
         <?php
             foreach($hstkp_transactions->all_trs($data->user_id) as $all_h_tr) {
-                $tr_color = $all_h_tr->tr_type = "inflow" ? "green" : "red";
+                $tr_color = ($all_h_tr->tr_type == "inflow") ? "green" : "red";
                 echo "<div style='color:$tr_color;font-size:15px'><i class='fa fa-circle'></i>", $all_h_tr->tr_type, " - $all_h_tr->tr_amount - $all_h_tr->tr_time <i class='fa fa-angle-down'><i/></div>";
             }
         ?>
