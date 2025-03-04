@@ -14,7 +14,7 @@ class Transactions {
 
     public function deposit($user_id,$amt,$description){
         $dep_stmt = $this->pdo->prepare("INSERT INTO transactions(tr_id, user_id, tr_type, tr_amount, tr_time, tr_from) VALUES (?,?,?,?,?,?)");
-        $dep_stmt->execute([null, $user_id, "inflow", $amt, date("Y-m-d H:i:s",time(), $description)]);
+        $dep_stmt->execute([null, $user_id, "inflow", $amt, date("Y-m-d H:i:s",time()), $description]);
 
         return $this->tr_alert("Deposit made successfully"); 
     }
@@ -103,4 +103,3 @@ class Transactions {
 
 $hstkp_transactions = new Transactions;
 $hstkp_transactions->inject($pdo);
-
