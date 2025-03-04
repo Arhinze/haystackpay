@@ -111,7 +111,7 @@ Class admin_Segments{
 </head>
 <body>
     <div class="headers" style="height:36px;padding:16px 16px 8px 8px"> 
-        <div style="font-size:18px;margin:-16px 19px 0px 14px"><h3 class="site_name"><a href="/">$site_name</a></h3></div>
+        <div style="font-size:18px;margin:-16px 19px 0px 14px"><a href=""><h3 class="site_name">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></h3></a></div>
         
         <div class="menu-icon">
             <label for = "menu-box"><i class="fa fa-bars"></i></label>
