@@ -52,7 +52,7 @@ class Transactions {
 
     public function get_last_tr_id($user_id) {
         //Get last user transaction id
-        $tr_id_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE user_id = ? LIMIT ?, ? ORDER BY tr_id DESC");
+        $tr_id_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE user_id = ? ORDER BY tr_id DESC LIMIT ?, ?");
         $tr_id_stmt->execute([$user_id, 0, 1]) or die(mysql_error());
 
         $tr_id_data = $tr_id_stmt->fetch(PDO::FETCH_OBJ);
