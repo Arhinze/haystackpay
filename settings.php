@@ -50,7 +50,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 </div>
 
 <div class="clear" style="padding:18px 8px 10px 8px;border-top:1px solid #888;margin:12px" >
-&nbsp; <a class = "button" style="background-color:#0bee3ccc" href="/reset-password">Reset Password <i class="fa fa-pencil"></i></a>
+&nbsp; <a class = "button" style="background-color:#0bee3ccc;color:#fff" href="/reset-password">Reset Password <i class="fa fa-pencil"></i></a>
 </div>
 
 
@@ -63,7 +63,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 <div class="clear" style="padding:6px 8px;border-top:1px solid #888;margin:12px">
 
-<div style="float:right"><button type="submit" class="button" style="background-color:#0bee3ccc"><i class="fa fa-gear"></i> Change Account Data</button></div>
+<div style="float:right"><button type="submit" class="button" style="background-color:#fff"><i class="fa fa-gear"></i> Change Account Data</button></div>
 
 </div>
 
