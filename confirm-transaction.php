@@ -30,7 +30,7 @@ if($data) {//that means user is logged in:
         }
     }
 
-    //header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
+    header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
     Dashboard_Segments::footer();
 } else {
     header("location:/login");
