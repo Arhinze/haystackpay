@@ -85,20 +85,22 @@ class Transactions {
         $data = $all_trs_stmt->fetchAll(PDO::FETCH_OBJ);
         return $data;
     }
+
+    //To check for registered emails on the site:
+    //This shouldn't be here though, please find somewhere else to place it.
+    public function user_exists($user_id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM haystack_users WHERE (username = ? OR user_email = ?) LIMIT ?, ?");
+        $stmt->execute([$user_id, 0, 1]);
+        
+        $data = $stmt->fetch(PDO::FETCH_OBJ);
+        if($data) {
+            return $data;
+        } else {
+            return false;
+        }
+    }
 }
 
 $hstkp_transactions = new Transactions;
 $hstkp_transactions->inject($pdo);
 
-//To check for registered emails on the site:
-function user_exists($user_id) {
-    $stmt = $this->pdo->prepare("SELECT * FROM haystack_users WHERE (username = ? OR user_email = ?) LIMIT ?, ?");
-    $stmt->execute([$user_id, 0, 1]);
-    
-    $data = $stmt->fetch(PDO::FETCH_OBJ);
-    if($data) {
-        return $data;
-    } else {
-        return false;
-    }
-}

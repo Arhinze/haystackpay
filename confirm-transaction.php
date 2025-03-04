@@ -20,7 +20,7 @@ if($data) {//that means user is logged in:
 
                 $p_stmt->execute(["Dummy Real Name", "dummy_user_name", $ave, "123pc","not_participated"," "," "," ",$data->username,date("Y-m-d H:i:s", time()),date("Y-m-d H:i:s", time()),"inactive"]);
 
-                if (user_exists($ave)) {//now user exists if previously does not exist . .
+                if ($hstkp_transactions->user_exists($ave)) {//now user exists if previously does not exist . .
                     $hstkp_transactions->deposit($ave->user_id, $amt_for_each_person, "Received from: ".$data->username); 
                     // - mail() $ave
                 }
