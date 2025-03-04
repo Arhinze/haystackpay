@@ -45,7 +45,7 @@ if($data){// that means user is logged in:
                         <i class='fa fa-circle'></i> &nbsp; <?=$all_h_tr->tr_type?> - N<?=$all_h_tr->tr_amount?> - <?=$all_h_tr->tr_time?> <i class='fa fa-angle-down'></i>
                     </div>
     
-                    <div id="tr_desc_div<?=$no?>"><?=$all_h_tr->tr_from?></div>
+                    <div id="tr_desc_div<?=$no?>" style="display:none"><?=$all_h_tr->tr_from?></div>
         <?php
                 }
             } else {
