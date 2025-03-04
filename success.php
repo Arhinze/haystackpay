@@ -24,7 +24,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         }
     </style>
     
-    <div style="margin:105px 12px">
+    <div style="margin:180px 12px 75px 12px">
         <div class="message">
             <h1>Deposit Successful</h1>
             <p>Thank you for banking with us! Your transaction was successful.</p>
@@ -65,7 +65,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
             check_mail_status($mail2);
             check_mail_status($mail3);
         } else {
-            echo "<div class=''>Please proceed to the dashboard</div>";
+            echo "<div class='invalid' style='background-color:green'>Please proceed to the dashboard</div>";
         }
 
     Dashboard_Segments::footer();
