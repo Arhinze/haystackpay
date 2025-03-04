@@ -157,6 +157,13 @@ a{
     background-color: var(--site_color_main);
 }
 
+.site_name_logo{
+    width:24px;
+    height:auto;
+    margin:12px;
+    margin-right:15px;
+}
+
 .rotate_360 {
     animation: rotate_360 6s infinite .0s normal;
 }
