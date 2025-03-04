@@ -11,9 +11,9 @@ if($data){// that means user is logged in:
 
 <div style="margin:180px 15px 90px 15px">
     <form method="post" action="" style="background-color:#fff;padding:15px 6px;border-radius:9px;border:1px solid #ff9100">
-        <input type="number" class="input" placeholder="N100 - N5,000,000" style="border:1px solid #ff9100;margin:18px 3px;height:42px"/>
+        <input type="number" class="input" placeholder="N100 - N5,000,000" style="border:1px solid #888;margin:18px 3px;height:42px;width:100%"/>
 
-        <button type="submit" class="long-action-button" style="background-color:green;color:#fff">
+        <button type="submit" class="long-action-button" style="background-color:green;color:#fff;width:100%">
             Confirm
         </button>
     </form>
