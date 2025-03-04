@@ -169,7 +169,7 @@ class Index_Segments{
             }
     
             function calculate_total(){
-                total_num = document.getElementById("total_number").innerHTML;
+                total_num = document.getElementById("total_number").value;
                 amt_for_each = document.getElementById("amount_to_pay_each_person").value;
                 total_amount = Number(total_num) * Number(amt_for_each);
     

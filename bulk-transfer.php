@@ -72,7 +72,7 @@ if(isset($_POST["referred_accounts"])){
                 <form method="post" action="/confirm-transaction">
                     <div style="margin:15px 3px"><b>How much do you intend to pay these persons?</b></div>
                     <input type="number" name="amount_to_pay_each_person" id="amount_to_pay_each_person" class="input" value="<?=$amount_to_pay_per_person?>" onkeyup="calculate_total()" required/>
-                    <div id="total_number" style="display:none"><?=$i?></div>
+                    <input type="number" id="total_number" value="<?=$i?>" style="display:none"/>
                     <div id="total_to_transfer_text"></div>
 
                     <input type="hidden" name="transaction_type" value="bulk_transfer"/>
