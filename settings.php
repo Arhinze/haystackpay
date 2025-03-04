@@ -1,12 +1,12 @@
 <?php
 
-include_once("/home/u590828029/domains/aguanit.com/public_html/views/Dashboard_Segments.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
     if($data){ //$data variable from php/account-manager.php
         // that means user is logged in:
         
         //display header
-        Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $site_mining_page_url = SITE_MINING_PAGE_URL, $Hi_user = $data->username);
+        Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username, $title="Settings - ".$site_name);
 
         if (isset($_POST["edit_account_data"])){
             //Update Data:
