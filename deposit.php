@@ -26,8 +26,8 @@ if($data) {// that means user is logged in:
             $code_out .= $code_array[$a];
         }
 
-        $code .= $alph1[0];
-        $code .= $alpha2[0];
+        $code_out .= $alph1[0];
+        $code_out .= $alpha2[0];
 
         //insert generated ps_attempt_refx to database(tr_attempts) to avoid duplicate transactions ~ this would be deleted once 1 transaction is made
         $refx_stmt = $pdo->prepare("INSERT INTO tr_attempts(user_id, rq_type, rq_amount, rq_time, ps_attempt_refx) VALUES (?, ?, ?, ?, ?)");
