@@ -33,16 +33,22 @@ if($data){// that means user is logged in:
         <h2>Your Transactions:</h2>
         <?php
             $no = 0;
-            foreach($hstkp_transactions->all_trs($data->user_id) as $all_h_tr) {
-                $no += 1;
-                $tr_color = ($all_h_tr->tr_type == "inflow") ? "green" : "red";
+            $all_trs_by_this_user = $hstkp_transactions->all_trs($data->user_id);
+            
+            if(count($all_trs_by_this_user) > 0) {
+                foreach ($all_trs_by_this_user as $all_h_tr) {
+                    $no += 1;
+                    $tr_color = ($all_h_tr->tr_type == "inflow") ? "green" : "red";
         ?>
-                <div style="color:<?=$tr_color?>;font-size:15px;margin-bottom:9px" onclick="show_div('tr_desc_div<?=$no?>')">
-                    <i class='fa fa-circle'></i> &nbsp; <?=$all_h_tr->tr_type?> - N<?=$all_h_tr->tr_amount?> - <?=$all_h_tr->tr_time?> <i class='fa fa-angle-down'></i>
-                </div>
-
-                <div id="tr_desc_div<?=$no?>"><?=$all_h_tr->tr_from?></div>
+                    <div style="color:<?=$tr_color?>;font-size:15px;margin-bottom:9px" onclick="show_div('tr_desc_div<?=$no?>')">
+                        <i class='fa fa-circle'></i> &nbsp; <?=$all_h_tr->tr_type?> - N<?=$all_h_tr->tr_amount?> - <?=$all_h_tr->tr_time?> <i class='fa fa-angle-down'></i>
+                    </div>
+    
+                    <div id="tr_desc_div<?=$no?>"><?=$all_h_tr->tr_from?></div>
         <?php
+                }
+            } else {
+                return "<i class='color:#888'> - All Your Transactions will appear here - </i>";
             }
         ?>
         <b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?>
