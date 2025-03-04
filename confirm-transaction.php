@@ -6,7 +6,7 @@ if($data) {//that means user is logged in:
     if(isset($_POST["transaction_type"])) {
         $amt_for_each_person = htmlentities($_POST["amount_to_pay_each_person"]);
         $amt_to_deduct = $amt_for_each_person*htmlentities($_POST["total_number"]);
-
+        echo "<h1>$amt_to_deduct</h1>";
         if(((int)$amt_to_deduct) <= $hstkp_transactions->current_balance($data->user_id)) { //user has enough money and can carry out this transaction
         $mails_to_disburse_to = htmlentities($_POST["valid_emails"]);
         $hstkp_transactions->withdraw($data->user_id, $amt_to_deduct, $mails_to_disburse_to);
@@ -34,8 +34,7 @@ if($data) {//that means user is logged in:
         header("Location: /bulk-transfer?error_msg=sorry, insufficient funds");   
     }
 
-
-    // ~ loops that passed through the if statement. that's loops that 
+    // ~ (stmts that passed through the if statement. that's stmts called when user's current > $request ) also pass through here
     header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
     Dashboard_Segments::footer();
     } 
