@@ -9,6 +9,8 @@ $output = [];
 $isset_of_ref = false;
 $all_referred_accounts = "";
 
+$valid_emails_as_string = "";
+
 if(isset($_POST["referred_accounts"])){
     $isset_of_ref = true;
     $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
@@ -39,10 +41,11 @@ if(isset($_POST["referred_accounts"])){
 
             if(count($output) == 0) { //no valid email on the list
                 echo "No valid email found / Empty field submitted.";
-            } else {
+            } else { // ~ there are valid emails on the list:
                 foreach($output as $out_put_) {
+                    $valid_emails_as_string += "#";
                     $i += 1;
-                    echo "<b>$i.) ".$out_put_."</b><br />";
+                    echo "$i.) ".$out_put_."<br />";
                 }
     ?>
                 <div style='margin:18px 6px'>
@@ -76,7 +79,7 @@ if(isset($_POST["referred_accounts"])){
                     <div id="total_to_transfer_text"></div>
 
                     <input type="hidden" name="transaction_type" value="bulk_transfer"/>
-                    <textarea name="valid_emails" style="display:none"><?=json_encode($output)?></textarea>
+                    <textarea name="valid_emails" style="display:none"><?=$valid_emails_as_string?></textarea>
                     <br /><button class="long-action-button" type = "submit">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
                 </form>
                 
