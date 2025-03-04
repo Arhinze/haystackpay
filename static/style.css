@@ -646,7 +646,6 @@ a{
 
 .new-input-div{
     position:relative;
-    width:90%;
 }
 
 .new-input-fa-icon{
@@ -660,7 +659,7 @@ a{
 }
 
 .new-input {
-    width:80%;
+    width:96%;
     height:37px;
     margin-top:6px;
     background-color: #fff;
