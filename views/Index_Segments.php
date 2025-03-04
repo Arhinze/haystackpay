@@ -190,7 +190,7 @@ class Index_Segments{
                     }
                 }
         
-                obj.open("GET","/ajax/ajax_cb.php?total_="+$total_amount);
+                obj.open("GET","/ajax/ajax_cb.php?total_="+total_amount);
                 obj.send(null);
             }
 
