@@ -3,6 +3,7 @@
 include_once($_SERVER["DOCUMENT_ROOT"]."/php/account-manager.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Mail.php");
 
 class Dashboard_Segments extends Index_Segments{
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "",$title=SITE_NAME){
