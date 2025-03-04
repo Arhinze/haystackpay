@@ -42,7 +42,7 @@ class Index_Segments{
         <body>
             <div class="headers" style="display:flex;padding:6px 3px">  
                 <div style="float:left;margin-top:-5px"><img src="/static/images/logo_rbg.png" class="site_name_logo"/></div>
-                <div style="float:left;margin-top:-19px">
+                <div style="float:left;margin-top:-11px">
                     <h3 class="site_name"><a href="/">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></a></h3>
                 </div>
             
