@@ -45,7 +45,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         $mail2 = mail("francisokoye48@gmail.com", "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);
 
         //mail user
-        $mail3 = mail($customer_mail, "Inflow ~ your deposit of N$dep_amount was successful", $user_successful_deposit_message, $headers);
+        $mail3 = mail($user_mail, "Inflow ~ your deposit of N$dep_amount was successful", $user_successful_deposit_message, $headers);
 
         check_mail_status($mail1);
         check_mail_status($mail2);

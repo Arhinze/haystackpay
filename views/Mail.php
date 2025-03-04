@@ -3,9 +3,12 @@
 ini_set("display_errors", 1);
 $username = "";
 $dep_amount ="";
+$user_mail ="";
 if($data) {
     $username = $data->username;
+    $user_mail = $data->user_email;
 }
+
 if(isset($_POST["deposit_amount"])) {
     $dep_amount = htmlentities($_POST["deposit_amount"]);
 }
