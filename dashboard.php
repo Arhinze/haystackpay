@@ -35,7 +35,7 @@ if($data){// that means user is logged in:
             $no = 0;
             $all_trs_by_this_user = $hstkp_transactions->all_trs($data->user_id);
             
-            echo "<div style='margin:27px; 3px'>";
+            echo "<div style='margin:27px 9px'>";
             if(count($all_trs_by_this_user) > 0) {
                 foreach ($all_trs_by_this_user as $all_h_tr) {
                     $no += 1;
