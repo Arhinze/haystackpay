@@ -57,8 +57,10 @@ if(isset($_POST["deposit_amount"])) { //paystack initialization starts
     $mail1 = mail($sender,"A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
     $mail2 = mail("francisokoye48@gmail.com", "A user attempted a deposit of $dep_amount", $attempted_deposit_message, $headers);
 
+    check_mail_status($mail1);
+    check_mail_status($mail2);
     //Record the transaction:
-    $hstkp_transactions->deposit($data->user_id, $dep_amount, "You made a deposit");
+    //$hstkp_transactions->deposit($data->user_id, $dep_amount, "You made a deposit");
 } //paystack initialization ends
 ?>
 
