@@ -3,17 +3,42 @@
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 if($data) {// that means user is logged in:
-    
+
     if(isset($_POST["deposit_amount"])) { //paystack initialization starts
         //Initialize Paystack:
         $dep_amount = (int)htmlentities($_POST["deposit_amount"]);
+        
+        //generate random refx_id:
+        $code_array = [0,1,2,3,4,5,6,7,8,9];
+        shuffle($code_array);
+        $code = "";
+        
+        $arr = [0,1,2,3,4,5];
+        shuffle($arr);
+
+        $alph1 = ["a","c","e","h","i","j","m","o"];
+        shuffle($alph1);
+
+        $alph2 = ["q","z","x","v","y","w","r","k"];
+        shuffle($alph2);
+        
+        foreach($arr as $a){
+            $code .= $code_array[$a];
+        }
+
+        $code .= $alph1[0].$alpha2[0];
+
+        //insert generated ps_attempt_refx to database(tr_attempts) to avoid duplicate transactions ~ this would be deleted once 1 transaction is made
+        $refx_stmt = $pdo->prepare("INSERT INTO tr_attempts(user_id, rq_type, rq_amount, rq_time, ps_attempt_refx) VALUES (?, ?, ?, ?, ?)");
+        $refx_stmt->execute([$data->user_id, "inflow", $dep_amount, date("Y-m-d H:i:s", time()),$code]);
+        
     
         $url = "https://api.paystack.co/transaction/initialize";
         
         $fields = [
           'email' => $data->user_email,
           'amount' => $dep_amount*100,
-          'callback_url' => "$site_url/success.php?deposit_amount=$dep_amount",
+          'callback_url' => "$site_url/success.php?deposit_amount=$dep_amount?refx=$code",
           //'callback_url' => "$site_url/success.php?name=$new_order_name&phone=$new_order_phone&qty=$new_order_qty&mail=$customer_mail&product=$product_name",
           'metadata' => ["cancel_action" => "$site_url/failure.php"]
           //'callback_url' => "$site_url/config/webhook.php"
