@@ -33,8 +33,10 @@ class Transactions {
         $cb_in_data = $cb_in_stmt->fetchAll(PDO::FETCH_OBJ);
 
         $total_cb_in = 0;
-        foreach($cb_in_data as $cb_in) {
-            $total_cb_in += $cb_in;
+        if(count($cb_in_data) > 0) {
+            foreach($cb_in_data as $cb_in) {
+                $total_cb_in += $cb_in;
+            }
         }
 
         //outflow:
@@ -43,8 +45,10 @@ class Transactions {
         $cb_out_data = $cb_out_stmt->fetchAll(PDO::FETCH_OBJ);
 
         $total_cb_out = 0;
-        foreach($cb_out_data as $cb_out) {
-            $total_cb_out += $cb_out;
+        if(count($cb_out_data) > 0) {
+            foreach($cb_out_data as $cb_out) {
+                $total_cb_out += $cb_out;
+            }
         }
 
         //current balance:
