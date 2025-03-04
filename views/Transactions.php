@@ -79,11 +79,7 @@ class Transactions {
         $all_trs_stmt->execute([$user_id, 0, 1000]);
         
         $data = $all_trs_stmt->fetchAll(PDO::FETCH_OBJ);
-        if(count($data) > 0) {
-            return $data;
-        } else {
-            return "<i class='color:#888'> - All Your Transactions will appear here - </i>";
-        }
+        return $data;
     }
 }
 
