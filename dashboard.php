@@ -41,11 +41,11 @@ if($data){// that means user is logged in:
                     $no += 1;
                     $tr_color = ($all_h_tr->tr_type == "inflow") ? "green" : "red";
         ?>
-                    <div style="color:<?=$tr_color?>;font-size:15px;margin-bottom:9px" onclick="show_div('tr_desc_div<?=$no?>')">
+                    <div style="color:<?=$tr_color?>;font-size:12px;margin-bottom:9px" onclick="show_div('tr_desc_div<?=$no?>')">
                         <i class='fa fa-circle'></i> &nbsp; <?=$all_h_tr->tr_type?> - N<?=$all_h_tr->tr_amount?> - <?=$all_h_tr->tr_time?> <i class='fa fa-angle-down'></i>
                     </div>
     
-                    <div id="tr_desc_div<?=$no?>" style="display:none;font-size:15px;margin:9px;background-color:#fff;padding:12px;9px;border-radius:9px;border:1px solid #ff9100"><?=$all_h_tr->tr_from?></div>
+                    <div id="tr_desc_div<?=$no?>" style="display:none;font-size:15px;margin:9px;background-color:#fff;padding:12px;9px;border-radius:9px;border:1px solid #ff9100;box-shadow:0 0 6px 0 #888 inset"><?=$all_h_tr->tr_from?></div>
         <?php
                 }
             } else {
