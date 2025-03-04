@@ -12,7 +12,7 @@ if($data) {//that means user is logged in:
         //disburse funds to all emails
         $all_valid_emails = explode("#", $mails_to_disburse_to);
         foreach($all_valid_emails as $ave) {
-            if (count($hstkp_transactions->user_exists($ave))>0) {
+            if ($hstkp_transactions->user_exists($ave)) {
                 $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
                 // - mail() $ave
             } else {
