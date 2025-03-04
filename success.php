@@ -35,7 +35,11 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
     </div>
 
     <?php
+        // $_GET variables:
+        $dep_amount = htmlentities($_GET["deposit_amount"]);
+
         //Insert deposit transaction . .
+        $hstkp_transactions->deposit($data->user_id, $dep_amount, "You made a deposit");
 
         //mail admin
         $mail1 = mail($sender, "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);

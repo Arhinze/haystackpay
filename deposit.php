@@ -19,7 +19,7 @@ if(isset($_POST["deposit_amount"])) { //paystack initialization starts
     $fields = [
       'email' => $data->user_email,
       'amount' => $dep_amount*100,
-      'callback_url' => "$site_url/dashboard",
+      'callback_url' => "$site_url/success.php?deposit_amount=$dep_amount",
       //'callback_url' => "$site_url/success.php?name=$new_order_name&phone=$new_order_phone&qty=$new_order_qty&mail=$customer_mail&product=$product_name",
       'metadata' => ["cancel_action" => "$site_url/failure.php"]
       //'callback_url' => "$site_url/config/webhook.php"
@@ -60,7 +60,7 @@ if(isset($_POST["deposit_amount"])) { //paystack initialization starts
     check_mail_status($mail1);
     check_mail_status($mail2);
     //Record the transaction:
-    //$hstkp_transactions->deposit($data->user_id, $dep_amount, "You made a deposit");
+    //$hstkp_transactions->deposit($data->user_id, $dep_amount, "You made a deposit"); ~ should be on success page
 } //paystack initialization ends
 ?>
 
