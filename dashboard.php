@@ -68,6 +68,8 @@ if($data){// that means user is logged in:
             
             <i style="margin-left:-29px;color:#fff" class="fa fa-copy" onclick="copyText('referral_link')"></i>
             <div id="alert_text_copied"></div>
+
+        <a name="referral_link" id="referral_link"></a>
         <br /> 
     </div>
     <!-- Referral Link section ends -->
