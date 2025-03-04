@@ -1,6 +1,7 @@
 <?php
 
 include_once($_SERVER["DOCUMENT_ROOT"]."/php/account-manager.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/config/paystack.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Mail.php");
