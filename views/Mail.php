@@ -2,9 +2,12 @@
 
 ini_set("display_errors", 1);
 $username = "";
-//$dep_amount ="";
+$dep_amount ="";
 if($data) {
     $username = $data->username;
+}
+if(isset($_POST["deposit_amount"])) {
+    $dep_amount = htmlentities($_POST["deposit_amount"]);
 }
       
 $attempted_deposit_order = <<<HTML
