@@ -10,7 +10,7 @@ if($data) {//that means user is logged in:
         $hstkp_transactions->withdraw($data->user_id, $amt_to_deduct, $mails_to_disburse_to);
 
         //disburse funds to all emails
-        $all_valid_emails = json_decode($output);
+        $all_valid_emails = json_decode($mails_to_disburse_to);
         foreach($all_valid_emails as $ave) {
             if (user_exists($ave)) {
                 $hstkp_transactions->deposit($ave->user_id, $amt_for_each_person, "Received from: ".$data->username); 
