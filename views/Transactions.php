@@ -14,14 +14,14 @@ class Transactions {
 
     public function deposit($user_id,$amt,$from){
         $dep_stmt = $this->pdo->prepare("INSERT INTO transactions(tr_id, user_id, tr_type, tr_amount, tr_time, tr_from) VALUES (?,?,?,?,?,?)");
-        $dep_stmt->execute([null, $user_id, "inflow", $amt, date("Y-m-d h:ia",time(), $from)]);
+        $dep_stmt->execute([null, $user_id, "inflow", $amt, date("Y-m-d H:i:s",time(), $from)]);
 
         return $this->tr_alert("Deposit made successfully"); 
     }
 
     public function withdraw($user_id,$amt,$description){
         $wit_stmt = $this->pdo->prepare("INSERT INTO transactions(tr_id, user_id, tr_type, tr_amount, tr_time, tr_from) VALUES (?,?,?,?,?,?)");
-        $wit_stmt->execute([null, $user_id, "outflow", $amt, date("Y-m-d h:ia",time(), $description)]);
+        $wit_stmt->execute([null, $user_id, "outflow", $amt, date("Y-m-d H:i:s",time()), $description]);
 
         return $this->tr_alert("Withdrawal made successfully"); 
     }
