@@ -639,6 +639,7 @@ a{
     height:33px;
     margin-top:6px;
     background-color:#fff;
+    font-size:18px;
     color:var(--site_color_alt);
     border:1px solid var(--site_color_alt);
     border-radius: 6px;
@@ -665,6 +666,7 @@ a{
     background-color: #fff;
     color:var(--site_color_alt);
     font-weight:bold;
+    font-size:18px;
     border:1px solid #525050;
     border-radius: 6px;
     border-left:54px solid #fff;
