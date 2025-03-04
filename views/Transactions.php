@@ -9,7 +9,7 @@ class Transactions {
     }
 
     private function tr_alert($message){
-        echo "<div class='invalid' style='background-color:green'>".$message."</div>";
+        echo "<div class='invalid' style='background-color:green;color:#fff'>".$message."</div>";
     }
 
     public function deposit($user_id,$amt,$from){
