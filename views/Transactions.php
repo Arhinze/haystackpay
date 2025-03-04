@@ -90,7 +90,7 @@ class Transactions {
     //This shouldn't be here though, please find somewhere else to place it.
     public function user_exists($user_id) {
         $stmt = $this->pdo->prepare("SELECT * FROM haystack_users WHERE (username = ? OR user_email = ?) LIMIT ?, ?");
-        $stmt->execute([$user_id, 0, 1]);
+        $stmt->execute([$user_id, $user_id, 0, 1]);
         
         $data = $stmt->fetch(PDO::FETCH_OBJ);
         if($data) {
