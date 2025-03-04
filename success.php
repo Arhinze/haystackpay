@@ -65,7 +65,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
             check_mail_status($mail2);
             check_mail_status($mail3);
         } else {
-            echo "<div class='invalid' style='background-color:green'>Please proceed to the dashboard</div>";
+            echo "<div class='invalid' style='background-color:green;color:#fff'>Please proceed to the dashboard</div>";
         }
 
     Dashboard_Segments::footer();
