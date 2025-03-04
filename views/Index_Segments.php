@@ -180,6 +180,18 @@ class Index_Segments{
                 total_amount = Number(total_num) * Number(amt_for_each);
     
                 document.getElementById("total_to_transfer_text").innerHTML = "<div style='margin:12px 3px'>Total cost of transaction: <b><i class='fa fa-naira'></i>N "+total_amount.toString()+"</b></div>";
+
+                obj = new XMLHttpRequest;
+                obj.onreadystatechange = function(){
+                    if(obj.readyState == 4){
+                        if (document.getElementById("current_balance_text")){
+                            document.getElementById("current_balance_text").innerHTML = obj.responseText;
+                        }
+                    }
+                }
+        
+                obj.open("GET","/ajax/ajax_cb.php?total_="+$total_amount);
+                obj.send(null);
             }
 
         </script>
