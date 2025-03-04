@@ -51,7 +51,7 @@ if($data){// that means user is logged in:
                 echo "<i class='color:#888'> - All Your Transactions will appear here - </i>";
             }
         ?>
-        <b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?>
+        <div><b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?></div>
     </div>
 
     <!-- Referral Link section starts -->
