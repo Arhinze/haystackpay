@@ -7,7 +7,6 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
         //display header
         Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username, $title="Deposit Successful");
 ?>
- 
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,7 +46,6 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
         //mail user
         $mail3 = mail($customer_mail, "Inflow ~ your deposit of N$dep_amount was successful", $user_successful_deposit_message, $headers);
-
 
         check_mail_status($mail1);
         check_mail_status($mail2);
