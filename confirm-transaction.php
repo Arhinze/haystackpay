@@ -1,6 +1,7 @@
 <?php
 
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 
 if($data) {//user is logged in: -- $data from /php/account-manager.php
     Dashboard_Segments::header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = $data->username,$title=SITE_NAME." - Confirm Transaction");
