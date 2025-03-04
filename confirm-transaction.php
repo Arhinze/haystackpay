@@ -13,7 +13,7 @@ if($data) {//that means user is logged in:
         $all_valid_emails = explode("#", $mails_to_disburse_to);
         foreach($all_valid_emails as $ave) {
             if ($hstkp_transactions->user_exists($ave)) {
-                $hstkp_transactions->deposit($ave->user_id, $amt_for_each_person, "Received from: ".$data->username); 
+                $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
                 // - mail() $ave
             } else {
                 $p_stmt = $pdo->prepare("INSERT INTO haystack_users(real_name, username, user_email, `password`,airdrop_status,twitter_username,avax_wallet_address,aguat_wallet_address,referred_by,entry_date,mining_status,mining_start_time) VALUES(?, ?,?, ?, ?, ?,?,?,?,?,?,?)");
