@@ -19,12 +19,3 @@ if($data) { // ~ user is logged in
 }
 
 ?>
-
-<script> 
-    button_status = document.getElelmentById("proceed_to_pay_button");
-    if((document.getElementById("cb_id").style.color) == "green") {
-        $button_status.disabled = true;
-    } else {
-        $button_status.disabled = false;
-    }
-</script>
