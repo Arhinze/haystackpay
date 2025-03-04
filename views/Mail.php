@@ -49,7 +49,7 @@ HTML;
 $user_successful_deposit_message = <<<HTML
     $mail_body_top
         <p  style ="font-family:Trirong;">
-            Congratulations, <b>$username</b>your deposit of <b>$dep_amount</b> on <b>$site_name</b> was successful. 
+            Congratulations, <b>$username</b>, your deposit of <b>$dep_amount</b> on <b>$site_name</b> was successful. 
         </p>
         <p>
             <div>
