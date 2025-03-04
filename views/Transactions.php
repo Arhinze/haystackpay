@@ -63,7 +63,7 @@ class Transactions {
 
     public function tr_time($tr_id) {
         //Get last user transaction id
-        $tr_time_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE tr_id = ? LIMIT ?, ? ORDER BY tr_id DESC");
+        $tr_time_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE tr_id = ? ORDER BY tr_id DESC LIMIT ?, ?");
         $tr_time_stmt->execute([$tr_id, 0, 1]);
 
         $tr_time_data = $tr_time_stmt->fetch(PDO::FETCH_OBJ);
