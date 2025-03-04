@@ -29,7 +29,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 <div class="sign-in-welcome">
     <h3 style="color:#fff"><i class="fa fa-gear"></i>&nbsp; Settings</h3>
-    <a href="/"><i class="fa fa-home"> Home</i></a> - Profile
+    <a href="/"><b><i class="fa fa-home"> Home</i></b></a> - Profile
 </div>
 
 <!-- Account Data: -->
@@ -63,7 +63,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 <div class="clear" style="padding:6px 8px;border-top:1px solid #888;margin:12px">
 
-<div style="float:right"><button type="submit" class="button" style="background-color:#fff"><i class="fa fa-gear"></i> Change Account Data</button></div>
+<div style="float:right"><button type="submit" class="button" style="background-color:#0bee3ccc;color:#fff"><i class="fa fa-gear"></i> Change Account Data</button></div>
 
 </div>
 
