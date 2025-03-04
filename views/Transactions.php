@@ -78,7 +78,12 @@ class Transactions {
         $all_trs_stmt = $this->pdo->prepare("SELECT * FROM transactions WHERE user_id = ? LIMIT ?, ?");
         $all_trs_stmt->execute([$user_id, 0, 1000]);
         
-        return $all_trs_stmt->fetchAll(PDO::FETCH_OBJ);
+        $data = $all_trs_stmt->fetchAll(PDO::FETCH_OBJ);
+        if(count($data > 0)) {
+            return $data;
+        } else {
+            return "<i class='color:#888'> - All Your Transactions will appear here - </i>";
+        }
     }
 }
 
