@@ -4,7 +4,28 @@ ini_set("display_errors", '1'); //for testing purposes..
 include_once($_SERVER["DOCUMENT_ROOT"]."/php/connection.php");
 
 class Index_Segments{
+    public static function main_header($site_name = SITE_NAME_SHORT) {
+        echo <<<HTML
+            <div class="headers" style="display:flex;padding:6px 3px"> <!-- start of .headers --> 
+                <div style="float:left;margin-top:-5px"><img src="/static/images/logo_rbg.png" class="site_name_logo"/></div>
+                <div style="float:left;margin-top:-5px">
+                    <h3 class="site_name"><a href="/">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></a></h3>
+                </div>
+            
+                <div class="menu-icon" style="position:fixed;right:9px">
+                    <label for = "menu-box">
+                        <i class="fa fa-bars"></i>
+                    </label>
+                </div> 
+            </div> <a name="#top"></a> <!-- end of .headers --> 
+        HTML;
+    }
+    
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "", $title=SITE_NAME){
+        
+        $main_header = Index_Segments::main_header();
+        $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
+
         if (isset($_GET["ref"])) {
             $ref = htmlentities($_GET["ref"]);
 
@@ -16,8 +37,6 @@ class Index_Segments{
             //set new referer cookie:
             setcookie("ref", $ref, time()+(12*3600), "/");
         }
-
-        $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
 
         echo <<<HTML
         <!doctype html>
@@ -40,21 +59,7 @@ class Index_Segments{
               
         </head>
         <body>
-            <div class="headers" style="display:flex;padding:6px 3px">  
-                <div style="float:left;margin-top:-5px"><img src="/static/images/logo_rbg.png" class="site_name_logo"/></div>
-                <div style="float:left;margin-top:-5px">
-                    <h3 class="site_name"><a href="/">HAYSTACK<span style="color:#ff9100">PAY</span><!--$site_name--></a></h3>
-                </div>
-            
-                <div class="menu-icon" style="position:fixed;right:9px">
-                    <label for = "menu-box">
-                        <i class="fa fa-bars"></i>
-                    </label>
-                </div> 
-            </div> 
-        
-            <a name="#top"></a>
-              
+            $main_header
             <div class="menu-list-div">  
                 <input type="checkbox" id="menu-box" class="menu-box"/>
                 <ul class="menu-list">
