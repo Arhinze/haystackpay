@@ -21,7 +21,7 @@ if($data) {//user is logged in: -- $data from /php/account-manager.php
     <?php 
         if(isset($_POST["transaction_type"])) {
             $amt_to_deduct = htmlentities($_POST["amount_to_pay_each_person"])*htmlentities($_POST["total_number"]);
-            $hstkp_transactions->deduct($amt_to_deduct);
+            $hstkp_transactions->withdraw($amt_to_deduct);
         }
     ?>
 </div>

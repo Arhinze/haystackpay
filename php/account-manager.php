@@ -68,5 +68,5 @@ class Transactions {
     }
 }
 
-$transactions = new Transactions;
-$transactions->inject($pdo);
+$hstkp_transactions = new Transactions;
+$hstkp_transactions->inject($pdo);
