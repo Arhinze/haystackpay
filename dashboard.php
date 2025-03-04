@@ -30,7 +30,7 @@ if($data){// that means user is logged in:
     <!--End of: This is going off soon -->
 
     <div class="dashboard">
-        <h2>Your Transactions:</h2>
+        <h2>Your Transactions:</h2><hr />
         <?php
             $no = 0;
             $all_trs_by_this_user = $hstkp_transactions->all_trs($data->user_id);
@@ -51,7 +51,7 @@ if($data){// that means user is logged in:
                 echo "<i class='color:#888'> - All Your Transactions will appear here - </i>";
             }
         ?>
-        <div><b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?></div>
+        <div style="margin-top:21px"><b>Current Balance: </b><?=$hstkp_transactions->current_balance($data->user_id)?></div>
     </div>
 
     <!-- Referral Link section starts -->
