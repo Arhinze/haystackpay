@@ -29,7 +29,7 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 <div class="sign-in-welcome">
     <h3 style="color:#fff"><i class="fa fa-gear"></i>&nbsp; Settings</h3>
-    <a href="/"><b><i class="fa fa-home"> Home</i></b></a> - Profile
+    <a href="/"><b><i class="fa fa-home"></i> Home</b></a> - Profile
 </div>
 
 <!-- Account Data: -->
