@@ -215,19 +215,19 @@ if (isset($_POST["code"])) {
 
 <div class="sign-in-box">
     <div style="margin-bottom:24px">
-        <span style="color:<?=$site_color_light?>;font-size:24px;font-weight:bold"><i class="fa fa-home"></i> - Reset Login Password</span><br />
-        <b style="color:<?=$site_color_light?>"><?=$site_name?></b>
+        <span style="color:#fff;font-size:24px;font-weight:bold"><i class="fa fa-home"></i> - Reset Login Password</span><br />
+        <b style="color:#fff"><?=$site_name?></b>
     </div>
 
     <form method="post" action="" id="email"> 
         <input type="text" name="email" placeholder="Enter Your Email Address: " class="input" 
         <?php if (isset($_POST["email"])) { ?> value="<?=htmlentities($_POST["email"])?>" <?php } if(!$c || isset($_POST["password1"])) { ?>/>    
 
-        <button type="submit" class="long-action-button" style="margin-top:12px">Submit <i class="fa fa-telegram"></i> </button> <br />
+        <button type="submit" class="long-action-button" style="margin-top:12px;background-color:#ff9100">Submit <i class="fa fa-telegram"></i> </button> <br />
 
         <div style="font-size:15px;margin-top:15px">
-            <a href="/login" style="font-weight:bold;color:<?=$site_color_light?>">Login</a>.
-            Don't have an account? <a href="/sign-up" style="font-weight:bold;color:<?=$site_color_light?>">Sign Up</a>
+            <a href="/login" style="font-weight:bold">Login</a>.
+            Don't have an account? <a href="/sign-up" style="font-weight:bold">Sign Up</a>
         </div>
         <?php } ?>
     </form>
