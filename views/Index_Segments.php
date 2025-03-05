@@ -71,7 +71,7 @@ class Index_Segments{
                     <li><a href="/sign-up">Sign Up</a></li>
                     <li><a href="$site_url#bulk_tr">Bulk Transfer </a></li>
                     <!--<li><a href="/how-it-works">How it works</a></li>-->
-                    <li><a href="https://wa.link/94f4vk">Contact us</a></li>
+                    <li><a href="https://wa.link/hgzcrj">Contact us</a></li>
                 </ul> 
             </div> 
        HTML;
