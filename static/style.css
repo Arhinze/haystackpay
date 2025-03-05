@@ -436,6 +436,13 @@ a{
     z-index:3;
 }
 
+.dashboard_form{
+    background-color:#fff;
+    padding:12px;
+    border-radius:9px;
+    border:1px solid #ff9100;
+}
+
 @keyframes pop_up{
     0%{
         opacity:1;
