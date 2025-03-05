@@ -88,7 +88,7 @@ if(isset($_POST["referred_accounts"])){
 
                     <input type="hidden" name="transaction_type" value="bulk_transfer"/>
                     <textarea name="valid_emails" style="display:none"><?=$valid_emails_as_string?></textarea>
-                    <br /><button class="long-action-button" type = "submit" id="proceed_to_pay_button" disabled>Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
+                    <br /><button class="long-action-button" type = "submit" id="proceed_to_pay_button">Proceed to payment <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i> </button><br /><br />
                 </form>
                 
     <?php
