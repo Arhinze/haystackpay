@@ -6,7 +6,7 @@ if($data) {// that means user is logged in:
     if(isset($_POST["withdrawal_amount"])) { //paystack initialization starts
         
         $with_amt = (int)htmlentities($_POST["withdrawal_amount"]);
-        echo "<div class='invalid' style='color:#fff'>This feature is coming soon</div>";
+        echo "<div class='pop_up' style='color:#fff;background-color:#ff9100'>This feature is coming soon</div>";
         //Initialize Paystack:
         
     } //paystack initialization ends
