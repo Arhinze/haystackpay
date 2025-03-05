@@ -745,8 +745,8 @@ a{
     font-size:30px;
     background-color: var(--site_color_alt);
     width:45px; 
-    height:33px;
-    padding-top:12px;
+    height:36px;
+    padding-top:9px;
     border-radius:100%;
     text-align: center;
 }
