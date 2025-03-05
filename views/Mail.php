@@ -116,8 +116,8 @@ $bulk_transferer_message = <<<HTML
         <p>Hello Sir/Ma, </p>
         
         <p>Congratulations, your transfer of N$amt_to_deduct to $total_number user(s) was successful</p>
-        <p>These <b>$total_number</b> users have received a sum of <b>N$amt_for_each_person</b>.</p>
-        <p>Your dashboard page contains a receipt of this transaction showing the email adresses involved.</p>
+        <p>These <b>$total_number</b> users have received a sum of <b>N$amt_for_each_person</b> each.</p>
+        <p>Your dashboard page contains a receipt for this transaction - showing the email addresses involved.</p>
 
         <p>Thank you so much for your continuous support as we look forward to working more with you.</p>
         <p>Kindly keep in touch with us on our various social media platforms.</p>
