@@ -6,6 +6,7 @@ if($data) {// that means user is logged in:
     if(isset($_POST["withdrawal_amount"])) { //paystack initialization starts
         
         $with_amt = (int)htmlentities($_POST["withdrawal_amount"]);
+        echo "<div class='invalid'>This feature is coming soon</div>";
         //Initialize Paystack:
         
     } //paystack initialization ends
@@ -19,8 +20,10 @@ if($data) {// that means user is logged in:
     <h2>Withdraw Money</h2>
     <form method="post" action="" style="background-color:#fff;padding:15px 6px;border-radius:9px;border:1px solid #ff9100">
         <input type="number" class="input" id="withdrawal_amount" name="withdrawal_amount" placeholder="How much would you like to withdraw" style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" onkeyup="check_withdraw_status()" required/>
+        
         <div id="withraw_status"></div>
         <div style="margin-bottom:12px"><?="Current Balance: <b>N <span id='cb_on_wp'>",$hstkp_transactions->current_balance($data->user_id), "</span></b>"?></div>
+
         <button type="submit" class="long-action-button" id="withdraw_confirm_button" style="background-color:green;color:#fff;width:96%">
             Confirm
         </button>
@@ -36,7 +39,7 @@ if($data) {// that means user is logged in:
         if(withdrawal_amount <= cb_on_wp) {
             withdraw_confirm_button.disabled = false;
         } else {
-            withdraw_confirm_button.disabled = "background-color:#888;color:#fff;width:96%";
+            withdraw_confirm_button.style = "background-color:#888;color:#fff;width:96%";
             withdraw_confirm_button.disabled = true;
         }
     }
