@@ -95,7 +95,7 @@ HTML;
 
     public static function dashboard_body_top() {
         echo <<<HTML
-            <div class="dashboard_form" style="display:flex;justify-content:center;text-align:center">
+            <div class="dashboard_form" style="display:flex;justify-content:center">
                 <div class="dashboard_top_section">
                     <div class="dashboard_top_div"><i class="fa fa-arrow-circle-down"></i></div>
                     <div class="dashboard_top_text">Deposit</div>
