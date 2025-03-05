@@ -4,9 +4,13 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 
 if($data) {//that means user is logged in:
     if(isset($_POST["transaction_type"])) {
+        
         $amt_for_each_person = htmlentities($_POST["amount_to_pay_each_person"]);
-        $amt_to_deduct = $amt_for_each_person*htmlentities($_POST["total_number"]);
+        $total_number = htmlentities($_POST["total_number"]);
+        $amt_to_deduct = $amt_for_each_person*$total_number;
+
         echo "<h1>$amt_to_deduct</h1>";
+
         if(((int)$amt_to_deduct) <= $hstkp_transactions->current_balance($data->user_id)) { //user has enough money and can carry out this transaction
         $mails_to_disburse_to = htmlentities($_POST["valid_emails"]);
         $hstkp_transactions->withdraw($data->user_id, $amt_to_deduct, $mails_to_disburse_to);
@@ -17,7 +21,10 @@ if($data) {//that means user is logged in:
             if(!empty($ave)) {//so as not to insert empty string
                 if ($hstkp_transactions->user_exists($ave)) {
                     $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
-                    // - mail() $ave
+
+                    /// - mail() $ave ~ replacing soon with a cron job that sends emails
+                    $mail_user = mail($ave, "You received a top up of N$amt_for_each_person", $user_received_deposit_message, $headers);
+                    check_mail_status($mail_user);
                 } else {
                     $p_stmt = $pdo->prepare("INSERT INTO haystack_users(real_name, username, user_email, `password`,airdrop_status,twitter_username,avax_wallet_address,aguat_wallet_address,referred_by,entry_date,mining_status,mining_start_time) VALUES(?, ?,?, ?, ?, ?,?,?,?,?,?,?)");
     
@@ -25,11 +32,18 @@ if($data) {//that means user is logged in:
     
                     if ($hstkp_transactions->user_exists($ave)) {//now user exists if previously does not exist . .
                         $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
-                        // - mail() $ave
+
+                        // - mail() $ave ~ replacing soon with a cron job that sends emails
+                        $mail_user = mail($ave, "You received a top up of N$amt_for_each_person", $user_received_deposit_message, $headers);
+                        check_mail_status($mail_user);
                     }
                 }
             } //end of if(!empty($ave))
         }
+
+        //message admin that a bulk transfer has been made:
+        $mail_admin = mail($sender, "A user sent a total of N$amt_to_deduct to $total_number users", $admin_user_received_deposit_message, $headers);
+        check_mail_status($mail_admin);
     } else {// ~ user does not have enough money for this transaction 
         header("Location: /bulk-transfer?error_msg=sorry, insufficient funds");   
     }
@@ -41,4 +55,3 @@ if($data) {//that means user is logged in:
 } else {
     header("location:/login");
 }
-?>

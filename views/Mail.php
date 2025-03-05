@@ -4,6 +4,9 @@ ini_set("display_errors", 1);
 $username = "";
 $dep_amount ="";
 $user_mail ="";
+$total_number = "";
+$amount_for_each_person = "";
+
 if($data) {
     $username = $data->username;
     $user_mail = $data->user_email;
@@ -16,6 +19,13 @@ if(isset($_POST["deposit_amount"])) {
 if(isset($_GET["deposit_amount"])) {
     $dep_amount = htmlentities($_GET["deposit_amount"]);
 }
+
+if(isset($_POST["transaction_type"])) {
+    $amt_for_each_person = htmlentities($_POST["amount_to_pay_each_person"]);
+    $total_number = htmlentities($_POST["total_number"]);
+    $amt_to_deduct = $amt_for_each_person*$total_number;
+}
+
 
 $mail_body_top = <<<HTML
     <html>
@@ -41,7 +51,7 @@ HTML;
 
 $admin_successful_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Sir/Ma, A user successfully desposited: $dep_amount.</p>
+        <p>Hello Sir/Ma, A user successfully desposited: N $dep_amount.</p>
         <p>Username: <b>$username</b>, Email: <b>$user_mail</b>.</p>
     $mail_body_bottom
 HTML;
@@ -65,6 +75,26 @@ $user_successful_deposit_message = <<<HTML
     $mail_body_bottom
 HTML;
 
+$user_received_deposit_message = <<<HTML
+    $mail_body_top
+        <p>Hello Sir/Ma, you just received a top up of <b>:N $amount_for_each_person </b> from a haystackpay user with username: <b>$username</b>. You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
+
+        <p>To learn more about haystackpay, visit us today on <a href="$site_url">haystackpay.com</a> .</p>
+        <p>Connect with us on our various social media platforms and do not forget to share with your friends.</p>
+        <p>Thank you.</p>
+
+        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px"> Visit your dashboard </a></div>
+    $mail_body_bottom
+HTML;
+
+$admin_user_received_deposit_message = <<<HTML
+    $mail_body_top
+        <p>Hello Admin, a user with username: <b>$username</b> just made a bulk transfer of <b>:N $amt_to_deduct</b> to $total_number users.</p>
+
+        <div><a href="$site_url/site-users" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px"> Visit control panel </a></div>
+    $mail_body_bottom
+HTML;
+
 $sender = "admin@$site_url_short";
 
 $headers = "From: $sender \r\n";
@@ -79,3 +109,7 @@ function check_mail_status($mail) {
         echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b> </span>";
     }
 }
+
+
+// to send a mail: ~ updating soon to $mail_sender->send() with only two arguments ($receiver, $subject, $message)
+//$mail_xyx = mail($receiver, "A user deposited a sum of N$dep_amount", $user_received_deposit_message, $headers);;
