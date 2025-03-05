@@ -445,13 +445,13 @@ a{
     background-color:#f5c07a;
     padding:15px;
     border-radius:9px;
-    font-size:42px;
     margin:18px;
+    font-size:15px;
+    text-align: center;
 }
 
 .dashboard_top_text{
-    font-size:15px;
-    text-align: center;
+    
 }
 
 .dashboard_form{
