@@ -18,7 +18,7 @@ if($data) {// that means user is logged in:
 
 <div style="margin:180px 15px 90px 15px">
     <h2>Withdraw Money</h2>
-    <form method="post" action="" style="background-color:#fff;padding:15px 6px;border-radius:9px;border:1px solid #ff9100">
+    <form method="post" action="" style="background-color:#fff;padding:15px 12px;border-radius:9px;border:1px solid #ff9100">
         <input type="number" class="input" id="withdrawal_amount" name="withdrawal_amount" placeholder="How much would you like to withdraw" style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" onkeyup="check_withdraw_status()" required/>
         
         <div id="withraw_status"></div>
