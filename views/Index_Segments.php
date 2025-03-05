@@ -205,8 +205,6 @@ class Index_Segments{
 
                 //turn current balance text green or red depending on if it's > or < than total_amount
                 current_balance_text = document.getElementById("current_balance_text");
-                //current_balance_text.style="color:green";//until proven otherwise
-
                 if(Number(current_balance_text.innerHTML) >= total_amount) {
                     current_balance_text.style="color:green";
                 } else {
