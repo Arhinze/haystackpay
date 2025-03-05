@@ -442,13 +442,13 @@ a{
 
 .dashboard_top_div {
     color:#ff9100;
-    background-color:#ffd79f;
+    background-color:#f5c07a;
     border-radius:9px;
-    margin:9px;
-    width:60px;
-    height:51px;
-    padding-top:9px;
-    font-size:36px;
+    margin:18px;
+    width:75px;
+    height:60px;
+    padding-top:15px;
+    font-size:42px;
     text-align:center;
 }
 
