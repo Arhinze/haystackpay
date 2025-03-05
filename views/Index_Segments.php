@@ -211,7 +211,7 @@ class Index_Segments{
                     current_balance_text.style="color:red";
                 }
 
-                $tr_color = ($current_balance >= $total_from_user) ? "green" : "red";
+                //tr_color = (current_balance >= total_from_user) ? "green" : "red";
             }
 
         </script>
