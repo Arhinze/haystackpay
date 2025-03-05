@@ -6,7 +6,7 @@ $username = "";
 $dep_amount ="";
 $user_mail ="";
 $total_number = "";
-$amount_for_each_person = "";
+$amt_for_each_person = "";
 $amt_to_deduct = "";
 
 if($data) {
@@ -79,7 +79,7 @@ HTML;
 
 $user_received_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Sir/Ma, you just received a top up of <b>:N $amount_for_each_person </b> from a haystackpay user with username: <b>$username</b>. You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
+        <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>. You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
 
         <p>To learn more about haystackpay, visit us today on <a href="$site_url" style="font-weight:bold;color:#ff9100">haystackpay.com</a> .</p>
         <p>Connect with us on our various social media platforms and do not forget to share with your friends.</p>
