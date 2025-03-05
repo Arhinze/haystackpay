@@ -22,7 +22,7 @@ if($data) {// that means user is logged in:
         <input type="number" class="input" id="withdrawal_amount" name="withdrawal_amount" placeholder="How much would you like to withdraw" style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" onkeyup="check_withdraw_status()" required/>
         
         <div id="withraw_status"></div>
-        <div style="margin-bottom:12px"><?="Current Balance: <b>N <span id='cb_on_wp'>",$hstkp_transactions->current_balance($data->user_id), "</span></b>"?></div>
+        <div style="margin-bottom:12px"><?="Current Balance: <b>N <span id='cb_on_wp'>",$hstkp_transactions->current_balance($data->user_id),"</span></b>"?></div>
 
         <button type="submit" class="long-action-button" id="withdraw_confirm_button" style="background-color:green;color:#fff;width:96%">
             Confirm
@@ -32,15 +32,15 @@ if($data) {// that means user is logged in:
 
 <script>
     function check_withdraw_status() {
-        cb_on_wp = document.getElementById("cb_on_wp").innerHTML;
+        cb_on_wp = Number(document.getElementById("cb_on_wp").innerHTML);
         withdraw_confirm_button = document.getElementById("withdraw_confirm_button");
-        withdrawal_amount = document.getElementById("withdrawal_amount").value;
+        withdrawal_amount = Number(document.getElementById("withdrawal_amount").value);
 
-        if(withdrawal_amount <= cb_on_wp) {
-            withdraw_confirm_button.disabled = false;
-        } else {
+        if(withdrawal_amount > cb_on_wp) {
             withdraw_confirm_button.style = "background-color:#888;color:#fff;width:96%";
             withdraw_confirm_button.disabled = true;
+        } else {
+            withdraw_confirm_button.disabled = false;
         }
     }
 </script>
