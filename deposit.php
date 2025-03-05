@@ -90,7 +90,7 @@ if($data) {// that means user is logged in:
 <div style="margin:180px 15px 90px 15px">
     <h2>Add Money</h2>
     <form method="post" action="" class="dashboard_form">
-        <input type="number" class="input" name="deposit_amount" placeholder=" N100 - N5,000,000" style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" required/>
+        <input type="number" class="dashboard_input" name="deposit_amount" placeholder=" N100 - N5,000,000" required/>
 
         <button type="submit" class="long-action-button" style="background-color:green;color:#fff;width:96%">
             Confirm
