@@ -26,7 +26,7 @@ if($data) {// that means user is logged in:
 
         <input type="number" class="input" id="account_number" name="account_number" placeholder="Account Number: " style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" minlength = "10" required />
 
-        <select name = "bank" class="input" required>
+        <select name = "bank" class="input" placeholder="Choose your bank" style="margin-bottom:21px" required>
             <option value = "Access" class="input">Access</option>
             <option value = "UBA" class="input">United Bank for Africa</option>
             <option value = "Sterling" class="input">Sterling</option>
