@@ -194,7 +194,7 @@ class Index_Segments{
                 obj.send(null);
 
                 //disable button and allow only when input < current balance
-                button_status = document.getElelmentById("proceed_to_pay_button");
+                button_status = document.getElementById("proceed_to_pay_button");
                 if(Number(document.getElementById("current_balance_text").innerHTML) > total_amount) {
                     button_status.disabled = false;
                 } else {
