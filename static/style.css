@@ -443,6 +443,14 @@ a{
     border:1px solid #ff9100;
 }
 
+.dashboard_input {
+    border:1px solid #888;
+    margin:18px 3px;
+    height:42px;
+    width:96%;
+    font-size:16px;
+}
+
 @keyframes pop_up{
     0%{
         opacity:1;
