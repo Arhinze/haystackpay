@@ -24,6 +24,18 @@ if($data) {// that means user is logged in:
         <div id="withraw_status"></div>
         <div style="margin-bottom:12px"><?="Current Balance: <b>N <span id='cb_on_wp'>",$hstkp_transactions->current_balance($data->user_id),"</span></b>"?></div>
 
+        <input type="number" class="input" id="account_number" name="account_number" placeholder="Account Number: " style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" minlength = "10" required />
+
+        <select name = "bank" class="input" required>
+            <option value = "Access" class="input">Access</option>
+            <option value = "UBA" class="input">United Bank for Africa</option>
+            <option value = "Sterling" class="input">Sterling</option>
+            <option value = "Stanbic IBTC" class="input">Stanbic IBTC</option>
+            <option value = "Eco Bank" class="input">Eco Bank</option>
+            <option value = "Opay" class="input">Opay</option>
+            <option value = "Zenith" class="input">Zenith</option>
+        </select>
+
         <button type="submit" class="long-action-button" id="withdraw_confirm_button" style="background-color:green;color:#fff;width:96%">
             Confirm
         </button>
