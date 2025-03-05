@@ -155,8 +155,12 @@ HTML;
         </script>
 
         <script>
-        function pop_up(txt){
-                document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"<span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span></div>";
+            function pop_up(txt){
+                document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"<span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_upx()'></i></span></div>";
+            }
+
+            function close_pop_upX(){
+                document.getElementById("pop_up").style.display = "none";
             }
         </script>
 
