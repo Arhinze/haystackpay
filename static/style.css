@@ -741,10 +741,12 @@ a{
 }
 
 .fa-user-login {
+    margin-right:18px;
     font-size:30px;
     background-color: var(--site_color_alt);
     width:45px; 
-    height:45px;
+    height:33px;
+    padding-top:12px
     border-radius:100%;
     text-align: center;
 }
