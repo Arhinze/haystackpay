@@ -436,6 +436,24 @@ a{
     z-index:3;
 }
 
+.dashboard_top_section {
+
+}
+
+.dashboard_top_div {
+    color:#ff9100;
+    background-color:#f5c07a;
+    padding:15px;
+    border-radius:9px;
+    font-size:42px;
+    margin:18px;
+}
+
+.dashboard_top_text{
+    font-size:15px;
+    text-align: center;
+}
+
 .dashboard_form{
     background-color:#fff;
     padding:12px;

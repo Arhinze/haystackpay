@@ -10,17 +10,17 @@ class Dashboard_Segments extends Index_Segments{
     public static function dashboard_body_top() {
         echo <<<HTML
             <div class="dashboard_form" style="display:flex;justify-content:center">
-                <div>
-                    <div class="" style="color:#ff9100;background-color:#f5c07a;padding:15px;border-radius:9px;font-size:42px;margin:18px"><i class="fa fa-arrow-circle-down"></i></div>
-                    <div style="font-size:15px">Deposit</div>
+                <div class="dashboard_top_section">
+                    <div class="dashboard_top_div"><i class="fa fa-arrow-circle-down"></i></div>
+                    <div style="dashboard_top_text">Deposit</div>
                 </div>
-                <div>
-                    <div class=""><i class="fa fa-bank"></i></div>
-                    <div style="font-size:15px">Withdraw to bank</div>
+                <div class="dashboard_top_section">
+                    <div class="dashboard_top_div"><i class="fa fa-bank"></i></div>
+                    <div style="dashboard_top_text">Withdraw to bank</div>
                 </div>
-                <div onclick="pop_up('This feature is coming soon')">
-                    <div class=""><i class="fa fa-exchange"></i></div>
-                    <div style="font-size:15px">Convert</div>
+                <div class="dashboard_top_section" onclick="pop_up('This feature is coming soon')">
+                    <div class="dashboard_top_div"><i class="fa fa-exchange"></i></div>
+                    <div style="dashboard_top_text">Convert</div>
                 </div>
             </div>
         HTML;
