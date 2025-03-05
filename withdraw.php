@@ -19,14 +19,14 @@ if($data) {// that means user is logged in:
 <div style="margin:180px 15px 90px 15px">
     <h2>Withdraw Money</h2>
     <form method="post" action="" class="dashboard_form">
-        <input type="number" class="input" id="withdrawal_amount" name="withdrawal_amount" placeholder="How much would you like to withdraw" style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" onkeyup="check_withdraw_status()" required/>
+        <input type="number" class="dashboard_input" id="withdrawal_amount" name="withdrawal_amount" placeholder="How much would you like to withdraw" onkeyup="check_withdraw_status()" required/>
         
         <div id="withraw_status"></div>
         <div style="margin-bottom:12px"><?="Current Balance: <b>N <span id='cb_on_wp'>",$hstkp_transactions->current_balance($data->user_id),"</span></b>"?></div>
 
         <input type="number" class="dashboard_input" id="account_number" name="account_number" placeholder="Account Number: " minlength = "10" required />
 
-        <select name = "bank" class="input" placeholder="Choose your bank" style="margin-bottom:21px" required>
+        <select name = "bank"  class="dashboard_input" placeholder="Choose your bank" style="margin-bottom:21px" required>
             <option value = "Access" class="input">Access</option>
             <option value = "UBA" class="input">United Bank for Africa</option>
             <option value = "Sterling" class="input">Sterling</option>
