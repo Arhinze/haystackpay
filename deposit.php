@@ -16,18 +16,17 @@ if($data) {// that means user is logged in:
         $arr = [0,1,2,3,4,5];
         shuffle($arr);
 
-        $alph1 = ["a","c","e","h","i","j","m","o"];
-        shuffle($alph1);
-
-        $alph2 = ["q","z","x","v","y","w","r","k"];
-        shuffle($alph2);
+        //$alph1 = ["a","c","e","h","i","j","m","o"];
+        //shuffle($alph1);
+        //$alph2 = ["q","z","x","v","y","w","r","k"];
+        //shuffle($alph2);
         
         foreach($arr as $a){
             $code_out .= $code_array[$a];
         }
 
-        $code_out .= $alph1[0];
-        $code_out .= $alpha2[0];
+        //$code_out .= $alph1[0];
+        //$code_out .= $alpha2[0];
 
         //insert generated ps_attempt_refx to database(tr_attempts) to avoid duplicate transactions ~ this would be deleted once 1 transaction is made
         $refx_stmt = $pdo->prepare("INSERT INTO tr_attempts(user_id, rq_type, rq_amount, rq_time, ps_attempt_refx) VALUES (?, ?, ?, ?, ?)");
