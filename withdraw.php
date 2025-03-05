@@ -40,6 +40,7 @@ if($data) {// that means user is logged in:
             withdraw_confirm_button.style = "background-color:#888;color:#fff;width:96%";
             withdraw_confirm_button.disabled = true;
         } else {
+            withdraw_confirm_button.style = "background-color:green;color:#fff;width:96%";
             withdraw_confirm_button.disabled = false;
         }
     }
