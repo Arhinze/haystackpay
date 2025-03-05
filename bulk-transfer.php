@@ -84,7 +84,7 @@ if(isset($_POST["referred_accounts"])){
                     <input type="number" name="amount_to_pay_each_person" placeholder=" N 10 - 5,000,000" id="amount_to_pay_each_person" class="input" value="<?=$amount_to_pay_per_person?>" onkeyup="calculate_total()" required/>
                     <input type="number" id="total_number" name="total_number" value="<?=$i?>" style="display:none"/>
                     <div id="total_to_transfer_text"></div>
-                    <div>Your current balance is: <span id="current_balance_text"></span></div> 
+                    <div>Your current balance is: <b id="current_balance_text"></b></div> 
 
                     <input type="hidden" name="transaction_type" value="bulk_transfer"/>
                     <textarea name="valid_emails" style="display:none"><?=$valid_emails_as_string?></textarea>
