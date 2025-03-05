@@ -195,7 +195,7 @@ class Index_Segments{
 
                 //disable button and allow only when total_amount < current balance and amt_for_each > 100
                 button_status = document.getElementById("proceed_to_pay_button");
-                if((Number(document.getElementById("current_balance_text").innerHTML) > total_amount) & (amt_for_each >= 10)) {
+                if((Number(document.getElementById("current_balance_text").innerHTML) >= total_amount) & (amt_for_each >= 10)) {
                     button_status.style="background-color:#333131";
                     button_status.disabled = false;
                 } else {
@@ -205,13 +205,11 @@ class Index_Segments{
 
                 //turn current balance text green or red depending on if it's > or < than total_amount
                 current_balance_text = document.getElementById("current_balance_text");
-                if((Number(document.getElementById("current_balance_text").innerHTML) > total_amount)) {
+                if((Number(document.getElementById("current_balance_text").innerHTML) >= total_amount)) {
                     current_balance_text.style="color:green";
                 } else {
                     current_balance_text.style="color:red";
                 }
-
-                //tr_color = (current_balance >= total_from_user) ? "green" : "red";
             }
 
         </script>
