@@ -84,6 +84,7 @@ class Dashboard_Segments extends Index_Segments{
                 <!--<a href="$site_url/referred-commissions">Referred Commissions</a>-->
             </div>
             
+            <li><a href="https://wa.link/94f4vk">Contact us</a></li>
             <li><a href="/settings">Settings</a></li>
             <li><a href="/reset-password">Reset Password</a></li>
 
