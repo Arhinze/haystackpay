@@ -35,8 +35,8 @@ $mail_body_top = <<<HTML
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong|Arimo"/><link rel="stylesheet" href="$site_url/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
         </head>
         <body style ="font-family:Trirong;">
-            <div style="position:relative">
-                <img src="$site_url/static/images/logo_rbg.png" style="margin-left:36%;margin-right:36%;width:25%;position:absolute"/>
+            <div>
+                <img src="$site_url/static/images/logo_rbg.png" style="margin-left:36%;margin-right:36%;width:25%"/>
             </div>
             <h2 style="color:#00008b;font-family:Arimo;text-align:center">$site_name</h2>
 HTML;
