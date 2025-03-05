@@ -104,7 +104,10 @@ HTML;
                     <div class="dashboard_top_div"><i class="fa fa-bank"></i></div>
                     <div class="dashboard_top_text">Withdraw to bank</div>
                 </div>
-                <div class="dashboard_top_section" onclick="pop_up('This feature is coming soon')"><span id="pop_up"></span>
+                <div class="dashboard_top_section" onclick="show_div('coming_soon')">
+                    <span id="coming_soon" style="display:none">
+                        <span style='float:right;position:absolute;top:9px;right:9px'><i class='fa fa-times' onclick="show_div('coming_soon')"></i></span></div>
+                    </span>
                     <div class="dashboard_top_div"><i class="fa fa-exchange"></i></div>
                     <div class="dashboard_top_text">Convert</div>
                 </div>
@@ -155,13 +158,13 @@ HTML;
         </script>
 
         <script>
-            function pop_up(txt){
+            /*function pop_up(txt){
                 document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"<span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_upx()'></i></span></div>";
             }
 
             function close_pop_upx(){
                 document.getElementById("pop_up").style.display = "none";
-            }
+            }*/
         </script>
 
     <noscript> 
