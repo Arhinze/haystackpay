@@ -8,7 +8,7 @@ if($data) {//that means user is logged in:
         $total_number = htmlentities($_POST["total_number"]);
         $amt_to_deduct = $amt_for_each_person*$total_number;
 
-        echo "<h1>$amt_to_deduct</h1>";
+        //echo "<h1>$amt_to_deduct</h1>";
 
         if(((int)$amt_to_deduct) <= $hstkp_transactions->current_balance($data->user_id)) { //user has enough money and can carry out this transaction
         $mails_to_disburse_to = htmlentities($_POST["valid_emails"]);
