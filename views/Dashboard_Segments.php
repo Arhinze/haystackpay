@@ -97,11 +97,11 @@ HTML;
         echo <<<HTML
             <div class="dashboard_form" style="display:flex;justify-content:center">
                 <div class="dashboard_top_section">
-                    <div class="dashboard_top_div"><i class="fa fa-arrow-circle-down"></i></div>
+                    <div class="dashboard_top_div"><a href="/deposit"><i class="fa fa-arrow-circle-down"></i></a></div>
                     <div class="dashboard_top_text">Deposit</div>
                 </div>
                 <div class="dashboard_top_section">
-                    <div class="dashboard_top_div"><i class="fa fa-bank"></i></div>
+                    <div class="dashboard_top_div"><a href="/withdraw"><i class="fa fa-bank"></i></a></div>
                     <div class="dashboard_top_text">Withdraw to bank</div>
                 </div>
                 <div class="dashboard_top_section" onclick="show_hiddenCS()">
