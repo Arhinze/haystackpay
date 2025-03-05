@@ -1,11 +1,13 @@
 <?php
 
 ini_set("display_errors", 1);
+
 $username = "";
 $dep_amount ="";
 $user_mail ="";
 $total_number = "";
 $amount_for_each_person = "";
+$amt_to_deduct = "";
 
 if($data) {
     $username = $data->username;
