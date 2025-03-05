@@ -47,11 +47,13 @@ if(isset($_POST["referred_accounts"])){
             if(count($output) == 0) { //no valid email on the list
                 echo "No valid email found / Empty field submitted.";
             } else { // ~ there are valid emails on the list:
+                echo "<div style='padding:10px 15px;border-right:1px solid #888'>";
                 foreach($output as $out_put_) {
                     $valid_emails_as_string .= $out_put_."#";
                     $i += 1;
                     echo "$i.) ".$out_put_."<br />";
                 }
+                echo "</div>";
     ?>
                 <div style='margin:18px 6px'>
                     <b>Total number is: <?=$i?>.</b> 
