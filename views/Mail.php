@@ -3,15 +3,20 @@
 ini_set("display_errors", 1);
 
 $username = "";
+$realName = "";
 $dep_amount ="";
 $user_mail ="";
 $total_number = "";
 $amt_for_each_person = "";
 $amt_to_deduct = "";
+$with_amt = "";
+$bank_name = "";
+$acct_num = "";
 
 if($data) {
     $username = $data->username;
     $user_mail = $data->user_email;
+    $realName = $data->real_name;
 }
 
 if(isset($_POST["deposit_amount"])) {
@@ -22,12 +27,17 @@ if(isset($_GET["deposit_amount"])) {
     $dep_amount = htmlentities($_GET["deposit_amount"]);
 }
 
-if(isset($_POST["transaction_type"])) {
+if(isset($_POST["transaction_type"])) { //for bulk transactions
     $amt_for_each_person = htmlentities($_POST["amount_to_pay_each_person"]);
     $total_number = htmlentities($_POST["total_number"]);
     $amt_to_deduct = $amt_for_each_person*$total_number;
 }
 
+if(isset($_POST["withdrawal_amount"])) { //for withdrawal
+    $with_amt = (int)htmlentities($_POST["withdrawal_amount"]);
+    $bank_name = htmlentities($_POST["bank"]);
+    $acct_num = htmlentities($_POST["account_number"]);
+}
 
 $mail_body_top = <<<HTML
     <html>
@@ -43,6 +53,9 @@ HTML;
 
 $mail_body_bottom = "</body></html>";
 
+
+
+//Deposit Mails:
 $attempted_deposit_message = <<<HTML
     $mail_body_top
         <p  style ="font-family:Trirong;">
@@ -77,6 +90,9 @@ $user_successful_deposit_message = <<<HTML
     $mail_body_bottom
 HTML;
 
+
+
+//Bulk Transfer Mails:
 $user_received_deposit_message = <<<HTML
     $mail_body_top
         <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>. You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
@@ -98,13 +114,56 @@ $admin_user_received_deposit_message = <<<HTML
         <p>Hello Admin, a user with username: <b>$username</b> just made a bulk transfer of <b>:N $amt_to_deduct</b> to $total_number users.</p>
 
         <br /><br /><br />
-        
+
         <div><a href="$site_url/site-users" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit control panel </a></div>
 
         <br /><br /><br />
     $mail_body_bottom
 HTML;
 
+
+
+//Withdrawal Mails:
+$user_attempt_withdrawal_message = <<<HTML
+    $mail_body_top
+        <p  style ="font-family:Trirong;">
+            Hello <b>$username</b>, 
+        </p>
+        <p>
+            We noticed your recent attempt to withdraw a sum of : <b>N$with_amt</b>. We regret to inform you that we are not yet done with this feature.
+        </p>
+        <p>
+            <p>Nevetheless, the admin has been notified of your transaction.</p> 
+            <p>Kindly reply this message with "Proceed", if you would still like to proceed with this transaction, and we will have our agent send it to you directly.</p>
+        </p>
+        <p>Thank you for your continuous support.</p>
+
+        <br /><br /><br />
+
+
+        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+
+        <br /><br /><br />
+
+    $mail_body_bottom
+HTML;
+
+$admin_user_attempt_withdrawal_message = <<<HTML
+    $mail_body_top
+        <p  style ="font-family:Trirong;">
+            Hello Admin, a user with username: <b>$username</b> and email address: <b>$user_mail</b> is attempting to withdraw <b>N$with_amt</b> from his/her dashboard.
+        </p>
+        <p>
+            <h3>Bank Details:</h3>
+            <div><b>Name: </b>$realName</div>
+            <div><b>Bank: </b>$bank_name</div>
+            <div><b>Account No: </b>$acct_num</div>
+        </p>
+    $mail_body_bottom
+HTML;
+
+
+//headers
 $sender = "admin@$site_url_short";
 
 $headers = "From: $sender \r\n";
@@ -112,6 +171,7 @@ $headers .="Reply-To: $sender \r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-type:text/html; charset=UTF-8\r\n";
 
+//tester function:
 function check_mail_status($mail) {
     if ($mail) {
         //echo "<br /> <span style='color:#e93609; margin-left:15px'> <b>Mail Sent Successfully</b> </span>";
@@ -122,4 +182,5 @@ function check_mail_status($mail) {
 
 
 // to send a mail: ~ updating soon to $mail_sender->send() with only two arguments ($receiver, $subject, $message)
-//$mail_xyx = mail($receiver, "A user deposited a sum of N$dep_amount", $user_received_deposit_message, $headers);;
+//$mail_xyx = mail($receiver, "A user deposited a sum of N$dep_amount", $user_received_deposit_message, $headers);
+//check_mail_status($mail_xyx);

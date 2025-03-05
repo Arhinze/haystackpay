@@ -4,11 +4,16 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
 
 if($data) {// that means user is logged in:
     if(isset($_POST["withdrawal_amount"])) { //paystack initialization starts
-        
         $with_amt = (int)htmlentities($_POST["withdrawal_amount"]);
+        $bank_name = htmlentities($_POST["bank"]);
+        $acct_num = htmlentities($_POST["account_number"]);
         echo "<div class='pop_up' style='color:#fff;background-color:#ff9100'>This feature is coming soon</div>";
+
         //Initialize Paystack:
         
+        // Mail admin . . this should come after successful paystack withdraw integration:
+        $mail_admin = mail($sender, "A user is attempting to withdraw a sum of N$with_amount", $admin_user_attempt_withdrawal_message, $headers);  
+        check_mail_status($mail_admin);
     } //paystack initialization ends
 
     //display header: ~ still under if($data), placed here to avoid header() already initialised error
