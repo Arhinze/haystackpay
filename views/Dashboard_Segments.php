@@ -104,7 +104,7 @@ HTML;
                     <div class="dashboard_top_div"><i class="fa fa-bank"></i></div>
                     <div class="dashboard_top_text">Withdraw to bank</div>
                 </div>
-                <div class="dashboard_top_section" onclick="pop_up('This feature is coming soon')"><span id="pop_up"></span>
+                <div class="dashboard_top_section" onclick="pop_up('This feature is coming soon')"><span id="pop_up" class="pop_up"></span>
                     <div class="dashboard_top_div"><i class="fa fa-exchange"></i></div>
                     <div class="dashboard_top_text">Convert</div>
                 </div>
