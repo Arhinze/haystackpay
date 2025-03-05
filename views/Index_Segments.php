@@ -199,6 +199,7 @@ class Index_Segments{
                     button_status.disabled = false;
                 } else {
                     button_status.disabled = true;
+                    button_status.style="background-color:#888";
                 }
             }
 
