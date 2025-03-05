@@ -36,7 +36,7 @@ if($data) {// that means user is logged in:
         if(withdrawal_amount <= cb_on_wp) {
             withdraw_confirm_button.disabled = false;
         } else {
-            withdraw_confirm_button.disabled = "background-color:green;color:#fff;width:96%";
+            withdraw_confirm_button.disabled = "background-color:#888;color:#fff;width:96%";
             withdraw_confirm_button.disabled = true;
         }
     }
