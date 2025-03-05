@@ -443,9 +443,10 @@ a{
 .dashboard_top_div {
     color:#ff9100;
     background-color:#f5c07a;
-    padding:15px;
     border-radius:9px;
     margin:18px;
+    width:100px;
+    height:100px;
     font-size:42px;
     text-align:center;
 }
