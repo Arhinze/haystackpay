@@ -193,9 +193,9 @@ class Index_Segments{
                 obj.open("GET","/ajax/ajax_cb.php?total_="+total_amount);
                 obj.send(null);
 
-                //disable button and allow only when total_amount < current balance
+                //disable button and allow only when total_amount < current balance and amt_for_each > 100
                 button_status = document.getElementById("proceed_to_pay_button");
-                if(Number(document.getElementById("current_balance_text").innerHTML) > total_amount) {
+                if((Number(document.getElementById("current_balance_text").innerHTML) > total_amount) & (amt_for_each > 10)) {
                     button_status.style="background-color:#333131";
                     button_status.disabled = false;
                 } else {
