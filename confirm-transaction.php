@@ -49,7 +49,7 @@ if($data) {//that means user is logged in:
     }
 
     // ~ (stmts that passed through the if statement. that's stmts called when user's current > $request ) also pass through here
-    header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
+    //header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
     Dashboard_Segments::footer();
     } 
 } else {
