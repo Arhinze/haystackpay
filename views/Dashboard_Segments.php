@@ -173,6 +173,8 @@ HTML;
                     document.getElementById(vari).style.display = "block";
                 } else if (document.getElementById(vari).style.display == "block") {
                     document.getElementById(vari).style.display = "none";
+                } else {
+                    document.getElementById(vari).style = "display:block";
                 }
             }
         </script>
