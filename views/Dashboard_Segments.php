@@ -169,10 +169,10 @@ HTML;
             }*/
 
             function show_div(vari) {
-                if (document.getElementById(vari).style.display == "none") {
-                    document.getElementById(vari).style.display = "block";
-                } else if (document.getElementById(vari).style.display == "block") {
-                    document.getElementById(vari).style.display = "none";
+                if (document.getElementById(vari).style == "display:none") {
+                    document.getElementById(vari).style = "display:block";
+                } else if (document.getElementById(vari).style == "display:block") {
+                    document.getElementById(vari).style = "display:none";
                 } else {
                     document.getElementById(vari).style = "display:block";
                 }
