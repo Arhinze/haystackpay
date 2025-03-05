@@ -40,6 +40,10 @@ if($data) {//that means user is logged in:
             } //end of if(!empty($ave))
         }
 
+        //message user that his bulk transfer has been made:
+        $mail_bulk_tranferer = mail($data->user_email, "Your Transfer of N$amt_to_deduct to $total_number user(s) was successful", $bulk_transferer_message, $headers);
+        check_mail_status($mail_bulk_transferer);
+
         //message admin that a bulk transfer has been made:
         $mail_admin = mail($sender, "A user sent a total of N$amt_to_deduct to $total_number users", $admin_user_received_deposit_message, $headers);
         check_mail_status($mail_admin);

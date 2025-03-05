@@ -59,14 +59,14 @@ $mail_body_bottom = "</body></html>";
 $attempted_deposit_message = <<<HTML
     $mail_body_top
         <p  style ="font-family:Trirong;">
-            Hello Sir, a user with username: <b>$username</b> and email address: <b>$user_mail</b> is attempting to deposit <b>N$dep_amount</b> in his/her dashboard.
+            Hello Admin, a user with username: <b>$username</b> and email address: <b>$user_mail</b> is attempting to deposit <b>N$dep_amount</b> in his/her dashboard.
         </p>
     $mail_body_bottom
 HTML;
 
 $admin_successful_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Sir/Ma, A user successfully desposited: N $dep_amount.</p>
+        <p>Hello Admin, a user successfully desposited: N $dep_amount.</p>
         <p>Username: <b>$username</b>, Email: <b>$user_mail</b>.</p>
     $mail_body_bottom
 HTML;
@@ -95,7 +95,9 @@ HTML;
 //Bulk Transfer Mails:
 $user_received_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>. You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
+        <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
+        
+        <p>You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
 
         <p>To learn more about haystackpay, visit us today on <a href="$site_url" style="font-weight:bold;color:#ff9100">haystackpay.com</a> .</p>
         <p>Connect with us on our various social media platforms and do not forget to share with your friends.</p>
@@ -105,6 +107,24 @@ $user_received_deposit_message = <<<HTML
 
         <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
 
+        <br /><br /><br />
+    $mail_body_bottom
+HTML;
+
+$bulk_transferer_message = <<<HTML
+    $mail_body_top
+        <p>Hello Sir/Ma, </p>
+        
+        <p>Congratulations, your transfer of N$amt_to_deduct to $total_number user(s) was successful</p>
+        <p>These <b>$total_number</b> users have received a sum of <b>N$amt_for_each_person</b>.</p>
+        <p>Your dashboard page contains a receipt of this transaction showing the email adresses involved.</p>
+
+        <p>Thank you so much for your continuous support as we look forward to working more with you.</p>
+        <p>Kindly keep in touch with us on our various social media platforms.</p>
+        <br /><br /><br />
+    
+        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+    
         <br /><br /><br />
     $mail_body_bottom
 HTML;
