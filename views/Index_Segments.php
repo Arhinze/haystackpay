@@ -197,6 +197,7 @@ class Index_Segments{
                 button_status = document.getElementById("proceed_to_pay_button");
                 if(Number(document.getElementById("current_balance_text").innerHTML) > total_amount) {
                     button_status.disabled = false;
+                    button_status.style="background-color:#333131";
                 } else {
                     button_status.disabled = true;
                     button_status.style="background-color:#888";
