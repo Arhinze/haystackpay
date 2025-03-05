@@ -52,9 +52,10 @@ class Dashboard_Segments extends Index_Segments{
             
             <li class="x"><label for="menu-box"><i class="fa fa-times"></i></label></li>
             
-            <li><a href="$site_url/dashboard">Dashboard</a></li>
-            <li><a href="$site_url/deposit">Add Money</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/deposit">Add Money</a></li>
             <li><a href="$site_url#bulk_tr">Bulk Transfer </a></li>
+            <li><a href="/withraw">Withdraw </a></li>
 
             <!--
             <li class="clear" style="padding-bottom:16px">
@@ -83,8 +84,8 @@ class Dashboard_Segments extends Index_Segments{
                 <!--<a href="$site_url/referred-commissions">Referred Commissions</a>-->
             </div>
             
-            <li><a href="$site_url/settings">Settings</a></li>
-            <li><a href="$site_url/reset-password">Reset Password</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/reset-password">Reset Password</a></li>
 
             <li><a href="/logout.php" style="color:#fff;font-weight:bold;background-color:red;padding:6px;border-radius:12px">Log out</a></li>
         </ul>     

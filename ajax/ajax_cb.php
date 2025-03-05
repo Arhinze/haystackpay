@@ -10,8 +10,8 @@ if($data) { // ~ user is logged in
         $total_from_user = (int)($_GET["total_"]);
     }
     $current_balance = $hstkp_transactions->current_balance($data->user_id);
-    echo $current_balance;
+    echo "N",$current_balance;
 } else { // ~ user is not logged in
-    echo "not available, kindly log in.";
+    echo "Nnot available, kindly log in.";
 }
 ?>
