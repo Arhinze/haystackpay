@@ -55,7 +55,7 @@ class Dashboard_Segments extends Index_Segments{
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/deposit">Add Money</a></li>
             <li><a href="$site_url#bulk_tr">Bulk Transfer </a></li>
-            <li><a href="/withraw">Withdraw </a></li>
+            <li><a href="/withdraw">Withdraw </a></li>
 
             <!--
             <li class="clear" style="padding-bottom:16px">
