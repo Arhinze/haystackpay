@@ -1,6 +1,5 @@
 <?php
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
-include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 
 if($data) {//that means user is logged in:
     if(isset($_POST["transaction_type"])) {
