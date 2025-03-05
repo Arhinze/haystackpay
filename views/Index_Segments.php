@@ -210,6 +210,7 @@ class Index_Segments{
                 } else {
                     current_balance_text.style="color:red";
                 }
+                current_balance_text.style="font-weight:bold";
             }
 
         </script>
