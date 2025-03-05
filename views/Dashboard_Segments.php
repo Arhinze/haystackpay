@@ -105,13 +105,15 @@ HTML;
                     <div class="dashboard_top_text">Withdraw to bank</div>
                 </div>
                 <div class="dashboard_top_section" onclick="show_div('coming_soon')">
-                    <span id="coming_soon" style="display:none">
-                        <span style='float:right;position:absolute;top:9px;right:9px'><i class='fa fa-times' onclick="show_div('coming_soon')"></i></span></div>
-                    </span>
                     <div class="dashboard_top_div"><i class="fa fa-exchange"></i></div>
                     <div class="dashboard_top_text">Convert</div>
                 </div>
             </div>
+            
+            <!-- displayed when user clicks on 'convert' . this is going off soon -->
+            <span id="coming_soon" style="display:none">
+                <span style='float:right;position:absolute;top:9px;right:9px'><i class='fa fa-times' onclick="show_div('coming_soon')"></i></span>
+            </span>
         HTML;
     }
 
