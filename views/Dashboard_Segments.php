@@ -7,25 +7,6 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Mail.php");
 
 class Dashboard_Segments extends Index_Segments{
-    public static function dashboard_body_top() {
-        echo <<<HTML
-            <div class="dashboard_form" style="display:flex;justify-content:center">
-                <div class="dashboard_top_section">
-                    <div class="dashboard_top_div"><i class="fa fa-arrow-circle-down"></i></div>
-                    <div style="dashboard_top_text">Deposit</div>
-                </div>
-                <div class="dashboard_top_section">
-                    <div class="dashboard_top_div"><i class="fa fa-bank"></i></div>
-                    <div style="dashboard_top_text">Withdraw to bank</div>
-                </div>
-                <div class="dashboard_top_section" onclick="pop_up('This feature is coming soon')">
-                    <div class="dashboard_top_div"><i class="fa fa-exchange"></i></div>
-                    <div style="dashboard_top_text">Convert</div>
-                </div>
-            </div>
-        HTML;
-    }
-
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "",$title=SITE_NAME){
         $main_header = Index_Segments::main_header();
         $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
@@ -112,6 +93,26 @@ HTML;
     }
 
 
+    public static function dashboard_body_top() {
+        echo <<<HTML
+            <div class="dashboard_form" style="display:flex;justify-content:center">
+                <div class="dashboard_top_section">
+                    <div class="dashboard_top_div"><i class="fa fa-arrow-circle-down"></i></div>
+                    <div style="dashboard_top_text">Deposit</div>
+                </div>
+                <div class="dashboard_top_section">
+                    <div class="dashboard_top_div"><i class="fa fa-bank"></i></div>
+                    <div style="dashboard_top_text">Withdraw to bank</div>
+                </div>
+                <div class="dashboard_top_section" onclick="pop_up('This feature is coming soon')">
+                    <div class="dashboard_top_div"><i class="fa fa-exchange"></i></div>
+                    <div style="dashboard_top_text">Convert</div>
+                </div>
+            </div>
+        HTML;
+    }
+
+
 
     public static function dashboard_scripts($site_name = SITE_NAME_SHORT, $site_url = SITE_URL){
 
@@ -154,85 +155,13 @@ HTML;
         </script>
 
         <script>
-            function boost_mining_speed() {
-                document.getElementById("boost_mining_speed").innerHTML = "<div class='pop_up'> This feature is coming soon. <span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span></div>";
-            }
-
-            function rotate_360() {
-                if(document.getElementById("small_coin").className !== "rotate_360_once") {
-                    document.getElementById("small_coin").className = "rotate_360_once";
-                } else {
-                    document.getElementById("small_coin").className="no_class_name";
-                } 
-            }
-        </script>
-
-
-
-        <!-- Mining Scripts -->
-        <script>
-            function start_mining(u_name, u_password) {
-                //alert("Active !!!")
-                document.getElementById("mining_status").innerHTML = "active";
-                document.getElementById("inner_button").className = "rotate_360";
-                if (document.getElementById("mining_time_left").innerHTML == "00:00:00") {
-                    document.getElementById("mining_time_left").innerHTML = "48:00:00";
-                }
-
-                obj = new XMLHttpRequest;
-                obj.onreadystatechange = function(){
-                    if(obj.readyState == 4){
-                        if (document.getElementById("ajax_mine")){
-                            document.getElementById("ajax_mine").innerHTML = obj.responseText;
-                        }
-                    }
-                }
-        
-                obj.open("GET","/ajax_mining_page.php?un="+u_name+"&up="+u_password);
-                obj.send(null);
-            }
-
-            setInterval(() => {
-                if (document.getElementById("mining_status")){ //checks is id exists at all
-                if (document.getElementById("mining_status").innerHTML == "active"){
-                    //increment amount earned per second
-                    var amount = document.getElementById("amount_mined").innerHTML;
-                    var new_amount = Number(amount) + 0.0000058;
-                    document.getElementById("amount_mined").innerHTML = new_amount.toFixed(6);
-
-                    //calculate time left
-                    var time_left = document.getElementById("mining_time_left").innerHTML;
-                    var time_left_array = time_left.split(":");
-                    var total_remaining_mining_seconds = (((Number(time_left_array[0]))*60*60)+((Number(time_left_array[1]))*60)+(Number(time_left_array[2])));
-
-                    total_remaining_mining_seconds -= 1; //decrease it every second setInterval() is called
-
-                    var total_remaining_mining_minutes = Math.floor(total_remaining_mining_seconds/60);
-                    var remaining_mining_hours = Math.floor(total_remaining_mining_minutes/60);
-                    var remaining_mining_minutes = total_remaining_mining_minutes - (remaining_mining_hours*60);
-                    var remaining_mining_seconds = total_remaining_mining_seconds - (total_remaining_mining_minutes*60);
-                    //OR var remaining_mining_seconds = total_remaining_mining_seconds % 60 //(modulus ~ reurns the remainder)
-
-                    //so it appears in 00:00:00 format instead of 0:0:00 or otherwise
-                    remaining_mining_hours = remaining_mining_hours >= 10 ? remaining_mining_hours : "0"+remaining_mining_hours.toString();
-                    remaining_mining_minutes = remaining_mining_minutes >= 10 ? remaining_mining_minutes : "0"+remaining_mining_minutes.toString();
-                    remaining_mining_seconds = remaining_mining_seconds >= 10 ? remaining_mining_seconds : "0"+remaining_mining_seconds.toString();
-
-                    var new_time_left = remaining_mining_hours.toString() + ":" + remaining_mining_minutes.toString()  + ":" + remaining_mining_seconds.toString() ;
-
-                    document.getElementById("mining_time_left").innerHTML = new_time_left;
-                    }
-                }
-            }, 1000);
-
-            function pop_up(txt){
+        function pop_up(txt){
                 document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"</div>";
             }
         </script>
-        <!-- Mining Script ends -->
 
     <noscript> 
-        Texts won't display well. please enable Javascript.
+        Java script is disabled. Site won't work well. please enable Javascript.
     </noscript>
 HTML;
     }
