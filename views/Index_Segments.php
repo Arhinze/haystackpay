@@ -202,6 +202,16 @@ class Index_Segments{
                     button_status.style="background-color:#888";
                     button_status.disabled = true;
                 }
+
+                //turn current balance text green or red depending on if it's > or < than total_amount
+                current_balance_text = document.getElementById("current_balance_text");
+                if((Number(document.getElementById("current_balance_text").innerHTML) > total_amount)) {
+                    current_balance_text.style="color:green";
+                } else {
+                    current_balance_text.style="color:red";
+                }
+
+                $tr_color = ($current_balance >= $total_from_user) ? "green" : "red";
             }
 
         </script>

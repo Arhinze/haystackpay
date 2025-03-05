@@ -11,11 +11,8 @@ if($data) { // ~ user is logged in
     }
     
     $current_balance = $hstkp_transactions->current_balance($data->user_id);
-    $tr_color = ($current_balance >= $total_from_user) ? "green" : "red";
-    
     echo $current_balance;
 } else { // ~ user is not logged in
     echo "not available, kindly log in.";
 }
-
 ?>
