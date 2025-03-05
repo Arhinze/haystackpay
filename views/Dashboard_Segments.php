@@ -156,7 +156,7 @@ HTML;
 
         <script>
         function pop_up(txt){
-                document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"</div><span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span><div/>";
+                document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"<span style='float:right;position:absolute;top:6px;right:6px'><i class='fa fa-times' onclick='close_pop_up()'></i></span></div>";
             }
         </script>
 
