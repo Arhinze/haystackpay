@@ -195,7 +195,7 @@ class Index_Segments{
 
                 //disable button and allow only when input < current balance
                 button_status = document.getElelmentById("proceed_to_pay_button");
-                if((document.getElementById("cb_id").style.color) == "green") {
+                if(Number(document.getElementById("current_balance_text").innerHTML) > total_amount) {
                     button_status.disabled = false;
                 } else {
                     button_status.disabled = true;
