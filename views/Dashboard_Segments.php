@@ -111,8 +111,8 @@ HTML;
             </div>
             
             <!-- displayed when user clicks on 'convert' . this is going off soon -->
-            <span id="coming_soon" style="display:none">
-                <span style='float:right;position:absolute;top:9px;right:9px'> This feature is coming soon <i class='fa fa-times' onclick="close_hiddenCS()"></i></span>
+            <span id="coming_soon" style="display:block">
+                This feature is coming soon <span style='float:right;position:absolute;top:9px;right:9px'> <i class='fa fa-times' onclick="close_hiddenCS()"></i></span>
             </span>
         HTML;
     }
