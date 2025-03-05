@@ -93,7 +93,7 @@ if($data) {// that means user is logged in:
     <form method="post" action="" style="background-color:#fff;padding:15px 6px;border-radius:9px;border:1px solid #ff9100">
         <input type="number" class="input" name="deposit_amount" placeholder="How much would you like to withdraw" style="border:1px solid #888;margin:18px 3px;height:42px;width:96%" onkeyup="check_withdraw_status()" required/>
         <div id="withraw_status"></div>
-        <div><?="Current Balance: ",$hstkp_transactions->current_balance($data->user_id)?></div>
+        <div style="margin-bottom:12px"><?="Current Balance: <b>",$hstkp_transactions->current_balance($data->user_id), "</b>"?></div>
         <button type="submit" class="long-action-button" style="background-color:green;color:#fff;width:96%">
             Confirm
         </button>
