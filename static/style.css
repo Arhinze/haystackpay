@@ -741,7 +741,6 @@ a{
 }
 
 .fa-user-login {
-    margin:0px 12px -12px 0;
     font-size:30px;
     background-color: var(--site_color_alt);
     width:45px; 
