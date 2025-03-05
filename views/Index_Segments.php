@@ -193,14 +193,14 @@ class Index_Segments{
                 obj.open("GET","/ajax/ajax_cb.php?total_="+total_amount);
                 obj.send(null);
 
-                //disable button and allow only when input < current balance
+                //disable button and allow only when total_amount < current balance
                 button_status = document.getElementById("proceed_to_pay_button");
                 if(Number(document.getElementById("current_balance_text").innerHTML) > total_amount) {
                     button_status.disabled = false;
-                    button_status.style="background-color:#333131";
+                    //button_status.style="background-color:#333131";
                 } else {
                     button_status.disabled = true;
-                    button_status.style="background-color:#888";
+                    //button_status.style="background-color:#888";
                 }
             }
 
