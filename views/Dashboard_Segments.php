@@ -111,7 +111,7 @@ HTML;
             </div>
             
             <!-- displayed when user clicks on 'convert' . this is going off soon -->
-            <span id="coming_soon" style="display:block">
+            <span id="coming_soon" style="display:block" class="pop_up">
                 This feature is coming soon <span style='float:right;position:absolute;top:9px;right:9px'> <i class='fa fa-times' onclick="close_hiddenCS()"></i></span>
             </span>
         HTML;
