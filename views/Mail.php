@@ -34,8 +34,8 @@ $mail_body_top = <<<HTML
         <head>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong|Arimo"/><link rel="stylesheet" href="$site_url/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
         </head>
-        <body style ="font-family:Trirong;">
-            <div>
+        <body style ="font-family:Trirong;padding:18px 9px">
+            <div style="margin-bottom:18px">
                 <img src="$site_url/static/images/logo_rbg.png" style="margin-left:36%;margin-right:36%;width:25%"/>
             </div>
             <h2 style="color:#00008b;font-family:Arimo;text-align:center">$site_name</h2>
@@ -88,6 +88,8 @@ $user_received_deposit_message = <<<HTML
         <br /><br /><br />
 
         <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+
+        <br /><br /><br />
     $mail_body_bottom
 HTML;
 
@@ -96,7 +98,10 @@ $admin_user_received_deposit_message = <<<HTML
         <p>Hello Admin, a user with username: <b>$username</b> just made a bulk transfer of <b>:N $amt_to_deduct</b> to $total_number users.</p>
 
         <br /><br /><br />
+        
         <div><a href="$site_url/site-users" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit control panel </a></div>
+
+        <br /><br /><br />
     $mail_body_bottom
 HTML;
 
