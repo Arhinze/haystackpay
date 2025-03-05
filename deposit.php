@@ -88,6 +88,7 @@ if($data) {// that means user is logged in:
 ?>
 
 <div style="margin:180px 15px 90px 15px">
+    <?=Dashboard_Segments::dashboard_body_top()?>
     <h2>Add Money</h2>
     <form method="post" action="" class="dashboard_form">
         <input type="number" class="dashboard_input" style="margin-bottom:18px" name="deposit_amount" placeholder=" N100 - N5,000,000" required/>

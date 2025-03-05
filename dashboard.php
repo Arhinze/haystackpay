@@ -29,6 +29,7 @@ if($data){// that means user is logged in:
     -->
     <!--End of: This is going off soon -->
 
+    <?=Dashboard_Segments::dashboard_body_top()?>
     <div class="dashboard">
         <h2>Your Transactions:</h2><hr />
         <?php

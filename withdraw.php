@@ -17,6 +17,9 @@ if($data) {// that means user is logged in:
 ?>
 
 <div style="margin:180px 15px 90px 15px">
+    
+    <?=Dashboard_Segments::dashboard_body_top()?>
+    
     <h2>Withdraw Money</h2>
     <form method="post" action="" class="dashboard_form">
         <input type="number" class="dashboard_input" id="withdrawal_amount" name="withdrawal_amount" placeholder="How much would you like to withdraw" onkeyup="check_withdraw_status()" required/>

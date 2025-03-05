@@ -7,6 +7,25 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Transactions.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Mail.php");
 
 class Dashboard_Segments extends Index_Segments{
+    public static function dashboard_body_top() {
+        echo <<<HTML
+            <div class="dashboard_form" style="display:flex;justify-content:center">
+                <div>
+                    <div class="" style="color:#ff9100;background-color:#f5c07a;padding:15px;border-radius:9px;font-size:42px;margin:18px"><i class="fa fa-arrow-circle-down"></i></div>
+                    <div style="font-size:15px">Deposit</div>
+                </div>
+                <div>
+                    <div class=""><i class="fa fa-bank"></i></div>
+                    <div style="font-size:15px">Withdraw to bank</div>
+                </div>
+                <div onclick="pop_up('This feature is coming soon')">
+                    <div class=""><i class="fa fa-exchange"></i></div>
+                    <div style="font-size:15px">Convert</div>
+                </div>
+            </div>
+        HTML;
+    }
+
     public static function header($site_name = SITE_NAME_SHORT, $site_url = SITE_URL, $Hi_user = "",$title=SITE_NAME){
         $main_header = Index_Segments::main_header();
         $css_version = filemtime($_SERVER["DOCUMENT_ROOT"]."/static/style.css");
@@ -202,20 +221,13 @@ HTML;
                     var new_time_left = remaining_mining_hours.toString() + ":" + remaining_mining_minutes.toString()  + ":" + remaining_mining_seconds.toString() ;
 
                     document.getElementById("mining_time_left").innerHTML = new_time_left;
-
-                    /*for testing purposes:
-                        
-                    document.getElementById("test").innerHTML = "<b>Test:</b><br />"
-                    +"time_left_array: "+time_left_array+"<br />"
-                    +"time_left_array[0]: "+time_left_array[0].toString()+"<br />"
-                    +"time_left_array[1]: "+time_left_array[1].toString()+"<br />"
-                    +"time_left_array[2]: "+time_left_array[2].toString()+"<br />"
-                    +"total_remaining_mining_seconds: "+total_remaining_mining_seconds.toString()+"<br />"
-                    +"total_remaining_mining_minutes: "+total_remaining_mining_minutes.toString()+"<br />"+"remaining_mining_hours:"+remaining_mining_hours.toString()+"<br />"+"remaining_mining_minutes:"+remaining_mining_minutes.toString()+"<br />"+"remaining_mining_seconds: "+remaining_mining_seconds.toString();
-                    */
                     }
                 }
             }, 1000);
+
+            function pop_up(txt){
+                document.getElementById("pop_up").innerHTML = "<div class='pop_up'>"+txt+"</div>";
+            }
         </script>
         <!-- Mining Script ends -->
 
