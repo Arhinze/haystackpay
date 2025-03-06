@@ -7,7 +7,7 @@ if($data) {// that means user is logged in:
         $with_amt = (int)htmlentities($_POST["withdrawal_amount"]);
         $bank_name = htmlentities($_POST["bank"]);
         $acct_num = htmlentities($_POST["account_number"]);
-        echo "<div class='pop_up' style='color:#fff;background-cor:#ff9100'>This feature is coming soon</div>";
+        echo "<div class='pop_up' style='color:#fff;background-color:#ff9100'>This feature is coming soon</div>";
 
         //Initialize Paystack:
         // ...

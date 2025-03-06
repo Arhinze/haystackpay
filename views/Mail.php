@@ -153,7 +153,7 @@ $user_attempt_withdrawal_message = <<<HTML
             We noticed your recent attempt to withdraw a sum of : <b>N$with_amt</b>. We regret to inform you that we are not yet done with this feature.
         </p>
         <p>
-            <p>Nevertheless, the admin has been notified of your transaction.</p> 
+            <p>Nevertheless, the admin has been notified of your intention.</p> 
             <p>Kindly reply this message with "Proceed", if you would still like to proceed with this transaction, and we will have our agent send it to your account manually.</p>
         </p>
         <p>Thank you for your continuous support.</p>
