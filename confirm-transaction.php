@@ -33,7 +33,7 @@ if($data) {//that means user is logged in:
                         $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
 
                         // - mail() $ave ~ replacing soon with a cron job that sends emails
-                        $mail_user_new = mail($ave, "$data->username added you to a $site_name loop", $new_user_received_deposit_message, $headers);
+                        $mail_user_new = mail($ave, "You received a top up of N$amt_for_each_person", $user_received_deposit_message, $headers);
                         check_mail_status($mail_user_new);
                     }
                 }
