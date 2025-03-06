@@ -41,7 +41,7 @@ if($data) {//that means user is logged in:
         }
 
         //message user that his bulk transfer has been made:
-        $mail_bulk_tranferer = mail($data->user_email, "Your Transfer of N$amt_to_deduct to $total_number user(s) was successful", $bulk_transferer_message, $headers);
+        $mail_bulk_transferer = mail($data->user_email, "Your Transfer of N$amt_to_deduct to $total_number user(s) was successful", $bulk_transferer_message, $headers);
         check_mail_status($mail_bulk_transferer);
 
         //message admin that a bulk transfer has been made:
