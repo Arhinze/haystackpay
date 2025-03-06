@@ -154,14 +154,14 @@ $user_attempt_withdrawal_message = <<<HTML
         </p>
         <p>
             <p>Nevetheless, the admin has been notified of your transaction.</p> 
-            <p>Kindly reply this message with "Proceed", if you would still like to proceed with this transaction, and we will have our agent send it to you directly.</p>
+            <p>Kindly reply this message with "Proceed", if you would still like to proceed with this transaction, and we will have our agent send it to your account manually.</p>
         </p>
         <p>Thank you for your continuous support.</p>
 
         <br /><br /><br />
 
 
-        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+        <!--<div><a href="https://haystackpay.com/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>-->
 
         <br /><br /><br />
 
