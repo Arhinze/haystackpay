@@ -111,6 +111,26 @@ $user_received_deposit_message = <<<HTML
     $mail_body_bottom
 HTML;
 
+
+$new_user_received_deposit_message = <<<HTML
+    $mail_body_top
+        <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
+        <p>Your account is new on $site_name, so you would have to reset the default password to your new password on <a href="$site_url/reset-password" style="font-weight:bold;color:#fff;background-color:#ff9100;padding:6px;border-radius:3px">$site_url/reset-password</a> to continue.</p>
+
+        <p>You can log in afterwards to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
+
+        <p>To learn more about haystackpay, visit us today on <a href="$site_url" style="font-weight:bold;color:#ff9100">haystackpay.com</a> .</p>
+        <p>Connect with us on our various social media platforms and do not forget to share with your friends.</p>
+        <p>Thank you.</p>
+
+        <br /><br /><br />
+
+        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+
+        <br /><br /><br />
+    $mail_body_bottom
+HTML;
+
 $bulk_transferer_message = <<<HTML
     $mail_body_top
         <p>Hello Sir/Ma, </p>
