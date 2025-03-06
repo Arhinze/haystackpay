@@ -115,7 +115,7 @@ HTML;
 $new_user_received_deposit_message = <<<HTML
     $mail_body_top
         <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
-        <p>Your account is new on $site_name, so you would have to reset the default password to your new password on <a href="$site_url/reset-password" style="font-weight:bold;color:#fff;background-color:#ff9100;padding:6px;border-radius:3px">$site_url/reset-password</a> to continue.</p>
+        <p>Your account is new on $site_name, so you would have to reset the generated default password to your new password on <a href="$site_url/reset-password" style="font-weight:bold;color:#fff;background-color:#ff9100;padding:6px;border-radius:3px">$site_url/reset-password</a> to continue.</p>
 
         <p>You can log in afterwards to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
 
@@ -220,7 +220,8 @@ function check_mail_status($mail) {
     if ($mail) {
         //echo "<br /> <span style='color:#e93609; margin-left:15px'> <b>Mail Sent Successfully</b> </span>";
     } else {
-        echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b> </span>";
+        //echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b> </span>";
+        die();
     }
 }
 
