@@ -144,7 +144,7 @@ $bulk_transferer_message = <<<HTML
         
         <p><b>PS:</b><br /></p>
         
-        <p>We've sent your beneficiaries an email notification, but in case they don't receive it, you can ask them to visit the reset password page <a href="$site_url/reset-password">$site_url/reset-password</a> using the email address you used to.</p>
+        <p>We've sent your beneficiaries an email notification, but in case they don't receive it, you can ask them to visit the reset password page <a href="$site_url/reset-password">$site_url/reset-password</a> and log in after resetting to a new password.</p>
 
         <br /><br /><br />
     

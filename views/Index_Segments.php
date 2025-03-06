@@ -43,7 +43,7 @@ class Index_Segments{
         <html lang="en">
         <head>
           
-            <link rel="stylesheet" href="/static/styleee.css?$css_version"/>
+            <link rel="stylesheet" href="/static/style.css?$css_version"/>
             <link rel="icon" type="image/x-icon" href="/static/images/favicon.png"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">

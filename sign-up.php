@@ -144,7 +144,7 @@ if(isset($_POST["user_code"])){
                         if($mail){
                             echo "A Welcome Mail has been sent to <b>", $_POST["email"],"</b>. If it doesn't arrive on time, kindly check your spam folder." ;
                         } else {
-                            echo "An error occurred, Mail not sent";
+                            echo "An error occurred, Mail not sent to new user.";
                           }
 
 
