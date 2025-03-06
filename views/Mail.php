@@ -220,8 +220,8 @@ function check_mail_status($mail) {
     if ($mail) {
         //echo "<br /> <span style='color:#e93609; margin-left:15px'> <b>Mail Sent Successfully</b> </span>";
     } else {
-        //echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b> </span>";
-        die(error_get_last());
+        echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b> </span>";
+        //die(error_get_last());
     }
 }
 
