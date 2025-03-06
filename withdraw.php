@@ -13,7 +13,7 @@ if($data) {// that means user is logged in:
         // ...
         //- End of Initialize Paystack:   
         // Mail user . . this should come after successful paystack withdraw integration:
-        $mail_user = mail($data->user_email, "A user is attempting to withdraw a sum of N$with_amt", $user_attempt_withdrawal_message, $headers);  
+        $mail_user = mail($data->user_email, "Attempt to withdraw N$with_amt detected", $user_attempt_withdrawal_message, $headers);  
         check_mail_status($mail_user);
         
         // Mail admin . . this should come after successful paystack withdraw integration:
