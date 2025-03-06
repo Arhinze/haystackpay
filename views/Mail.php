@@ -143,7 +143,8 @@ $bulk_transferer_message = <<<HTML
         <p>Kindly keep in touch with us on our various social media platforms.</p>
         
         <p><b>PS:</b><br /></p>
-        <p>We've sent your beneficiaries an email notification, but in case they don't receive it, you can ask them to visit the reset password page <a href="$site_url/reset-password">$site_url/reset-password</a> using the email address you sent the money to.</p>
+        
+        <p>We've sent your beneficiaries an email notification, but in case they don't receive it, you can ask them to visit the reset password page <a href="$site_url/reset-password">$site_url/reset-password</a> using the email address you used to.</p>
 
         <br /><br /><br />
     

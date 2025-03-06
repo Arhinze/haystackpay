@@ -286,7 +286,7 @@ if(isset($_POST["user_code"])){
                         }
 
                         //redirect user to dashboard
-                        header("location:/dashboard?new-user"); //--automatically log in
+                        //header("location:/dashboard?new-user"); //--automatically log in
                         //display sign up success pop up: ~ on dashboard page
                     }
 
