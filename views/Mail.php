@@ -111,6 +111,18 @@ $user_received_deposit_message = <<<HTML
     $mail_body_bottom
 HTML;
 
+$new_user_received_deposit_message = <<<HTML
+    $mail_body_top
+        <p>Hello Sir/Ma, <b>$username</b> added you to a $site_name loop.</p> 
+
+        <br /><br /><br />
+
+        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+
+        <br /><br /><br />
+    $mail_body_bottom
+HTML;
+
 $bulk_transferer_message = <<<HTML
     $mail_body_top
         <p>Hello Sir/Ma, </p>
