@@ -14,6 +14,9 @@ if($data) {// that means user is logged in:
         // Mail admin . . this should come after successful paystack withdraw integration:
         $mail_admin = mail($sender, "A user is attempting to withdraw a sum of N$with_amount", $admin_user_attempt_withdrawal_message, $headers);  
         check_mail_status($mail_admin);
+
+        $mail_user = mail($data->user_email, "A user is attempting to withdraw a sum of N$with_amount", $user_attempt_withdrawal_message, $headers);  
+        check_mail_status($mail_admin);
     } //paystack initialization ends
 
     //display header: ~ still under if($data), placed here to avoid header() already initialised error
