@@ -10,13 +10,15 @@ if($data) {// that means user is logged in:
         echo "<div class='pop_up' style='color:#fff;background-color:#ff9100'>This feature is coming soon</div>";
 
         //Initialize Paystack:
+        // ...
+        //- End of Initialize Paystack:   
+        // Mail user . . this should come after successful paystack withdraw integration:
+        $mail_user = mail($data->user_email, "A user is attempting to withdraw a sum of N$with_amt", $user_attempt_withdrawal_message, $headers);  
+        check_mail_status($mail_user);
         
         // Mail admin . . this should come after successful paystack withdraw integration:
-        $mail_admin = mail($sender, "A user is attempting to withdraw a sum of N$with_amount", $admin_user_attempt_withdrawal_message, $headers);  
-        check_mail_status($mail_admin);
-
-        $mail_user = mail($data->user_email, "A user is attempting to withdraw a sum of N$with_amount", $user_attempt_withdrawal_message, $headers);  
-        check_mail_status($mail_admin);
+        $mail_admin = mail($sender, "A user is attempting to withdraw a sum of N$with_amt", $admin_user_attempt_withdrawal_message, $headers);  
+        check_mail_status($mail_admin);        
     } //paystack initialization ends
 
     //display header: ~ still under if($data), placed here to avoid header() already initialised error
