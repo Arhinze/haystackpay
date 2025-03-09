@@ -54,15 +54,21 @@ include_once($_SERVER["DOCUMENT_ROOT"]."/views/Dashboard_Segments.php");
             $delete_tr_att_stmt->execute([$ps_att_ref]);
 
             //mail admin
-            $mail1 = mail($sender, "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);
-            $mail2 = mail("francisokoye48@gmail.com", "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);
-    
+            //$mail1 = mail($sender, "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message, $headers);
             //mail user
-            $mail3 = mail($user_mail, "Inflow ~ your deposit of N$dep_amount was successful", $user_successful_deposit_message, $headers);
-    
+            //$mail2 = mail($user_mail, "Inflow ~ your deposit of N$dep_amount was successful", $user_successful_deposit_message, $headers);
+            //check_mail_status($mail1);
+            //check_mail_status($mail2);
+            
+            //mail admin:
+            $mail1 = $cm->send_quick_mail($sender, "A user deposited a sum of N$dep_amount", $admin_successful_deposit_message); 
             check_mail_status($mail1);
+            $mail->clearAddresses();
+            
+            //mail user:
+            $mail2 = $cm->send_quick_mail($user_mail, "Inflow ~ your deposit of N$dep_amount was successful", $user_successful_deposit_message); 
             check_mail_status($mail2);
-            check_mail_status($mail3);
+            $mail->clearAddresses();
         } else {
             echo "<div class='invalid' style='background-color:green;color:#fff'>Please proceed to the dashboard</div>";
         }

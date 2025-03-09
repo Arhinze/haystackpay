@@ -13,12 +13,22 @@ if($data) {// that means user is logged in:
         // ...
         //- End of Initialize Paystack:   
         // Mail user . . this should come after successful paystack withdraw integration:
-        $mail_user = mail($data->user_email, "Attempt to withdraw N$with_amt detected", $user_attempt_withdrawal_message, $headers);  
-        check_mail_status($mail_user);
+        //$mail_user = mail($data->user_email, "Attempt to withdraw N$with_amt detected", $user_attempt_withdrawal_message, $headers);  
+        //check_mail_status($mail_user);
         
         // Mail admin . . this should come after successful paystack withdraw integration:
-        $mail_admin = mail($sender, "A user is attempting to withdraw a sum of N$with_amt", $admin_user_attempt_withdrawal_message, $headers);  
-        check_mail_status($mail_admin);        
+        //$mail_admin = mail($sender, "A user is attempting to withdraw a sum of N$with_amt", $admin_user_attempt_withdrawal_message, $headers);  
+        //check_mail_status($mail_admin); 
+        
+        // Mail user . . this should come after successful paystack withdraw integration:
+        $mail_user = $cm->send_quick_mail($data->user_email, "Attempt to withdraw N$with_amt detected", $user_attempt_withdrawal_message); 
+        check_mail_status($mail_user);
+        $mail->clearAddresses();
+        
+        // Mail admin . . this should come after successful paystack withdraw integration:
+        $mail_admin = $cm->send_quick_mail($sender, "A user is attempting to withdraw a sum of N$with_amt", $admin_user_attempt_withdrawal_message); 
+        check_mail_status($mail_admin);
+        $mail->clearAddresses();
     } //paystack initialization ends
 
     //display header: ~ still under if($data), placed here to avoid header() already initialised error

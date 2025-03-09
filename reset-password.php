@@ -2,6 +2,8 @@
 
 ini_set("session.use_only_cookies", 1);
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/php/account-manager.php");
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Mail.php");
 Index_Segments::header();
 
 $check_email = '';
@@ -38,7 +40,7 @@ if (isset($_POST["email"])) {
             <html>
             <head>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong|Arimo"/>
-                        <link rel="stylesheet" href="https://$site_url_short/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
+                <link rel="stylesheet" href="https://$site_url_short/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
         
                 <style>
                     a {
@@ -70,7 +72,10 @@ if (isset($_POST["email"])) {
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html; charset=UTF-8\r\n";
 
-        $mail = mail($_POST["email"],"Reset Password on $site_name",$message, $headers);
+        //$mail = mail($_POST["email"],"Reset Password on $site_name",$message, $headers);
+        $mail1 = $cm->send_quick_mail(htmlentities($_POST["email"]),"Reset Password on $site_name",$message); 
+        check_mail_status($mail1);
+        $mail->clearAddresses();
 
         if($mail){
         ?>
@@ -159,7 +164,10 @@ if (isset($_POST["code"])) {
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-type:text/html; charset=UTF-8\r\n";
 
-            $mail = mail($_POST["inputed_email"],"Reset Password on $site_name",$message, $headers);
+            //$mail = mail($_POST["inputed_email"],"Reset Password on $site_name",$message, $headers);
+            $mail2 = $cm->send_quick_mail(htmlentities($_POST["inputed_email"]),"Password Reset Successful - $site_name",$message); 
+            check_mail_status($mail2);
+            $mail->clearAddresses();
 
             if(!$mail){
                 echo "Sorry, an error occurred, Mail not sent";
@@ -169,8 +177,8 @@ if (isset($_POST["code"])) {
 ?>
             <div id="message_success" class="message_success" style="display:block">     
                 <div class="clear">
-                    <span class="float:right"><b>Password Updated successfully.<br />
-                       Proceed to <a href="/login" style="color:#042c06">Login</a></b></span>
+                    <span style="float:right;color:#fff"><b>Password Updated successfully.<br />
+                       Proceed to <a href="/login" style="color:#ff9100">Login</a></b></span>
                     &nbsp;&nbsp;&nbsp;
 
                     <i class="fa fa-times" style="float:right" onclick="show_div('message_success')"></i>

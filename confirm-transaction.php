@@ -21,9 +21,12 @@ if($data) {//that means user is logged in:
                 if ($hstkp_transactions->user_exists($ave)) {
                     $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
 
-                    /// - mail() $ave ~ replacing soon with a cron job that sends emails
-                    $mail_user = mail($ave, "You received a top up of N$amt_for_each_person", $user_received_deposit_message, $headers);
-                    check_mail_status($mail_user);
+                    /// - mail $ave ~ replacing soon with a cron job that sends emails
+                    //$mail_ave = mail($ave, "You received a top up of N$amt_for_each_person", $user_received_deposit_message, $headers);
+                    //check_mail_status($mail_user);
+                    $mail_ave = $cm->send_quick_mail($ave, "You received a top up of N$amt_for_each_person", $user_received_deposit_message); 
+                    check_mail_status($mail_ave);
+                    $mail->clearAddresses();
                 } else {
                     $p_stmt = $pdo->prepare("INSERT INTO haystack_users(real_name, username, user_email, `password`,airdrop_status,twitter_username,avax_wallet_address,aguat_wallet_address,referred_by,entry_date,mining_status,mining_start_time) VALUES(?, ?,?, ?, ?, ?,?,?,?,?,?,?)");
     
@@ -33,26 +36,38 @@ if($data) {//that means user is logged in:
                         $hstkp_transactions->deposit($hstkp_transactions->user_exists($ave)->user_id, $amt_for_each_person, "Received from: ".$data->username); 
 
                         // - mail() $ave ~ replacing soon with a cron job that sends emails
-                        $mail_user_new = mail($ave, "You received a top up of N$amt_for_each_person", $new_user_received_deposit_message, $headers);
-                        check_mail_status($mail_user_new);
+                        //$mail_user_new = mail($ave, "You received a top up of N$amt_for_each_person", $new_user_received_deposit_message, $headers);
+                        //check_mail_status($mail_user_new);
+                        $mail_new_ave = $cm->send_quick_mail($ave, "You received a top up of N$amt_for_each_person", $new_user_received_deposit_message); 
+                        check_mail_status($mail_new_ave);
+                        $mail->clearAddresses();
                     }
                 }
             } //end of if(!empty($ave))
         }
 
         //message user that his bulk transfer has been made:
-        $mail_bulk_transferer = mail($data->user_email, "Your Transfer of N$amt_to_deduct to $total_number user(s) was successful", $bulk_transferer_message, $headers);
+        //$mail_bulk_transferer = mail($data->user_email, "Your Transfer of N$amt_to_deduct to $total_number user(s) was successful", $bulk_transferer_message, $headers);
+        //check_mail_status($mail_bulk_transferer);
+        
+        $mail_bulk_transferer = $cm->send_quick_mail($data->user_email, "Your Transfer of N$amt_to_deduct to $total_number user(s) was successful", $bulk_transferer_message); 
         check_mail_status($mail_bulk_transferer);
+        $mail->clearAddresses();
 
         //message admin that a bulk transfer has been made:
-        $mail_admin = mail($sender, "A user sent a total of N$amt_to_deduct to $total_number users", $admin_user_received_deposit_message, $headers);
+        //$mail_admin = mail($sender, "A user sent a total of N$amt_to_deduct to $total_number users", $admin_user_received_deposit_message, $headers);
+        //check_mail_status($mail_admin);
+        $mail_admin = $cm->send_quick_mail($sender, "A user sent a total of N$amt_to_deduct to $total_number users", $admin_user_received_deposit_message); 
         check_mail_status($mail_admin);
+        $mail->clearAddresses();
     } else {// ~ user does not have enough money for this transaction 
         header("Location: /bulk-transfer?error_msg=sorry, insufficient funds");   
     }
 
     // ~ (stmts that passed through the if statement. that's stmts called when user's current > $request ) also pass through here
+    
     header("Location: /dashboard?new_transaction=".$hstkp_transactions->get_last_tr_id($data->user_id));
+    
     Dashboard_Segments::footer();
     } 
 } else {

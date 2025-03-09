@@ -1,7 +1,7 @@
 <?php 
 include_once($_SERVER["DOCUMENT_ROOT"]."/php/account-manager.php");
 include_once($_SERVER["DOCUMENT_ROOT"]."/views/Index_Segments.php");
-
+include_once($_SERVER["DOCUMENT_ROOT"]."/views/Mail.php");
 Index_Segments::header();
 
 $referer = "";
@@ -139,13 +139,11 @@ if(isset($_POST["user_code"])){
                         $headers .= "MIME-Version: 1.0\r\n";
                         $headers .= "Content-type:text/html; charset=UTF-8\r\n";
 
-                        $mail = mail($_POST["email"],"Welcome To $site_name",$message, $headers);
+                        //message user:
+                        $mail1 = $cm->send_quick_mail(htmlentities($_POST["email"]), "Welcome To $site_name", $message);
+                        check_mail_status($mail1);
+                        $mail->clearAddresses();
     
-                        if($mail){
-                            echo "A Welcome Mail has been sent to <b>", $_POST["email"],"</b>. If it doesn't arrive on time, kindly check your spam folder." ;
-                        } else {
-                            echo "An error occurred, Mail not sent to new user.";
-                          }
 
 
 
@@ -184,11 +182,11 @@ if(isset($_POST["user_code"])){
                                 <h2 style="color:$site_color_light;font-family:Arimo;text-align:center">$site_name</h2>
                                     <p  style ="font-family:Trirong;">Hi $ref_name,
 
-                                    We’re thrilled to let you know that your referral of $new_user with username: $new_username was successful!.
+                                    <p>We’re thrilled to let you know that your referral of $new_user with username: $new_username was successful!.</p>
 
                                     <!--As a token of our appreciation, we’ve credited your account with 1 &#x24; referral bonus.-->
                                     
-                                    Your support means the world to us and we’re grateful you chose to share this beautiful financial service app with others. Keep transacting with us, it gets more fun and easier with each passing day!  
+                                    <p>Your support means the world to us and we’re grateful you chose to share this beautiful financial service app with others. Keep transacting with us, it gets more fun and easier with each passing day!</p>  
                                         
                                     <p>The <b><a href="https://$site_url_short/referred-users"  style="color:#042c06">Referred Users</a></b> page of your dashboard contains a list of Users you have referred to us. <!--while 
                                     the <b><a href="https://site_url_short/referred-commissions"  style="color:#042c06">Referred Commissions</a></b> page contains your referral earnings.</p>-->
@@ -198,7 +196,7 @@ if(isset($_POST["user_code"])){
                                     <p>Thanks again for being an amazing advocate!</p>  
                                     
                                     <p>Best regards,</p>  
-                                    <p>$ref_name</p> 
+                                    <p>Admin - $site_name</p> 
                                     
                                     <p>Share your unique referral link below <!--and keep the rewards coming:--></p>  
                                     <p><a href="https://$site_url_short/?ref=$ref_username"></a></p>
@@ -218,17 +216,14 @@ if(isset($_POST["user_code"])){
                         $headers .="Reply-To: $sender \r\n";
                         $headers .= "MIME-Version: 1.0\r\n";
                         $headers .= "Content-type:text/html; charset=UTF-8\r\n";
-
-                        $mail = mail($ref_data_user_email, "Thank You for Your Referral, $ref_username", $message, $headers);
-
-                        if($mail){
-                            echo "<br /><br />A Mail has been sent to your referer";
-                        } else {
-                            echo "Sorry, an error occurred, Mail not sent";
-                          }
                         
-                        }
+                        //message referer:
+                        $mail2 = $cm->send_quick_mail($ref_data_user_email, "Thank You for Your Referral - $ref_username", $message);
+                        check_mail_status($mail2);
+                        $mail->clearAddresses();
 
+                        
+                        } //end of if(isset($ref))
 
 
 
@@ -269,24 +264,19 @@ if(isset($_POST["user_code"])){
                         $headers .="Reply-To: $sender \r\n";
                         $headers .= "MIME-Version: 1.0\r\n";
                         $headers .= "Content-type:text/html; charset=UTF-8\r\n";
-
-                        $mail = mail($sender,"A User Just Signed Up On $site_name",$message, $headers);
-                        $mail2 = mail("francisokoye48@gmail.com","A User Just Signed Up On $site_name",$message, $headers);
-
-                        if($mail){
-                            echo "<br /><br />A Mail has been sent to both the user and referer";
-                        } else {
-                            echo "Sorry, an error occurred, Mail not sent to both user and referer";
-                        }
-
-                        if($mail2){
-                            echo "<br /><br />A Mail has been sent to both the user and referer";
-                        } else {
-                            echo "Sorry, an error occurred, Mail not sent to both user and referer";
-                        }
+                        
+                        //message admin:
+                        $mail3 = $cm->send_quick_mail($sender, "A User Just Signed Up On $site_name", $message);
+                        check_mail_status($mail3);
+                        $mail->clearAddresses();
+                        
+                        //$mail4 = $cm->send_quick_mail("francisokoye48@gmail.com", "A User Just Signed Up On $site_name", $message);
+                        //check_mail_status($mail4);
+                        //$mail->clearAddresses();
+                        
 
                         //redirect user to dashboard
-                        header("location:/dashboard?new-user"); //--automatically log in
+                        //header("location:/dashboard?new-user"); //--automatically log in
                         //display sign up success pop up: ~ on dashboard page
                     }
 

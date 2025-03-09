@@ -1,5 +1,54 @@
 <?php
-
+   require $_SERVER["DOCUMENT_ROOT"]."/vendor/autoload.php";
+   include_once($_SERVER["DOCUMENT_ROOT"]."/php/connection.php");
+   
+   use PHPMailer\PHPMailer\PHPMailer;
+   $mail = new PHPMailer;
+   $mail->isSMTP();
+   $mail->SMTPDebug = 0; //set to 0 in runtime and 2 in testing
+   $mail->Host = 'smtp.hostinger.com';
+   $mail->Port = 587;
+   $mail->SMTPAuth = true;
+   $mail->Username = "admin@$site_url_short";
+   $mail->Password = $email_password;
+   $mail->setFrom("admin@$site_url_short", $site_name);
+   $mail->addReplyTo("admin@$site_url_short", $site_name);
+   $mail->isHTML(true);
+   $mail->SMTPKeepAlive = true;
+   //$mail->msgHTML(file_get_contents('message.html'), __DIR__);
+   //$mail->addAttachment('attachment.txt');
+   
+    //To send message, do this:
+    //$mail->addAddress(htmlentities($_POST["email"]), htmlentities($_POST["name"]));
+    //$mail->Subject = "Welcome To $site_name";
+    //$mail->Body = $message;
+    //$mail1 = $mail->send();
+    //check_mail_status($mail1);
+    //$mail->clearAddresses();
+    
+    //or this: ~ 
+    /*$mail_xyz = $cm->send_quick_mail($receiver, $subject, $message); 
+    check_mail_status($mail_xyz);
+    mail->clearAddresses();*/
+   
+    Class CustomMail extends  PHPMailer {
+        public $mail;
+        public function inject($obj) {
+            $this->mail = $obj;
+        }
+        
+        public function send_quick_mail($receiver, $subject, $message) {
+            $this->mail->addAddress($receiver, "");
+            $this->mail->Subject = $subject;
+            $this->mail->Body = $message;
+            return $this->mail->send();
+            // remember to clear after calling this function $mail_xyz->clearAddresses();
+        }
+    }
+    
+    $cm = new CustomMail; //to use: just declare: $cm->send_quick_mail($receiver, $subject, $message)
+    $cm->inject($mail);
+   
 ini_set("display_errors", 1);
 
 $username = "";
@@ -217,16 +266,11 @@ $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-type:text/html; charset=UTF-8\r\n";
 
 //tester function:
-function check_mail_status($mail) {
-    if ($mail) {
-        //echo "<br /> <span style='color:#e93609; margin-left:15px'> <b>Mail Sent Successfully</b> </span>";
+function check_mail_status($mail_xyz) {
+    if (!$mail_xyz) {
+        echo "<br /><br /><br /><br /> <span style='color:red; margin-left:15px'><br /> <b>Mail not sent. <br />  Mailer Error: ".$mail_xyz->ErrorInfo."  </b> </span>";
     } else {//$err_msg = error_get_last()["message"];
-        echo "<span style='color:red'> <b>Sorry, an error occurred, Mail not sent</b><br /> </span>"; //$err_msg
-        //die(error_get_last());
+        //$mail_xyz->clearAddresses();
+        //echo "<br /><br /><br /><br /> <span style='color:green'> <br /> <b> Mail sent successfully </b><br /> </span>";
     }
 }
-
-
-// to send a mail: ~ updating soon to $mail_sender->send() with only two arguments ($receiver, $subject, $message)
-//$mail_xyx = mail($receiver, "A user deposited a sum of N$dep_amount", $user_received_deposit_message, $headers);
-//check_mail_status($mail_xyx);
