@@ -115,7 +115,7 @@ HTML;
 
 $admin_successful_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Admin, a user successfully desposited: N $dep_amount.</p>
+        <p>Hello Admin, a user successfully desposited: N$dep_amount.</p>
         <p>Username: <b>$username</b>, Email: <b>$user_mail</b>.</p>
     $mail_body_bottom
 HTML;
@@ -123,7 +123,7 @@ HTML;
 $user_successful_deposit_message = <<<HTML
     $mail_body_top
         <p  style ="font-family:Trirong;">
-            Congratulations, <b>$username</b>, your deposit of <b>$dep_amount</b> on <b>$site_name</b> was successful. 
+            Congratulations, <b>$username</b>, your deposit of <b>N$dep_amount</b> on <b>$site_name</b> was successful. 
         </p>
         <p>
             <div>
@@ -144,7 +144,7 @@ HTML;
 //Bulk Transfer Mails:
 $user_received_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
+        <p>Hello Sir/Ma, you just received a top up of<b>: N$amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
         
         <p>You can log in now to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
 
@@ -163,8 +163,8 @@ HTML;
 
 $new_user_received_deposit_message = <<<HTML
     $mail_body_top
-        <p>Hello Sir/Ma, you just received a top up of <b>:N $amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
-        <p>Your account is new on $site_name, so you would have to reset the generated default password to your new password on <a href="$site_url/reset-password" style="font-weight:bold;color:#fff;background-color:#ff9100;padding:3px;border-radius:3px">$site_url/reset-password</a> to continue.</p>
+        <p>Hello Sir/Ma, you just received a top up of <b>:N$amt_for_each_person </b> from a haystackpay user with username: <b>$username</b>.</p> 
+        <p>Your account is new on $site_name, so you would have to reset the generated default password to your new password on <a href="$site_url/reset-password" style="font-weight:bold;color:#fff;background-color:#ff9100;padding:1.5px;border-radius:3px">$site_url/reset-password</a> to continue.</p>
 
         <p>You can log in afterwards to withdraw your funds, convert to other currencies, invest in the stock market or lock it up with the in-built safe-lock on our site with massive returns on investment.</p>
 
@@ -174,7 +174,7 @@ $new_user_received_deposit_message = <<<HTML
 
         <br /><br /><br />
 
-        <div><a href="$site_url/dashboard" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Visit your dashboard </a></div>
+        <div><a href="$site_url/reset-password" style="padding:18px;margin:27px 15px;background-color:#ff9100;color:#fff;border-radius:9px;font-weight:bold"> Reset Password </a></div>
 
         <br /><br /><br />
     $mail_body_bottom
