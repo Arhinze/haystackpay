@@ -108,6 +108,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
             }
             echo "<br /><br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
         ?>
+            <a class="long-action-button" style="background-color:blue;color:#fff;margin:30px 3px"> <i class="fa fa-search"></i> Search by managers </a>
         </div>
     </div>
 </body>
