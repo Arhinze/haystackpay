@@ -53,7 +53,7 @@ if(isset($_POST["referred_accounts"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linkedin Rentals</title>
+    <title>Linkedin Rentals ~ WANL</title>
 
     <link rel="stylesheet" href="/static/style.css?$css_version"/>
     <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css"/>
