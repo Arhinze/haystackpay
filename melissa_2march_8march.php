@@ -29,7 +29,7 @@ if(isset($_POST["referred_accounts"])){
     $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
     $managers_referrals_arr = array_unique($managers_referrals_arr);
     
-    echo "<h1>", $managers_referrals_arr, "</h1>";
+    print_r($managers_referrals_arr);
     
     foreach($managers_referrals_arr as $mra){
         if(strpos("0", $mra) == 0) {
