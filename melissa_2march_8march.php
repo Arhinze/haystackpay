@@ -3,6 +3,7 @@
 $linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_2march_8march.csv")));
 
 $linkedin_file = str_replace("+", "", $linkedin_file);
+$linkedin_file = str_replace(" ", "", $linkedin_file);
 $all_active_accounts = explode("\n", $linkedin_file);
 $all_active_accounts = array_map('strtolower', $all_active_accounts);
 $all_active_accounts = array_map('trim', $all_active_accounts);
