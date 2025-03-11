@@ -31,7 +31,7 @@ if(isset($_POST["referred_accounts"])){
     
     foreach($managers_referrals_arr as $mra){
         if(strpos("0", $mra) == 0) {
-            preg_replace("0", "", $mra, 1);
+            preg_replace("/0/", "", $mra, 1);
         }
     }
     
