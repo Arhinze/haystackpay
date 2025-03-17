@@ -129,13 +129,11 @@ if(isset($_POST["referred_accounts"])){
                 echo "<br /><br /><b>Total number is: $i.</b>";
             }
     ?>
-        <!--
-        <form method="post" action="/view-file">
-            <input type="hidden" name="managers_accounts" value="<$all_referred_accounts?>"/>
+        <form method="post" action="/melissa_view_file_23feb_1march">
+            <input type="hidden" name="managers_accounts" value="<?=$all_referred_accounts?>"/>
             
             <button class="long-action-button" style="background-color:blue;color:#fff" type="submit"> <i class="fa fa-file"></i> View on File >> </button>
         </form>
-        -->
    <?php
         }    
     ?>
