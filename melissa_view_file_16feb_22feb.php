@@ -1,6 +1,6 @@
 <?php
 
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_16feb_23feb.txt")));
+$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_16feb_22feb.txt")));
 
 $linkedin_file = str_replace("+", "", $linkedin_file);
 $all_active_accounts = explode("\n", $linkedin_file);
