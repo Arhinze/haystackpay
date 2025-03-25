@@ -103,10 +103,10 @@ if(isset($_GET["date"])){
                             $man_acct_no += 1;
                             echo "<span style='color:green;font-weight:bold'>", $i, ".) ", $all_act_acct, " <i class='fa fa-check-circle'></i></span><br />";
                         } else {
-                            echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br/>";
+                            echo "<span>", $i, ".) ", $all_act_acct, "</span><br/>";
                         }
                     } else {
-                        echo "<span style='color:#888'>", $i, ".) ", $all_act_acct, "</span><br/>";
+                        echo "<span>", $i, ".) ", $all_act_acct, "</span><br/>";
                     }
                 }
                              
