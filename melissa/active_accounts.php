@@ -119,7 +119,9 @@ if(isset($_GET["date"])){
         <div style="text-align:center;margin-bottom:24px">
             This program is created for managers to know if their tenants' accounts are still active on WANL(Melissa's company). <br /><br />
 
-            <h3 style = "text-align:center">Week: <?=explode("_",$date)[0]?> to <?=explode("_",$date)[1]?></h3>
+            <h3 style = "text-align:center">
+                Week: <?=ucfirst(explode("_", $date)[0])?> to <?=ucfirst(explode("_", $date)[1])?>
+            </h3>
 
             <div style="color:#ff9100;font-weight:bold">Accepted numbering formats are: 1. , 1) or 1.)</div>
         </div>
