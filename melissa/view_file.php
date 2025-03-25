@@ -1,16 +1,17 @@
 <?php
 
 $date = "";
+
 if(isset($_GET["date"])){
     $date = htmlentities($_GET["date"]);
+    $linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_$date.csv")));
+    $linkedin_file = str_replace("+", "", $linkedin_file);
+    $all_active_accounts = explode("\n", $linkedin_file);
+    $all_active_accounts = array_map('strtolower', $all_active_accounts);
+    $all_active_accounts = array_map('trim', $all_active_accounts);
+} else {
+    header("location:/melissa/display_message");
 }
-
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_$date.csv")));
-
-$linkedin_file = str_replace("+", "", $linkedin_file);
-$all_active_accounts = explode("\n", $linkedin_file);
-$all_active_accounts = array_map('strtolower', $all_active_accounts);
-$all_active_accounts = array_map('trim', $all_active_accounts);
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +116,7 @@ $all_active_accounts = array_map('trim', $all_active_accounts);
             }
             echo "<br /><br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
         ?>
-            <div style="margin:60px 3px"><a class="long-action-button" style="background-color:blue;color:#fff;" href="/melissa_9march_15march"> <i class="fa fa-search"></i> &nbsp; Search by managers >> </a></div>
+            <div style="margin:60px 3px"><a class="long-action-button" style="background-color:blue;color:#fff;" href="/active_accounts/<?=$date?>"> <i class="fa fa-search"></i> &nbsp; Search by managers >> </a></div>
         </div>
     </div>
 </body>

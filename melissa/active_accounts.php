@@ -149,7 +149,7 @@ if(isset($_GET["date"])){
                 echo "<br /><br /><b>Total number is: $i.</b>";
             }
     ?>
-        <form method="post" action="/melissa/view_file?date=march16_march22">
+        <form method="post" action="/melissa/view_file/<?=$date?>">
             <input type="hidden" name="managers_accounts" value="<?=$all_referred_accounts?>"/>
             <!-- $managers_referrals_arr-->
             
