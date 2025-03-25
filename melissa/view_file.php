@@ -68,7 +68,9 @@ if(isset($_GET["date"])){
             Below is a file showing all active accounts for the week on WANL(Melissa's company). <br /><br />
         </div>
 
-        <h2 style = "text-align:center">Week: <?=$date?></h2>
+        <h3 style = "text-align:center">
+            Week: <?=ucfirst(explode("_", $date)[0])?> to <?=ucfirst(explode("_", $date)[1])?>
+        </h3>
 
         <div style="margin: 24px; 12px">
         <?php
