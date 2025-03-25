@@ -5,6 +5,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^sign-up/([a-z0-9-_]*)$  /sign-up.php?referer=$1 [NC,L]
 RewriteRule ^site-users/([a-z0-9-_]*)$  /site-users.php?user=$1 [NC,L]
 RewriteRule ^user-requests/([a-z0-9-_]*)$  /user-requests.php?user=$1 [NC,L]
+RewriteRule ^(melissa)$  /$1/index.php [NC,L]
+RewriteRule ^melissa/([a-z0-9-_]*)$  /melissa/index.php?date=$1 [NC,L]
+RewriteRule ^melissa/view_file/([a-z0-9-_]*)$  /melissa/view_file.php?date=$1 [NC,L]
 RewriteRule ^([^\.]+)$ ./$1.php [NC,L]
 RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
 

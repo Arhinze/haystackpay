@@ -1,67 +1,69 @@
 <?php
 
 $date = "";
+
 if(isset($_GET["date"])){
     $date = htmlentities($_GET["date"]);
-}
-
-$linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_$date.csv")));
-
-$linkedin_file = str_replace("+", "", $linkedin_file);
-$linkedin_file = str_replace(" ", "", $linkedin_file);
-$all_active_accounts = explode("\n", $linkedin_file);
-$all_active_accounts = array_map('strtolower', $all_active_accounts);
-$all_active_accounts = array_map('trim', $all_active_accounts);
-//echo "<h2>All active accounts:</h2>"; print_r($all_active_accounts);
-
-$managers_referrals = [];
-$output = [];
-$isset_of_ref = false;
-$all_referred_accounts = "";
-
-if(isset($_POST["referred_accounts"])){
-    $isset_of_ref = true;
-    $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
-
-    $managers_referrals = trim($all_referred_accounts);
-    $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
-    $managers_referrals = str_replace("+", "", $all_referred_accounts);
-    $managers_referrals = str_replace(" ", "", $all_referred_accounts);
-    //echo "<h2>managers referrals: </h2>". $managers_referrals;
-    $managers_referrals_arr = explode("\n", $managers_referrals);
-    //$managers_json = json_encode($managers_referrals_arr);
-    $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
-    $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
-    $managers_referrals_arr = array_unique($managers_referrals_arr);
     
-    /*print_r($managers_referrals_arr);
+    $linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_$date.csv")));
     
-    foreach($managers_referrals_arr as $mra){
-        if(strpos("0", $mra) == 0) {
-            preg_replace("/0/", "", $mra, 1);
-        }
-    }*/
-
+    $linkedin_file = str_replace("+", "", $linkedin_file);
+    $linkedin_file = str_replace(" ", "", $linkedin_file);
+    $all_active_accounts = explode("\n", $linkedin_file);
+    $all_active_accounts = array_map('strtolower', $all_active_accounts);
+    $all_active_accounts = array_map('trim', $all_active_accounts);
+    //echo "<h2>All active accounts:</h2>"; print_r($all_active_accounts);
     
-    foreach($all_active_accounts as $all_act_acct) { //if(!in_array()) could be used here in place of array_unique
-        //if(in_array($managers_ref, $all_active_accounts)){
-        //    $output[] = $managers_ref;
-        //}
-        if(strlen($all_act_acct) > 10) {
-            $sub_all_act = substr($all_act_acct, 0, -6);
-            $sub_all_act = trim($sub_all_act);
-
-            if(preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)) {
-                if(!empty($all_act_acct)){ 
-                    $output[] = $all_act_acct;
+    $managers_referrals = [];
+    $output = [];
+    $isset_of_ref = false;
+    $all_referred_accounts = "";
+    
+    if(isset($_POST["referred_accounts"])){
+        $isset_of_ref = true;
+        $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
+    
+        $managers_referrals = trim($all_referred_accounts);
+        $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
+        $managers_referrals = str_replace("+", "", $all_referred_accounts);
+        $managers_referrals = str_replace(" ", "", $all_referred_accounts);
+        //echo "<h2>managers referrals: </h2>". $managers_referrals;
+        $managers_referrals_arr = explode("\n", $managers_referrals);
+        //$managers_json = json_encode($managers_referrals_arr);
+        $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
+        $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
+        $managers_referrals_arr = array_unique($managers_referrals_arr);
+        
+        /*print_r($managers_referrals_arr);
+        
+        foreach($managers_referrals_arr as $mra){
+            if(strpos("0", $mra) == 0) {
+                preg_replace("/0/", "", $mra, 1);
+            }
+        }*/
+    
+        
+        foreach($all_active_accounts as $all_act_acct) { //if(!in_array()) could be used here in place of array_unique
+            //if(in_array($managers_ref, $all_active_accounts)){
+            //    $output[] = $managers_ref;
+            //}
+            if(strlen($all_act_acct) > 10) {
+                $sub_all_act = substr($all_act_acct, 0, -6);
+                $sub_all_act = trim($sub_all_act);
+    
+                if(preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)) {
+                    if(!empty($all_act_acct)){ 
+                        $output[] = $all_act_acct;
+                    }
                 }
             }
         }
+        
+        $i = 0;
     }
-    
-    $i = 0;
+} else { //if a date is not specified:
+    header("location:/melissa/display_message");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -159,29 +161,3 @@ if(isset($_POST["referred_accounts"])){
     </div>
 </body>
 </html>
-
-<!--
-Nelsonaaron70@gmail.com
-jonathanfavour7@gmail.com
-dessien64@gmail.com
-aulejosephine01@gmail.com
-keshbentley020@gmail.com
-Khalidzubair085@gmail.com
-eebuka583@gmail.com
-ijebus2004@gmail.com
-joshuaisaac265@gmail.com
-oyesinapaul0@gmail.com
-dangkat123@gmail.com
-olayiwolahissa484@gmail.com
-oluwadarasimi765@gmail.com
-Mmeaomajames2006@gmail.com
-karmalrashid@gmail.com
-Ohitzandrew@gmail.com
-Hezekiel4real@yahoo.com
-yisaedward@gmail.com
-adewuyitobi730@gmail.com
-sahmedtyabo90@gmail.com
-favourakinnifesi@yahoo.com
-mohammedibrahimarabi@gmail.com
-davidoriyomi21@gmail.com
--->
