@@ -119,12 +119,12 @@ if(isset($_GET["date"])){
             (one on each line).
         </div>
     </div>
-    <form method = "post" action = "">
+    <form method = "post" action = "#active_accounts_display">
         <textarea name="referred_accounts"><?=$all_referred_accounts?></textarea>
         <br /><button class="long-action-button" type = "submit"><i class="fa fa-flash"></i> Submit</button><br /><br />
     </form>
 
-    <div style="margin:24px 15px">
+    <div style="margin:24px 15px"><a name="active_accounts_display" id="active_accounts_display"></a> 
     <?php
         if($isset_of_ref) {
             echo "<h2 style='text-align:center'>This Manager's Referals' accounts still active for the week are:</h2>";
