@@ -20,33 +20,19 @@ if(isset($_GET["date"])){
     $all_referred_accounts = "";
     
     if(isset($_POST["referred_accounts"])){
-        $isset_of_ref = true;
-        $all_referred_accounts = htmlentities($_POST["referred_accounts"]);
-    
-        $managers_referrals = trim($all_referred_accounts);
-        $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts);
+        $isset_of_ref = true; //would come in handy later on in html space . .
+        $all_referred_accounts = htmlentities($_POST["referred_accounts"]); //preventing sql injection 
+        $managers_referrals = trim($all_referred_accounts); //trimming for extra space
+        $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $all_referred_accounts); //replacing the accepted number formats with null
         $managers_referrals = str_replace("+", "", $all_referred_accounts);
         $managers_referrals = str_replace(" ", "", $all_referred_accounts);
-        //echo "<h2>managers referrals: </h2>". $managers_referrals;
         $managers_referrals_arr = explode("\n", $managers_referrals);
-        //$managers_json = json_encode($managers_referrals_arr);
         $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
         $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
         $managers_referrals_arr = array_unique($managers_referrals_arr);
-        
-        /*print_r($managers_referrals_arr);
-        
-        foreach($managers_referrals_arr as $mra){
-            if(strpos("0", $mra) == 0) {
-                preg_replace("/0/", "", $mra, 1);
-            }
-        }*/
     
-        
+
         foreach($all_active_accounts as $all_act_acct) { //if(!in_array()) could be used here in place of array_unique
-            //if(in_array($managers_ref, $all_active_accounts)){
-            //    $output[] = $managers_ref;
-            //}
             if(strlen($all_act_acct) > 10) {
                 $sub_all_act = substr($all_act_acct, 0, -6);
                 $sub_all_act = trim($sub_all_act);

@@ -5,7 +5,8 @@ $date = "";
 if(isset($_GET["date"])){
     $date = htmlentities($_GET["date"]);
     $linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_$date.csv")));
-    $linkedin_file = str_replace("+", "", $linkedin_file);
+    $linkedin_file = str_replace("+", "", $linkedin_file); //so I can be able to search for phone numbers
+    $linkedin_file = str_replace(" ", "", $linkedin_file); //so I can be able to search for phone numbers
     $all_active_accounts = explode("\n", $linkedin_file);
     $all_active_accounts = array_map('strtolower', $all_active_accounts);
     $all_active_accounts = array_map('trim', $all_active_accounts);
@@ -80,9 +81,9 @@ if(isset($_GET["date"])){
                 $managers_referrals = $_POST["managers_accounts"];
                 $managers_referrals = trim($managers_referrals);
                 $managers_referrals = preg_replace("/[0-9]+\.|[0-9]+\)|[\)]/", "", $managers_referrals);
-                //echo "<h2>managers referrals: </h2>". $managers_referrals;
+                $managers_referrals = str_replace("+", "", $managers_referrals);
+                $managers_referrals = str_replace(" ", "", $managers_referrals);
                 $managers_referrals_arr = explode("\n", $managers_referrals);
-                //$managers_json = json_encode($managers_referrals_arr);
                 $managers_referrals_arr = array_map('strtolower', $managers_referrals_arr);
                 $managers_referrals_arr = array_map('trim', $managers_referrals_arr);
                 $managers_referrals_arr = array_unique($managers_referrals_arr);
