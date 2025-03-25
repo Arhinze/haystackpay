@@ -48,9 +48,13 @@
 <body>
     <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals</h1>
     <div style="margin:24px 12px">
-        <div style="text-align:center;margin-bottom:24px">
+        <div style="text-align:center;margin-bottom:18px">
             Please specify a time range you wish to search or view. <br />
             The time(date) range for this program usually spans from sunday to saturday.
+        </div>
+
+        <div style="text-align:center;margin-bottom:18px;color:red">
+            You may be receiving this message because you've inputed a wrong date or date format.
         </div>
         <br /><br />
 

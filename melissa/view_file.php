@@ -63,7 +63,7 @@ if(isset($_GET["date"])){
     </style>
 </head>
 <body>
-    <h1 style = "text-align:center"><i class="fa fa-linkedin"></i> Linkedin Rentals - WANL(Melissa)</h1>
+    <h1 style = "text-align:center;color:#ff9100"><i class="fa fa-linkedin"></i> Linkedin Rentals - WANL(Melissa)</h1>
     <div>
         <div style="text-align:center;margin:21px 12px;border-bottom:3px solid #888;padding:18px 12px">
             Below is a file showing all active accounts for the week on WANL(Melissa's company). <br /><br />
