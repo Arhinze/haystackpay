@@ -5,6 +5,10 @@ $date = "";
 if(isset($_GET["date"])){
     $date = htmlentities($_GET["date"]);
     $linkedin_file = trim(htmlentities(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/static/files/linkedin_$date.csv")));
+    if(!$linkedin_file) {
+        header("location:/melissa/display_message");
+    }
+    
     $linkedin_file = str_replace("+", "", $linkedin_file); //so I can be able to search for phone numbers
     $linkedin_file = str_replace(" ", "", $linkedin_file); //so I can be able to search for phone numbers
     $all_active_accounts = explode("\n", $linkedin_file);
