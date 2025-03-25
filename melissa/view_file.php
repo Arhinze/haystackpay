@@ -118,7 +118,7 @@ if(isset($_GET["date"])){
             }
             echo "<br /><br /><b>Total active accounts for the week:</b> ", count($all_active_accounts);
         ?>
-            <div style="margin:60px 3px"><a class="long-action-button" style="background-color:blue;color:#fff;" href="/active_accounts/<?=$date?>"> <i class="fa fa-search"></i> &nbsp; Search by managers >> </a></div>
+            <div style="margin:60px 3px"><a class="long-action-button" style="background-color:blue;color:#fff;" href="/melissa/active_accounts/<?=$date?>"> <i class="fa fa-search"></i> &nbsp; Search by managers >> </a></div>
         </div>
     </div>
 </body>
