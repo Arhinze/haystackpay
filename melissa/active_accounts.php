@@ -134,7 +134,7 @@ if(isset($_GET["date"])){
             } else {
                 foreach($output as $out_put_) {
                     $i += 1;
-                    echo "<b>$i.) ".$out_put_."</b><br />";
+                    echo "<b>".$out_put_."</b><br />";
                 }
             
                 echo "<br /><br /><b>Total number is: $i.</b>";
