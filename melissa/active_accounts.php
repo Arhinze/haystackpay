@@ -137,7 +137,7 @@ if(isset($_GET["date"])){
                     echo "<b>".$out_put_."</b><br />";
                 }
             
-                echo "<br /><br /><b>Total number is: $i.</b>";
+                echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <span>Copy Emails <i class='fa fa-copy'></i></span>"; 
             }
     ?>
         <form method="post" action="/melissa/view_file/<?=$date?>">
