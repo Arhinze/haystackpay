@@ -135,7 +135,7 @@ if(isset($_GET["date"])){
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
-                    echo "<b>".$out_put_."</b><br />";
+                    echo "".$out_put_."<br />";
                 }
                 echo "</div>";
             
@@ -156,9 +156,9 @@ if(isset($_GET["date"])){
     <script>
         function copyEmails(){
             x = document.getElementById("active_emails").innerHTML;
-            x = x.replace("<b>", "");
-            x = x.replace("</b>", "");
-            x = x.replace("<br>", "");
+            //x = x.replaceAll("<b>", "");
+            //x = x.replaceAll("</b>", "");
+            //x = x.replaceAll("<br>", "");
             //navigator.clipboard.writeText(x.value);
             const textArea = document.createElement('textarea');
             textArea.value = x;
