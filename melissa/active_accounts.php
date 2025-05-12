@@ -132,12 +132,14 @@ if(isset($_GET["date"])){
             if(count($output) == 0) {
                 echo "No referrals for this manager the week / Empty field submitted.";
             } else {
+                echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
                     echo "<b>".$out_put_."</b><br />";
                 }
+                echo "</div>";
             
-                echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <span>Copy Emails <i class='fa fa-copy'></i></span>"; 
+                echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>"; 
             }
     ?>
         <form method="post" action="/melissa/view_file/<?=$date?>">
@@ -150,5 +152,16 @@ if(isset($_GET["date"])){
         }    
     ?>
     </div>
+
+    <script>
+        function copyEmails(){
+            x = document.getElementById("active_emails");
+            x.select();
+            x.setSelectionRange(0, 99999);
+            //navigator.clipboard.writeText(x.value);
+            document.execCommand('copy');
+            alert("copied emails successfully");
+        }
+    </script>
 </body>
 </html>
