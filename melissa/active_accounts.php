@@ -156,6 +156,9 @@ if(isset($_GET["date"])){
     <script>
         function copyEmails(){
             x = document.getElementById("active_emails").innerHTML;
+            x.replace("<b>", "");
+            x.replace("</b>", "");
+            x.replace("<br>", "");
             //navigator.clipboard.writeText(x.value);
             const textArea = document.createElement('textarea');
             textArea.value = x;
@@ -163,7 +166,7 @@ if(isset($_GET["date"])){
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
-            
+
             alert("copied emails successfully");
         }
     </script>
