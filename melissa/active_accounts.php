@@ -155,7 +155,7 @@ if(isset($_GET["date"])){
 
     <script>
         function copyEmails(){
-            x = document.getElementById("active_emails");
+            x = document.getElementById("active_emails").innerHTML;
             x.select();
             x.setSelectionRange(0, 99999);
             //navigator.clipboard.writeText(x.value);
