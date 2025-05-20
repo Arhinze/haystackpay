@@ -135,11 +135,11 @@ if(isset($_GET["date"])){
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
-                    echo "".$out_put_."<br />";
+                    echo "".$out_put_."<br /> ";
                 }
                 echo "</div>";
             
-                echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>"; 
+                echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
             }
     ?>
         <form method="post" action="/melissa/view_file/<?=$date?>">
@@ -156,7 +156,7 @@ if(isset($_GET["date"])){
     <script>
         function copyEmails(){
             x = document.getElementById("active_emails").innerHTML;
-            //x = x.replaceAll("<b>", "");
+            x = x.replaceAll("<br>", "");
             //x = x.replaceAll("</b>", "");
             //x = x.replaceAll("<br>", "");
             //navigator.clipboard.writeText(x.value);
