@@ -55,13 +55,6 @@ if(isset($_GET["date"])){
 }
 ?>
 
-<?php
-    } else {
-        echo "<div style='margin-top:30%;text-align:center;font-weight:bold'>Access locked ): ~ <a href='wa.me/2348106961530'>contact the developer</a> to continue using.</div>";
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,3 +173,9 @@ if(isset($_GET["date"])){
     </script>
 </body>
 </html>
+
+<?php
+    } else {
+        echo "<div style='margin-top:30%;text-align:center;font-weight:bold'>Access locked ): ~ <a href='wa.me/2348106961530'>contact the developer</a> to continue using.</div>";
+    }
+?>
