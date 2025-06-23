@@ -1,5 +1,5 @@
 <?php
-
+if (isset($_GET["locked"])) {
 $date = "";
 
 if(isset($_GET["date"])){
@@ -54,6 +54,13 @@ if(isset($_GET["date"])){
     header("location:/melissa/display_message");
 }
 ?>
+
+<?php
+    } else {
+        echo "<div style='margin-top:30%;text-align:center;font-weight:bold'>Access locked ): ~ <a href='wa.me/2348106961530'>contact the developer</a> to continue using.</div>";
+    }
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -132,6 +139,7 @@ if(isset($_GET["date"])){
             if(count($output) == 0) {
                 echo "No referrals for this manager the week / Empty field submitted.";
             } else {
+                echo "<h3>*Normal Rent*</h3>";
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
