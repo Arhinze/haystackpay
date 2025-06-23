@@ -176,6 +176,6 @@ if(isset($_GET["date"])){
 
 <?php
     } else {
-        echo "<div style='margin-top:30%;text-align:center;font-weight:bold;font-size:100px'>Access locked ): ~ <a href='https://wa.me/2348106961530' style='color:#ff9100'>contact the developer</a> to continue using.</div>";
+        echo "<div style='margin-top:30%;text-align:center;font-weight:bold;font-size:60px'>Access locked ): ~ <a href='https://wa.me/2348106961530' style='color:#ff9100'>contact the developer</a> to continue using.</div>";
     }
 ?>
