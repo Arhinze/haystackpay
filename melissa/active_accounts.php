@@ -132,6 +132,7 @@ if(isset($_GET["date"])){
             if(count($output) == 0) {
                 echo "No referrals for this manager the week / Empty field submitted.";
             } else {
+                $output = array_unique($output);
                 echo "<h3>*Normal Rent*</h3>";
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
