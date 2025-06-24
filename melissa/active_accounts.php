@@ -146,6 +146,18 @@ if(isset($_GET["date"])){
                 echo "</div>";
             
                 echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
+
+                $stripped_off = array_unique($stripped_off);
+                $i2 = 0;
+                echo "<h3>*Removed Accounts:*</h3>";
+                echo "<div id='active_emails'>";
+                foreach($stripped_off as $str_off) {
+                    $i2 += 1;
+                    echo "".$str_off."<br /> ";
+                }
+                echo "</div>";
+            
+                echo "<br /><br /><b>Total accounts stripped off: $i2.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
             }
     ?>
         <form method="post" action="/melissa/view_file/<?=$date?>">
