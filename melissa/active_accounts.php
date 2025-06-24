@@ -18,7 +18,7 @@ if(isset($_GET["date"])){
     //echo "<h2>All active accounts:</h2>"; print_r($all_active_accounts);
     
     $managers_referrals = [];
-    $output = [];
+    $output = []; $stripped_off = [];
     $isset_of_ref = false;
     $all_referred_accounts = "";
     
@@ -43,6 +43,10 @@ if(isset($_GET["date"])){
                 if(preg_grep("/$all_act_acct|$sub_all_act/", $managers_referrals_arr)) {
                     if(!empty($all_act_acct)){ 
                         $output[] = $all_act_acct;
+                    } 
+                } else {
+                    if(!empty($all_act_acct)){ 
+                        $stripped_off[] = $managers_referrals_arr;
                     }
                 }
             }
