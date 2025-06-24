@@ -147,7 +147,7 @@ if(isset($_GET["date"])){
             
                 echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
 
-                $stripped_off = array_unique($stripped_off);
+                $stripped_off_new = array_unique($stripped_off);
                 $i2 = 0;
                 echo "<h3>*Removed Accounts:*</h3>";
                 echo "<div id='active_emails'>";
