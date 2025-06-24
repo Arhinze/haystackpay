@@ -45,9 +45,9 @@ if(isset($_GET["date"])){
                         $output[] = $all_act_acct;
                     } 
                 } else {
-                    if(!empty($all_act_acct)){ 
+                    //if(!empty($all_act_acct)){ 
                         $stripped_off[] = $managers_referrals_arr;
-                    }
+                    //}
                 }
             }
         }
