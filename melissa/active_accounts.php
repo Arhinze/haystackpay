@@ -138,7 +138,7 @@ if(isset($_GET["date"])){
             } else {
                 $output = array_unique($output);
                 $real_count = count($output);
-                if(strpos("UR", $date)) {
+                if(strpos($date, "UR")) {
                     echo "<h3>*Lifted Restrictions*: $real_count</h3><br />";
                 } else {
                     echo "<h3>*Normal Rent*: $real_count</h3><br />";
