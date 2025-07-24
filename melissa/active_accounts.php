@@ -138,7 +138,11 @@ if(isset($_GET["date"])){
             } else {
                 $output = array_unique($output);
                 $real_count = count($output);
-                echo "<h3>*Normal Rent*: $real_count</h3><br />";
+                if(strpos("UR", $date)) {
+                    echo "<h3>*Lifted Restrictions*: $real_count</h3><br />";
+                } else {
+                    echo "<h3>*Normal Rent*: $real_count</h3><br />";
+                }
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
