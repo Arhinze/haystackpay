@@ -146,7 +146,7 @@ if(isset($_GET["date"])){
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
-                    echo "".$out_put_."<br /> ";
+                    echo "".$out_put_."<br /><br />";
                 }
                 echo "$i x $5 = ".($i*5);
                 echo "</div>";
