@@ -146,9 +146,9 @@ if(isset($_GET["date"])){
                 echo "<div id='active_emails'>";
                 foreach($output as $out_put_) {
                     $i += 1;
-                    echo "".$out_put_."<br /><br />";
+                    echo "".$out_put_."<br />";
                 }
-                echo "$i x $5 = $".($i*5);
+                echo "<br />$i x $5 = $".($i*5);
                 echo "</div>";
             
                 echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
@@ -166,6 +166,7 @@ if(isset($_GET["date"])){
                 //echo "<br /><br /><b>Total accounts stripped off: $i2.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
             }
     ?>
+    <>
         <form method="post" action="/melissa/view_file/<?=$date?>">
             <input type="hidden" name="managers_accounts" value="<?=$all_referred_accounts?>"/>
             <!-- $managers_referrals_arr-->
