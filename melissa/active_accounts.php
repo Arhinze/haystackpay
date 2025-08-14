@@ -148,6 +148,7 @@ if(isset($_GET["date"])){
                     $i += 1;
                     echo "".$out_put_."<br /> ";
                 }
+                echo "$i x $5 = ".($i*5);
                 echo "</div>";
             
                 echo "<br /><br /><b>Total number is: $i.</b> &nbsp; &nbsp; &nbsp; <!--<span onclick='copyEmails()'>Copy Emails <i class='fa fa-copy'></i></span>-->"; 
