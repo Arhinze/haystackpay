@@ -109,9 +109,18 @@ class Index_Segments{
                     <div style="margin-bottom:18px">
                         <b>Speak</b>, <b>Type</b> or <b>Snap</b> to pay:
                         <div style="display:flex;justify-content:space-between">
-                            <div class="features_images"><img src="/static/images/speak.png"/></div>
-                            <div class="features_images"><img src="/static/images/type.png"/></div>
-                            <div class="features_images"><img src="/static/images/snap.png"/></div>
+                            <div class="features_images">
+                                <div><img src="/static/images/speak.png"/></div>
+                                <div>listening. . .</div>
+                            </div>
+                            <div class="features_images">
+                                <div><img src="/static/images/type.png"/></div>
+                                <div>tell me what to do. .</div>
+                            </div>
+                            <div class="features_images">
+                                <div><img src="/static/images/snap.png"/></div>
+                                <div>Get a picture of anyone's account details</div>
+                            </div>
                         </div>
                     </div>
 
