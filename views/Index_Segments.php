@@ -106,8 +106,8 @@ class Index_Segments{
                         </div>
                     </a>
 
-                    <div style="margin-bottom:18px">
-                        <div style="font-size:21px"><b>Speak</b>, <b>Type</b> or <b>Snap</b> to pay:</div>
+                    <div style="margin:24px 0">
+                        <div style="font-size:24px"><b>Speak</b>, <b>Type</b> or <b>Snap</b> to pay:</div>
                         <div style="display:flex;justify-content:space-between">
                             <div class="features_images_div">
                                 <div class="features_images"><img src="/static/images/speak.png"/></div>
@@ -119,7 +119,7 @@ class Index_Segments{
                             </div>
                             <div class="features_images_div">
                                 <div class="features_images"><img src="/static/images/snap.png"/></div>
-                                <div class="features_images_bottom_text">Get a picture of anyone's account details</div>
+                                <div class="features_images_bottom_text">Take a picture of anyone's account details</div>
                             </div>
                         </div>
                     </div>
