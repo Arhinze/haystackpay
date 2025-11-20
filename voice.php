@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-
+<!--
     <button id="speakBtn">🎤 Speak</button>
 <p id="transcript"></p>
 
@@ -33,5 +33,44 @@
         });
     };
 </script>
+-->
+
+
+<button id="start">Start Recording</button><br /><br />
+<button id="stop">Stop</button>
+
+<script>
+let chunks = [];
+let recorder;
+
+navigator.mediaDevices.getUserMedia({ audio: true })
+.then(stream => {
+    recorder = new MediaRecorder(stream);
+
+    recorder.ondataavailable = e => chunks.push(e.data);
+
+    document.getElementById("start").onclick = () => recorder.start();
+    document.getElementById("stop").onclick = () => {
+        recorder.stop();
+        recorder.onstop = e => {
+            let blob = new Blob(chunks, { type: "audio/webm" });
+            chunks = [];
+
+            let formData = new FormData();
+            formData.append("audio", blob, "voice.webm");
+
+            fetch("audio_to_ai.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert("AI Response: " + data.result);
+            });
+        };
+    };
+});
+</script>
+
 </body>
 </html>
