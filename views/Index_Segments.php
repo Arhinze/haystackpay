@@ -111,15 +111,15 @@ class Index_Segments{
                         <div style="display:flex;justify-content:space-between">
                             <div class="features_images_div">
                                 <div class="features_images"><img src="/static/images/speak.png"/></div>
-                                <div>listening. . .</div>
+                                <div class="features_images_bottom_text">listening. . .</div>
                             </div>
                             <div class="features_images_div">
                                 <div class="features_images"><img src="/static/images/type.png"/></div>
-                                <div>tell me what to do. .</div>
+                                <div class="features_images_bottom_text">tell me what to do. .</div>
                             </div>
                             <div class="features_images_div">
                                 <div class="features_images"><img src="/static/images/snap.png"/></div>
-                                <div>Get a picture of anyone's account details</div>
+                                <div class="features_images_bottom_text">Get a picture of anyone's account details</div>
                             </div>
                         </div>
                     </div>

@@ -234,6 +234,10 @@ a{
     height:auto
 }
 
+.features_images_bottom_text {
+    font-size:9px;
+}
+
 .haystackpay_intro{
     text-align:center; 
     margin:96px 12px 24px 12px;
