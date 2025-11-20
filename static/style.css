@@ -229,6 +229,10 @@ a{
     border-radius:9px;
 }
 
+.features_images_div{
+    width:33%;
+}
+
 .features_images img{
     width: 100px;
     height:auto
