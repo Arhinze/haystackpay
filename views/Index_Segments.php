@@ -106,6 +106,15 @@ class Index_Segments{
                         </div>
                     </a>
 
+                    <div>
+                        <b>Speak</b>, <b>Type</b> or <b>Snap</b> to pay:
+                        <div style="display:flex;justify-content:space-between">
+                            <div class="features_images"><img src="/static/images/speak.png"/></div>
+                            <div class="features_images"><img src="/static/images/type.png"/></div>
+                            <div class="features_images"><img src="/static/images/snap.png"/></div>
+                        </div>
+                    </div>
+
                     <div class="bulk_tr"><a id="bulk_tr" name="bulk_tr"></a><!-- start of .bulk_tr -->
                         <div style="margin-bottom:12px">
                             <b>Do you intend to send money to multiple persons from a single account? <br />
