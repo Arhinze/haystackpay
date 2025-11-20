@@ -106,7 +106,7 @@ class Index_Segments{
                         </div>
                     </a>
 
-                    <div>
+                    <div style="margin-bottom:18px">
                         <b>Speak</b>, <b>Type</b> or <b>Snap</b> to pay:
                         <div style="display:flex;justify-content:space-between">
                             <div class="features_images"><img src="/static/images/speak.png"/></div>
