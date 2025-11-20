@@ -229,6 +229,11 @@ a{
     border-radius:9px;
 }
 
+.features_image img{
+    width: 30px;
+    height:auto
+}
+
 .haystackpay_intro{
     text-align:center; 
     margin:96px 12px 24px 12px;
