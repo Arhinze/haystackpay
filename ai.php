@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_POST['message'])) {
+if (!isset($_GET['message'])) {
     $message = htmlentities($_POST["message"]);
 }
 
