@@ -124,6 +124,16 @@ class Index_Segments{
                         </div>
                     </div>
 
+                    <div style="display:block;position:fixed;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb" id="start_speaking_div">
+                        <div class="features_images_div">
+                            <label for="speak_button"><div class="features_images"><img src="/static/images/speak.png"/></div></label>
+                            <div class="features_images_bottom_text">Tap the icon to speak</div>
+
+                            <div><b id="transcript"></b></div>
+                            <button id="speak_button" style="display:none"></button>
+                        </div>
+                    </div>
+
                     <div style="margin:18px 0">
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
                         <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
@@ -200,6 +210,33 @@ class Index_Segments{
                           
                 collection[i].innerHTML = newInnerHT;
             }
+
+
+
+            //AI speech to text:
+            let recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-US";
+            recognition.continuous = false;
+            
+            document.getElementById("speakBtn").onclick = () => recognition.start();
+            
+            recognition.onresult = function(event) {
+                let text = event.results[0][0].transcript;
+                document.getElementById("transcript").textContent = text;
+            
+                // Send recognized text to PHP
+                fetch("ai.php", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                    body: "message=" + encodeURIComponent(text)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    alert("AI Response: " + data.choices[0].message.content);
+                });
+            };
+
+            
                            
             function hide_invalid_div() {
                 //const collection = document.getElementsByClassName("invalid");
