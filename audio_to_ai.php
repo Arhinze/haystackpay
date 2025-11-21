@@ -6,7 +6,7 @@ $text = $_POST['message'];
 $url = "https://api.openai.com/v1/chat/completions";
 
 $data = [
-    "model" => "gpt-4o-mini",
+    "model" => "gpt-4o-transcribe",
     "messages" => [
         ["role" => "user", "content" => $text]
     ]
@@ -24,5 +24,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 $response = curl_exec($ch);
 curl_close($ch);
 
+header('Content-Type: application/json');
 echo $response;
+
 ?>
