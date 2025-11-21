@@ -12,33 +12,33 @@
 <p id="output"></p>
 
 <script>
-let recorder;
-let chunks = [];
+let recorder, chunks = [];
 
-// Request microphone
 navigator.mediaDevices.getUserMedia({ audio: true })
 .then(stream => {
-    // WAV works everywhere, so we use default browser encoding
-    recorder = new MediaRecorder(stream);
+    // Force proper, supported audio format
+    recorder = new MediaRecorder(stream, {
+        mimeType: "audio/webm;codecs=opus"
+    });
 
     recorder.ondataavailable = e => chunks.push(e.data);
 
     document.getElementById("startBtn").onclick = () => {
         chunks = [];
         recorder.start();
-        document.getElementById("output").innerHTML = "🎙️ Listening...";
+        document.getElementById("output").textContent = "🎙️ Listening...";
     };
 
     document.getElementById("stopBtn").onclick = () => {
         recorder.stop();
-        document.getElementById("output").innerHTML = "Processing...";
+        document.getElementById("output").textContent = "Processing...";
     };
 
     recorder.onstop = () => {
-        let blob = new Blob(chunks, { type: "audio/wav" });
+        let blob = new Blob(chunks, { type: "audio/webm" });
 
         let formData = new FormData();
-        formData.append("audio", blob, "voice.wav");
+        formData.append("audio", blob, "voice.webm");
 
         fetch("audio_to_ai.php", {
             method: "POST",
@@ -46,18 +46,15 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         })
         .then(r => r.json())
         .then(data => {
-            console.log(data);
+            console.log("Groq Response:", data);
             document.getElementById("output").textContent = data.text || "No text returned.";
-            document.getElementById("output").innerHTML = "";
+            document.getElementById("output").textContent = "";
         })
         .catch(err => {
+            document.getElementById("output").textContent = "";
             document.getElementById("output").textContent = "Error: " + err;
-            document.getElementById("output").innerHTML = "";
         });
     };
-})
-.catch(err => {
-    alert("Microphone access denied: " + err);
 });
 </script>
 
