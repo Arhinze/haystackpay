@@ -6,56 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-<button id="startBtn">Start Recording</button>
-<button id="stopBtn">Stop</button>
-
-<p id="output"></p>
+<button id="start">Start Recording</button>
+<button id="stop">Stop Recording</button>
 
 <script>
-let recorder, chunks = [];
+let mediaRecorder;
+let audioChunks = [];
 
-navigator.mediaDevices.getUserMedia({ audio: true })
-.then(stream => {
-    // Force proper, supported audio format
-    recorder = new MediaRecorder(stream, {
-        mimeType: "audio/webm;codecs=opus"
-    });
+document.getElementById("start").onclick = async () => {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
 
-    recorder.ondataavailable = e => chunks.push(e.data);
+    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+    mediaRecorder.start();
+};
 
-    document.getElementById("startBtn").onclick = () => {
-        chunks = [];
-        recorder.start();
-        document.getElementById("output").textContent = "🎙️ Listening...";
-    };
+document.getElementById("stop").onclick = async () => {
+    mediaRecorder.stop();
 
-    document.getElementById("stopBtn").onclick = () => {
-        recorder.stop();
-        document.getElementById("output").textContent = "Processing...";
-    };
+    mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+        const formData = new FormData();
+        formData.append("file", audioBlob, "audio.webm");
 
-    recorder.onstop = () => {
-        let blob = new Blob(chunks, { type: "audio/webm" });
-
-        let formData = new FormData();
-        formData.append("audio", blob, "voice.webm");
-
-        fetch("audio_to_ai.php", {
+        const res = await fetch("process_audio.php", {
             method: "POST",
             body: formData
-        })
-        .then(r => r.json())
-        .then(data => {
-            console.log("Groq Response:", data);
-            document.getElementById("output").textContent = data.text || "No text returned.";
-            document.getElementById("output").textContent = "";
-        })
-        .catch(err => {
-            document.getElementById("output").textContent = "";
-            document.getElementById("output").textContent = "Error: " + err;
         });
+
+        console.log(await res.text());
     };
-});
+};
 </script>
 
 </body>
