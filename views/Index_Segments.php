@@ -114,11 +114,11 @@ class Index_Segments{
                                 <div class="features_images_bottom_text">listening. . .</div>
                             </div>
                             <div class="features_images_div">
-                                <div class="features_images"onclick="show_div('start_typing_div')"><img src="/static/images/type.png"/></div>
+                                <div class="features_images" onclick="show_div('start_typing_div')"><img src="/static/images/type.png"/></div>
                                 <div class="features_images_bottom_text">tell me what to do. .</div>
                             </div>
                             <div class="features_images_div">
-                                <div class="features_images"><img src="/static/images/snap.png"/></div>
+                                <div class="features_images" onclick="show_div('start_snapping_div')"><img src="/static/images/snap.png"/></div>
                                 <div class="features_images_bottom_text">Take a picture of anyone's account details</div>
                             </div>
                         </div>
@@ -149,6 +149,18 @@ class Index_Segments{
                     </div>
                     
                     <div id="proceed_after_typing"></div>
+
+                    <!-- Snap/Pictures -->
+                    <div style="display:none;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:80%;width:70%;text-align:center" id="start_snapping_div">
+                        <div style="text-align:left;margin:12px"><b onclick="show_div('start_snapping_div')"><i class="fa fa-times" style="color:#2b8eeb"></i></b></div>
+                        <div class="features_images_div" style="width:100%;margin:25% 3%">
+                            <label for="speak_button"><div class="features_images"><img src="/static/images/snap.png" style="width:60%;height:auto"/></div></label>
+                            <div class="features_images_bottom_text">Take a picture of any account details to send money to that account.</div>
+
+                            
+                            <button id="snap_button" style="display:block">Upload a picture/screenshot from your device containing account details.</button>
+                        </div>
+                    </div>
 
                     <div style="margin:18px 0">
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
