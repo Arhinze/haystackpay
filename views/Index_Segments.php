@@ -114,7 +114,7 @@ class Index_Segments{
                                 <div class="features_images_bottom_text">listening. . .</div>
                             </div>
                             <div class="features_images_div">
-                                <div class="features_images"><img src="/static/images/type.png"/></div>
+                                <div class="features_images"onclick="show_div('start_typing_div')"><img src="/static/images/type.png"/></div>
                                 <div class="features_images_bottom_text">tell me what to do. .</div>
                             </div>
                             <div class="features_images_div">
@@ -124,6 +124,7 @@ class Index_Segments{
                         </div>
                     </div>
 
+                    <!-- Speech -->
                     <div style="display:none;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:80%;width:70%;text-align:center" id="start_speaking_div">
                         <div style="text-align:left;margin:12px"><b onclick="show_div('start_speaking_div')"><i class="fa fa-times" style="color:#2b8eeb"></i></b></div>
                         <div class="features_images_div" style="width:100%;margin:25% 3%">
@@ -135,15 +136,19 @@ class Index_Segments{
                         </div>
                     </div>
 
-                    <div id="proceed_after_speech">
+                    <div id="proceed_after_speech"></div>
 
+                    <!-- Typing -->
                     <div style="display:none;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:80%;width:70%;text-align:center" id="start_typing_div">
+                        <div style="text-align:left;margin:12px"><b onclick="show_div('start_typing_div')"><i class="fa fa-times" style="color:#2b8eeb"></i></b></div>
+
                         <div style="margin-top:30px">
                             <input class="payment_input" id="ai_text_input" type="text" placeholder="try: 'send 3000 to bestie'"/>
                             <button class="payment_button" onclick="typing_output()"><i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
-                    </div>
+                    
+                    <div id="proceed_after_typing"></div>
 
                     <div style="margin:18px 0">
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
