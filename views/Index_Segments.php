@@ -173,13 +173,15 @@ class Index_Segments{
             }
 
             function reveal_email_ps(){
-                show_div("pay_via_email");
+                document.getElementById("pay_via_email").style.display = "block";
+                document.getElementById("pay_via_phone").style.display = "none";
                 document.getElementById("rps_email_text").style.color = "#000";
                 document.getElementById("rps_phone_text").style.color = "#888";
             }
 
             function reveal_phone_ps(){
-                show_div("pay_via_phone");
+                document.getElementById("pay_via_email").style.display = "none";
+                document.getElementById("pay_via_phone").style.display = "block";
                 document.getElementById("rps_email_text").style.color = "#888";
                 document.getElementById("rps_phone_text").style.color = "#000";
             }
