@@ -128,13 +128,13 @@ class Index_Segments{
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
                         <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
 
-                        <div style="font-weight:bold">Email/<span style="color:#888">Phone Number</span></div>
+                        <div style="font-weight:bold"><span onclick="reveal_email_ps()" style="color:#000" id="rps_email_text">Email</span>/<span onclick="reveal_phone_ps()"  style="color:#888" id="rps_phone_text">Phone Number</span></div>
                         <div id="pay_via_email" style="display:block">
                             <input class="payment_input" placeholder="Enter an email address"/>
-                            <button><i class="fa fa-arrow-right"></i></button>
+                            <button class="button"><i class="fa fa-arrow-right"></i></button>
                         </div>
 
-                        <div id="pay_via_phone_number" style="display:none">
+                        <div id="pay_via_phone" style="display:none">
                             <input class="payment_input" placeholder="Enter a phone Number"/>
                         </div>
                     </div>
@@ -170,6 +170,18 @@ class Index_Segments{
                 } else if (document.getElementById(vari).style.display == "block") {
                     document.getElementById(vari).style.display = "none";
                 }
+            }
+
+            function reveal_email_ps(){
+                show_div("pay_via_email");
+                document.getElementById("rps_email_text").style.color = "#000";
+                document.getElementById("rps_phone_text").style.color = "#888";
+            }
+
+            function reveal_phone_ps(){
+                show_div("pay_via_phone");
+                document.getElementById("rps_email_text").style.color = "#888";
+                document.getElementById("rps_phone_text").style.color = "#000";
             }
                          
             const collection = document.getElementsByClassName("invalid");
