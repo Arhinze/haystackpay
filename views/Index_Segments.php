@@ -139,8 +139,8 @@ class Index_Segments{
 
                     <div style="display:none;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:80%;width:70%;text-align:center" id="start_typing_div">
                         <div style="margin-top:30px">
-                            <input class="payment_input" type="text" placeholder="try: 'send 3000 to bestie'"/>
-                            <button class="payment_button"><i class="fa fa-arrow-right"></i></button>
+                            <input class="payment_input" id="ai_text_input" type="text" placeholder="try: 'send 3000 to bestie'"/>
+                            <button class="payment_button" onclick="typing_output()"><i class="fa fa-arrow-right"></i></button>
                         </div>
                     </div>
                     </div>
@@ -262,6 +262,24 @@ class Index_Segments{
             };
 
 
+            //AI text understanding:
+            function typing_output() {
+                ai_text=document.getElementById("ai_text_input").value;
+                obj = new XMLHttpRequest;
+                obj.onreadystatechange = function(){
+                    if(obj.readyState == 4){
+                        if (document.getElementById("proceed_after_text")){
+                            document.getElementById("proceed_after_text").innerHTML = obj.responseText;
+                        }
+                    }
+                }         
+    
+                console.log(text);
+                obj.open("GET","/ajax/ai.php?message="+ai_text);
+                obj.send(null);
+            }
+            
+  
                            
             function hide_invalid_div() {
                 //const collection = document.getElementsByClassName("invalid");
