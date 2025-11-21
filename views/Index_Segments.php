@@ -218,7 +218,7 @@ class Index_Segments{
             recognition.lang = "en-US";
             recognition.continuous = false;
             
-            document.getElementById("speakBtn").onclick = () => recognition.start();
+            document.getElementById("speak_button").onclick = () => recognition.start();
             
             recognition.onresult = function(event) {
                 let text = event.results[0][0].transcript;
@@ -236,7 +236,7 @@ class Index_Segments{
                 });
             };
 
-            
+
                            
             function hide_invalid_div() {
                 //const collection = document.getElementsByClassName("invalid");
