@@ -125,15 +125,16 @@ class Index_Segments{
                     </div>
 
                     <div>
-                        <div style="font-size:24px">Pay via email/phone Number</div>
-                        <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can pay</div>
+                        <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
+                        <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
 
-                        <div style="font-weight:bold">Email/Phone Number</div>
-                        <div id="pay_via_email">
+                        <div style="font-weight:bold">Email/<span style="color:#888">Phone Number</span></div>
+                        <div id="pay_via_email" style="display:block">
                             <input class="payment_input" placeholder="Enter an email address"/>
+                            <button><i class="fa fa-arrow-right"></i></button>
                         </div>
 
-                        <div id="pay_via_phone_number">
+                        <div id="pay_via_phone_number" style="display:none">
                             <input class="payment_input" placeholder="Enter a phone Number"/>
                         </div>
                     </div>
