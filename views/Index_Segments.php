@@ -110,7 +110,7 @@ class Index_Segments{
                         <div style="font-size:24px"><b>Speak</b>, <b>Type</b> or <b>Snap</b> to pay:</div>
                         <div style="display:flex;justify-content:space-between">
                             <div class="features_images_div">
-                                <div class="features_images"><img src="/static/images/speak.png"/></div>
+                                <div class="features_images" onclick="show_div('start_speaking_div')"><img src="/static/images/speak.png"/></div>
                                 <div class="features_images_bottom_text">listening. . .</div>
                             </div>
                             <div class="features_images_div">
@@ -124,7 +124,7 @@ class Index_Segments{
                         </div>
                     </div>
 
-                    <div style="display:block;position:fixed;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb" id="start_speaking_div">
+                    <div style="display:block;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb" id="start_speaking_div">
                         <div class="features_images_div">
                             <label for="speak_button"><div class="features_images"><img src="/static/images/speak.png"/></div></label>
                             <div class="features_images_bottom_text">Tap the icon to speak</div>
