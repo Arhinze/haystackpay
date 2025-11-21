@@ -1,30 +1,37 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"]."/config/chatgpt.php");
+
+include_once($_SERVER["DOCUMENT_ROOT"]."/config/groq.php");
+
 $api_key = $ai_secret_key;
-$text = $_POST['message'];
+$audioFile = $_FILES["audio"]["tmp_name"];
+$url = "https://api.groq.com/openai/v1/audio/transcriptions";
+$ch = curl_init();
 
-$url = "https://api.openai.com/v1/chat/completions";
-
-$data = [
-    "model" => "gpt-4o-transcribe",
-    "messages" => [
-        ["role" => "user", "content" => $text]
+curl_setopt_array($ch, [
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_HTTPHEADER => [
+        "Authorization: Bearer $api_key"
+    ],
+    CURLOPT_POSTFIELDS => [
+        "file" => new CURLFile($audioFile),
+        "model" => "whisper-large-v3"  // Groq model
     ]
-];
-
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Content-Type: application/json",
-    "Authorization: Bearer $api_key"
 ]);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
 $response = curl_exec($ch);
+
+if (curl_errno($ch)) {
+    echo json_encode(["error" => curl_error($ch)]);
+    exit;
+}
+
 curl_close($ch);
 
-header('Content-Type: application/json');
+// Groq already returns proper JSON
+header("Content-Type: application/json");
 echo $response;
+
 
 ?>

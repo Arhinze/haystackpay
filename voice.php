@@ -6,42 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-<!--
-    <button id="speakBtn">🎤 Speak</button>
-<p id="transcript"></p>
+<button id="startBtn">Start Recording</button>
+<button id="stopBtn">Stop</button>
+
+<p id="output"></p>
 
 <script>
-    let recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
-    recognition.lang = "en-US";
-    recognition.continuous = false;
-    
-    document.getElementById("speakBtn").onclick = () => recognition.start();
-    
-    recognition.onresult = function(event) {
-        let text = event.results[0][0].transcript;
-        document.getElementById("transcript").textContent = text;
-    
-        // Send recognized text to PHP
-        fetch("ai.php", {
-            method: "POST",
-            headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body: "message=" + encodeURIComponent(text)
-        })
-        .then(res => res.json())
-        .then(data => {
-            alert("AI Response: " + data.choices[0].message.content);
-        });
-    };
-</script>
--->
-
-
-<button id="start">Start Recording</button><br /><br />
-<button id="stop">Stop</button>
-
-<script>
-let chunks = [];
 let recorder;
+let chunks = [];
 
 navigator.mediaDevices.getUserMedia({ audio: true })
 .then(stream => {
@@ -49,13 +21,17 @@ navigator.mediaDevices.getUserMedia({ audio: true })
 
     recorder.ondataavailable = e => chunks.push(e.data);
 
-    document.getElementById("start").onclick = () => recorder.start();
-    document.getElementById("stop").onclick = () => {
-        recorder.stop();
-        recorder.onstop = e => {
-            let blob = new Blob(chunks, { type: "audio/webm" });
-            chunks = [];
+    document.getElementById("startBtn").onclick = () => {
+        chunks = [];
+        recorder.start();
+        document.getElementById("output").textContent = "Listening...";
+    };
 
+    document.getElementById("stopBtn").onclick = () => {
+        recorder.stop();
+
+        recorder.onstop = () => {
+            let blob = new Blob(chunks, { type: "audio/webm" });
             let formData = new FormData();
             formData.append("audio", blob, "voice.webm");
 
@@ -63,10 +39,14 @@ navigator.mediaDevices.getUserMedia({ audio: true })
                 method: "POST",
                 body: formData
             })
-            .then(res => res.json())
+            .then(async res => res.json())
             .then(data => {
                 console.log(data);
-                alert("AI Response: " + data.text);
+                document.getElementById("output").textContent = data.text;
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById("output").textContent = "Error";
             });
         };
     };
