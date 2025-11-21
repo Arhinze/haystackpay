@@ -65,7 +65,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
             })
             .then(res => res.json())
             .then(data => {
-                alert("AI Response: " + data.result);
+                alert("AI Response: " + data.text);
             });
         };
     };
