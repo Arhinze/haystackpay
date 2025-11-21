@@ -137,6 +137,12 @@ class Index_Segments{
 
                     <div id="proceed_after_speech">
 
+                    <div style="display:none;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:80%;width:70%;text-align:center" id="start_typing_div">
+                        <div style="margin-top:30px">
+                            <input class="payment_input" type="text" placeholder="try: 'send 3000 to bestie'"/>
+                            <button class="payment_button"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
                     </div>
 
                     <div style="margin:18px 0">
