@@ -135,6 +135,10 @@ class Index_Segments{
                         </div>
                     </div>
 
+                    <div id="proceed_after_speech" style="position:fixed;z-index:5;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:300px;width:70%;text-align:center;font-weight:bold">
+                    
+                    </div>
+
                     <div style="margin:18px 0">
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
                         <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
@@ -226,7 +230,7 @@ class Index_Segments{
                 document.getElementById("transcript").textContent = text;
             
                 // Send recognized text to PHP
-                fetch("ai.php", {
+                /*fetch("ai.php", {
                     method: "POST",
                     headers: {"Content-Type": "application/x-www-form-urlencoded"},
                     body: "message=" + encodeURIComponent(text)
@@ -235,7 +239,19 @@ class Index_Segments{
                 .then(data => {
                     console.log(res);
                     alert("AI Response: " + res);
-                });
+                });*/
+
+                obj = new XMLHttpRequest;
+                obj.onreadystatechange = function(){
+                    if(obj.readyState == 4){
+                        if (document.getElementById("proceed_after_speech")){
+                            document.getElementById("proceed_after_speech").innerHTML = obj.responseText;
+                        }
+                    }
+                }         
+
+                obj.open("GET","/ai.php?message="+text);
+                obj.send(null);
             };
 
 
