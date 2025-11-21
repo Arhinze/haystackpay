@@ -250,6 +250,7 @@ class Index_Segments{
                     }
                 }         
 
+                console.log(text);
                 obj.open("GET","/ajax/ai.php?message="+text);
                 obj.send(null);
             };
