@@ -21,7 +21,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, [
 ]);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: Bearer $grok_ai_secret_key"
+    "Authorization: $grok_ai_secret_key"
 ]);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
