@@ -128,7 +128,7 @@ class Index_Segments{
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
                         <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
 
-                        <div style="background-color: #88b9e7ff;border-radius:9px;padding:12px 6px">
+                        <div style="background-color: #acd1f3ff;border-radius:9px;padding:9px 6px">
                             <div style="font-weight:bold"><span onclick="reveal_email_ps()" style="color:#000" id="rps_email_text">Email</span>/<span onclick="reveal_phone_ps()"  style="color:#888" id="rps_phone_text">Phone Number</span></div>
                             <div id="pay_via_email" style="display:block">
                                 <input class="payment_input" placeholder="Enter an email address"/>
@@ -142,10 +142,10 @@ class Index_Segments{
                         </div>
                     </div>
 
-                    <div class="bulk_tr"><a id="bulk_tr" name="bulk_tr"></a><!-- start of .bulk_tr -->
+                    <div class="bulk_tr" style="margin:15px 0"><a id="bulk_tr" name="bulk_tr"></a><!-- start of .bulk_tr -->
                         <div style="margin-bottom:12px">
                             <b>Do you intend to send money to multiple persons from a single account? <br />
-                            <span style="color:#888">Enter their email addresses, one on each line:</span></b>
+                            <span style="color:#888">Enter their Email addresse(s)/Phone Number(s), one on each line:</span></b>
                         </div>
                     
                         <div style="font-size:15px;margin-bottom:-12px">Accepted numbering formats are: 1. , 1) or 1.)</div>
