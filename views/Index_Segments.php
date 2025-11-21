@@ -124,7 +124,7 @@ class Index_Segments{
                         </div>
                     </div>
 
-                    <div style="display:block;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb" id="start_speaking_div">
+                    <div style="display:block;position:fixed;top:15%;left:10%;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:80%;width:70%;text-align:center" id="start_speaking_div">
                         <div class="features_images_div">
                             <label for="speak_button"><div class="features_images"><img src="/static/images/speak.png"/></div></label>
                             <div class="features_images_bottom_text">Tap the icon to speak</div>
