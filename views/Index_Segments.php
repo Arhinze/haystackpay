@@ -164,6 +164,8 @@ class Index_Segments{
                                 <input type="file" onchange="snapping_output()" style="display:none" id="snap_button"/>
                             </form>
                         </div>
+
+                        <div id="proceed_after_snap"></div>
                     </div>
 
                     <div style="margin:18px 0">
@@ -306,8 +308,8 @@ class Index_Segments{
                 obj = new XMLHttpRequest;
                 obj.onreadystatechange = function(){
                     if(obj.readyState == 4){
-                        if (document.getElementById("proceed_after_text")){
-                            document.getElementById("proceed_after_text").innerHTML = obj.responseText;
+                        if (document.getElementById("proceed_after_snap")){
+                            document.getElementById("proceed_after_snap").innerHTML = obj.responseText;
                         }
                     }
                 }         
