@@ -92,7 +92,7 @@ class Index_Segments{
                     
                     <br />
                     <h1>Get it done with <span style="color:#ff9100">ease</span>.</h1>
-                    <div>Make bulk transfers, receive, send, exchange and manage multiple currencies in one app.</div>
+                    <div>Speak, Type or Snap to pay. Make to multiple people at once. Receive AI powered financial analysis of your spending habit - all in one app.</div>
 
                     <!--
                     <img src="/static/images/horizontal_image1.png" class="" style="margin:12px"/> 
