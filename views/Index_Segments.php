@@ -301,7 +301,7 @@ class Index_Segments{
             }
 
             //Snap(Image) understanding:
-            function snapping_output() {
+            function snapping_output(){
                 ai_text="send 5000 to Francis";
                 obj = new XMLHttpRequest;
                 obj.onreadystatechange = function(){
