@@ -124,6 +124,20 @@ class Index_Segments{
                         </div>
                     </div>
 
+                    <div>
+                        <div style="font-size:24px">Pay via email/phone Number</div>
+                        <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can pay</div>
+
+                        <div style="font-weight:bold">Email/Phone Number</div>
+                        <div id="pay_via_email">
+                            <input placeholder="Enter an email address"/>
+                        </div>
+
+                        <div id="pay_via_phone_number">
+                            <input placeholder="Enter a phone Number"/>
+                        </div>
+                    </div>
+
                     <div class="bulk_tr"><a id="bulk_tr" name="bulk_tr"></a><!-- start of .bulk_tr -->
                         <div style="margin-bottom:12px">
                             <b>Do you intend to send money to multiple persons from a single account? <br />
