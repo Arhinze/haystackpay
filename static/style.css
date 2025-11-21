@@ -49,6 +49,17 @@ a{
     border-radius:3px;
 }
 
+.payment_button {
+    background-color:#25a1e9;
+    font-weight:bold;
+    color:#fff;
+    font-size:18px;
+    margin:19px 0px;
+    border:0px;
+    padding:8px 17px;
+    border-radius:3px;
+}
+
 .menu-box{
     display:none;
 }

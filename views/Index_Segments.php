@@ -124,18 +124,21 @@ class Index_Segments{
                         </div>
                     </div>
 
-                    <div>
+                    <div style="margin:18px 0">
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
                         <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
 
-                        <div style="font-weight:bold"><span onclick="reveal_email_ps()" style="color:#000" id="rps_email_text">Email</span>/<span onclick="reveal_phone_ps()"  style="color:#888" id="rps_phone_text">Phone Number</span></div>
-                        <div id="pay_via_email" style="display:block">
-                            <input class="payment_input" placeholder="Enter an email address"/>
-                            <button class="button"><i class="fa fa-arrow-right"></i></button>
-                        </div>
-
-                        <div id="pay_via_phone" style="display:none">
-                            <input class="payment_input" placeholder="Enter a phone Number"/>
+                        <div style="background-color: #88b9e7ff;border-radius:9px;padding:12px 6px">
+                            <div style="font-weight:bold"><span onclick="reveal_email_ps()" style="color:#000" id="rps_email_text">Email</span>/<span onclick="reveal_phone_ps()"  style="color:#888" id="rps_phone_text">Phone Number</span></div>
+                            <div id="pay_via_email" style="display:block">
+                                <input class="payment_input" placeholder="Enter an email address"/>
+                                <button class="payment_button"><i class="fa fa-arrow-right"></i></button>
+                            </div>
+    
+                            <div id="pay_via_phone" style="display:none">
+                                <input class="payment_input" placeholder="Enter a phone Number"/>
+                                <button class="payment_button"><i class="fa fa-arrow-right"></i></button>
+                            </div>
                         </div>
                     </div>
 
