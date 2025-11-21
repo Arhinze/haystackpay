@@ -11,7 +11,7 @@ $audioFileName = $_FILES['file']['name'];
 // Prepare CURL
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "https://api.x.ai/v1/audio/transcriptions");
+curl_setopt($ch, CURLOPT_URL, "https://api.groq.com/openai/v1/audio/transcriptions");
 curl_setopt($ch, CURLOPT_POST, true);
 
 // **MULTIPART FORM DATA**
@@ -21,7 +21,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, [
 ]);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: $grok_ai_secret_key"
+    "Authorization: Bearer $grok_ai_secret_key"
 ]);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
