@@ -1,4 +1,5 @@
 <?php
+include_once($_SERVER["DOCUMENT_ROOT"]."/config/grok.php");
 // CHECK IF FILE EXISTS
 if (!isset($_FILES['file'])) {
     die("No file received");
