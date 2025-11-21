@@ -159,9 +159,9 @@ class Index_Segments{
 
                             
                             <form method="post" action = "" enctype="multipart/form-data"> 
-                                <label for="upload_file"><div style="width:80%"><button id="snap_button" class="button" style="display:block"> <i class="fa fa-image"></i> Upload a picture/screenshot from your device containing account details.</button></div></label>
+                                <label for="snap_button"><div style="width:80%" id="snap_button" class="button" style="display:block"> <i class="fa fa-image"></i> Upload a picture/screenshot from your device containing account details.</div></label>
 
-                                <input type="file" style="display:none" id="upload_file"/>
+                                <input type="file" style="display:none" id="snap_button"/>
                             </form>
                         </div>
                     </div>
