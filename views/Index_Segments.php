@@ -158,7 +158,7 @@ class Index_Segments{
                             <div class="features_images_bottom_text">Take a picture of any account details to send money to that account.</div>
 
                             
-                            <button id="snap_button" class="button" style="display:block"> <i class="fa fa-image"></i> Upload a picture/screenshot from your device containing account details.</button>
+                            <div style="width:80%"><button id="snap_button" class="button" style="display:block"> <i class="fa fa-image"></i> Upload a picture/screenshot from your device containing account details.</button></div>
                         </div>
                     </div>
 
