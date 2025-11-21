@@ -279,7 +279,7 @@ class Index_Segments{
                     }
                 }         
     
-                console.log(text);
+                console.log("AI typing text: " + ai_text);
                 obj.open("GET","/ajax/ai.php?message="+ai_text);
                 obj.send(null);
             }
