@@ -697,6 +697,17 @@ a{
     border-radius: 6px;
 }
 
+.payment_input{
+    width:70%;
+    height:33px;
+    margin-top:6px;
+    background-color:#fff;
+    font-size:15px;
+    color:var(--site_color_alt);
+    border:1px solid var(--site_color_alt);
+    border-radius: 6px;
+}
+
 .new-input-div{
     position:relative;
 }

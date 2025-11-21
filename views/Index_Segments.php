@@ -130,11 +130,11 @@ class Index_Segments{
 
                         <div style="font-weight:bold">Email/Phone Number</div>
                         <div id="pay_via_email">
-                            <input placeholder="Enter an email address"/>
+                            <input class="payment_input" placeholder="Enter an email address"/>
                         </div>
 
                         <div id="pay_via_phone_number">
-                            <input placeholder="Enter a phone Number"/>
+                            <input class="payment_input" placeholder="Enter a phone Number"/>
                         </div>
                     </div>
 
