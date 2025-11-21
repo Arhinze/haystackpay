@@ -39,9 +39,8 @@ a{
 }
 
 .button{
-    background-color:var(--site_color_main);
-    font-weight:bold;
-    color:var(--site_color_alt);
+    background-color:#25a1e9;
+    color:#fff;
     font-size:18px;
     margin:19px 0px;
     border:0px;
