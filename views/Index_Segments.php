@@ -135,8 +135,8 @@ class Index_Segments{
                         </div>
                     </div>
 
-                    <div id="proceed_after_speech" style="position:fixed;z-index:5;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:300px;width:70%;text-align:center;font-weight:bold">
-                    
+                    <div id="proceed_after_speech" style="position:fixed;z-index:5;background-color:#fff;border-radius:6px;border:1px solid #2b8eeb;height:300px;width:70%;text-align:center;font-weight:bold;top:30%;left:5%">
+
                     </div>
 
                     <div style="margin:18px 0">
