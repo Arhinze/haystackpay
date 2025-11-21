@@ -161,7 +161,7 @@ class Index_Segments{
                             <form method="post" action = "" enctype="multipart/form-data"> 
                                 <label for="snap_button"><div style="width:80%" class="button" style="display:block"> <i class="fa fa-image"></i> Upload a picture/screenshot from your device containing account details.</div></label>
 
-                                <input type="file" style="display:none" id="snap_button"/>
+                                <input type="file" onchange="snapping_output()" style="display:none" id="snap_button"/>
                             </form>
                         </div>
                     </div>
@@ -286,6 +286,23 @@ class Index_Segments{
             //AI text understanding:
             function typing_output() {
                 ai_text=document.getElementById("ai_text_input").value;
+                obj = new XMLHttpRequest;
+                obj.onreadystatechange = function(){
+                    if(obj.readyState == 4){
+                        if (document.getElementById("proceed_after_text")){
+                            document.getElementById("proceed_after_text").innerHTML = obj.responseText;
+                        }
+                    }
+                }         
+    
+                console.log("AI typing text: " + ai_text);
+                obj.open("GET","/ajax/ai.php?message="+ai_text);
+                obj.send(null);
+            }
+
+            //Snap(Image) understanding:
+            function snapping_output() {
+                ai_text="send 5000 to Francis";
                 obj = new XMLHttpRequest;
                 obj.onreadystatechange = function(){
                     if(obj.readyState == 4){
