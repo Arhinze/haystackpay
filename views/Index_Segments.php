@@ -233,6 +233,7 @@ class Index_Segments{
                 })
                 .then(res => res.json())
                 .then(data => {
+                    console.log(res);
                     alert("AI Response: " + res);
                 });
             };
