@@ -128,7 +128,7 @@ class Index_Segments{
                         <div style="font-size:24px;"><b>Pay via email/phone Number</b></div>
                         <div style="font-size:15px">No need to ask for their account details, Once you have their email or phone number, you can make a transfer to them.</div>
 
-                        <div style="background-color: #acd1f3ff;border-radius:9px;padding:9px 6px">
+                        <div style="background-color: #acd1f3ff;border-radius:9px;padding:9px 6px;margin-top:12px">
                             <div style="font-weight:bold"><span onclick="reveal_email_ps()" style="color:#000" id="rps_email_text">Email</span>/<span onclick="reveal_phone_ps()"  style="color:#888" id="rps_phone_text">Phone Number</span></div>
                             <div id="pay_via_email" style="display:block">
                                 <input class="payment_input" placeholder="Enter an email address"/>
